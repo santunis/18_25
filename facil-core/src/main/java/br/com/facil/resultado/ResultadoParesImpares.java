@@ -1,0 +1,110 @@
+package br.com.facil.resultado;
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Objects;
+
+import com.opencsv.CSVReader;
+
+import br.com.facil.excecao.LotoException;
+import br.com.facil.regras.pares.RNP02;
+import br.com.facil.regras.pares.RNP03;
+import br.com.facil.regras.pares.RNP04;
+import br.com.facil.regras.pares.RNP05;
+import br.com.facil.regras.pares.RNP06;
+import br.com.facil.regras.pares.RNP07;
+import br.com.facil.regras.pares.RNP08;
+import br.com.facil.regras.pares.RNP09;
+import br.com.facil.regras.pares.RNP10;
+import br.com.facil.regras.pares.RNP11;
+import br.com.facil.regras.pares.RNP12;
+
+public class ResultadoParesImpares {
+
+	@SuppressWarnings({ "deprecation" })
+	public static void main(String[] args) throws URISyntaxException, IOException, LotoException {
+
+		URL resultadoOrdenado = ResultadoParesImpares.class.getClassLoader().getResource("resultado.csv");
+		int contTotalLinhaArquivo = 0;
+		RNP02 rnp02 = new RNP02();
+		RNP03 rnp03 = new RNP03();
+		RNP04 rnp04 = new RNP04();
+		RNP05 rnp05 = new RNP05();
+		RNP06 rnp06 = new RNP06();
+		RNP07 rnp07 = new RNP07();
+		RNP08 rnp08 = new RNP08();
+		RNP09 rnp09 = new RNP09();
+		RNP10 rnp10 = new RNP10();
+		RNP11 rnp11 = new RNP11();
+		RNP12 rnp12 = new RNP12();
+
+		int cont02 = 0;
+		int cont03 = 0;
+		int cont04 = 0;
+		int cont05 = 0;
+		int cont06 = 0;
+		int cont07 = 0;
+//		int linha07 = 0;
+		int cont08 = 0;
+		int cont09 = 0;
+		int cont10 = 0;
+		int cont11 = 0;
+		int cont12 = 0;
+
+		if (Objects.nonNull(resultadoOrdenado)) {
+
+			Path caminho = Paths.get(resultadoOrdenado.toURI());
+			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
+			String[] linha15;
+			while (Objects.nonNull((linha15 = csvReader.readNext()))) {
+				contTotalLinhaArquivo++;
+//				linha07++;
+				if (rnp02.aplicar(linha15)) {
+					cont02++;
+				} else if (rnp03.aplicar(linha15)) {
+					cont03++;
+				} else if (rnp04.aplicar(linha15)) {
+					cont04++;
+				} else if (rnp05.aplicar(linha15)) {
+					cont05++;
+				} else if (rnp06.aplicar(linha15)) {
+					cont06++;
+				} else if (rnp07.aplicar(linha15)) {
+					cont07++;
+//					System.out.println("Linha: " + linha07);
+				} else if (rnp08.aplicar(linha15)) {
+					cont08++;
+				} else if (rnp09.aplicar(linha15)) {
+					cont09++;
+				} else if (rnp10.aplicar(linha15)) {
+					cont10++;
+				} else if (rnp11.aplicar(linha15)) {
+					cont11++;
+				} else if (rnp12.aplicar(linha15)) {
+					cont12++;
+				} else {
+					System.out.println("#### FUDEU... ####");
+				}
+			}
+		} else {
+			System.out.println("#### Arquivo nao encontrado... ####");
+		}
+
+		System.out.println("TOTAL DE LINHAS NO ARQUIVO: " + contTotalLinhaArquivo);
+		System.out.println("TOTAL RNP02: " + cont02);
+		System.out.println("TOTAL RNP03: " + cont03);
+		System.out.println("TOTAL RNP04: " + cont04);
+		System.out.println("TOTAL RNP05: " + cont05);
+		System.out.println("TOTAL RNP06: " + cont06);
+		System.out.println("TOTAL RNP07: " + cont07);
+		System.out.println("TOTAL RNP08: " + cont08);
+		System.out.println("TOTAL RNP09: " + cont09);
+		System.out.println("TOTAL RNP10: " + cont10);
+		System.out.println("TOTAL RNP11: " + cont11);
+		System.out.println("TOTAL RNP12: " + cont12);
+	}
+}

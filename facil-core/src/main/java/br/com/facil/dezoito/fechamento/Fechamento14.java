@@ -1,9 +1,7 @@
 package br.com.facil.dezoito.fechamento;
 
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Path;
@@ -50,12 +48,12 @@ public class Fechamento14 {
             }
             
             for (String[] saida : listaNumeros) {
-            	String lista = null;
-    			
-    			lista = saida[0] + "," + saida[1] + "," + saida[2] + "," + saida[3] + "," + saida[4] + "," + 
-    					saida[5] + "," + saida[6] + "," + saida[7] + "," + saida[8] + "," + saida[9] + "," + 
-    					saida[10] + "," + saida[11] + "," + saida[12] + "," + saida[13] + "," + saida[14];
-    			
+//            	String lista = null;
+//    			
+//    			lista = saida[0] + "," + saida[1] + "," + saida[2] + "," + saida[3] + "," + saida[4] + "," + 
+//    					saida[5] + "," + saida[6] + "," + saida[7] + "," + saida[8] + "," + saida[9] + "," + 
+//    					saida[10] + "," + saida[11] + "," + saida[12] + "," + saida[13] + "," + saida[14];
+//    			
 //    			gravarArq.printf("%s%n", lista);
     			
     			contFechamento++;

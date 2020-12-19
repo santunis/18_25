@@ -49,6 +49,7 @@ public class Frequencia {
 			throws URISyntaxException, NumberFormatException, IOException {
 
 		int saiu = 0;
+		int saiusim = 0;
 		int naosaiu = 0;
 		URL resultado = Frequencia.class.getClassLoader().getResource("resultado.csv");
 		if (Objects.nonNull(resultado)) {
@@ -72,15 +73,17 @@ public class Frequencia {
 				}
 
 				if (saiu == NumeroEnum.UM.getValor()) {
+					saiusim++;
 					naosaiu = 0;
 				} else {
 					naosaiu++;
+					saiusim = 0;
 				}
 			}
 		} else {
 			System.out.println("### [resultado.csv] - Arquivo nao encontrado... ###");
 		}
-
+//		System.out.println("Saiu: " + saiusim);
 		return naosaiu;
 	}
 }

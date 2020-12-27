@@ -202,7 +202,9 @@ public enum NumeroEnum {
     
     DUZENTOS_SETENTA(270),
     
-    DUZENTOS_E_CINQUENTA_E_CINCO(255);
+    DUZENTOS_E_CINQUENTA_E_CINCO(255),
+	
+	CEM_MIL(100000);
     
     private Integer valor;
 

@@ -1,4 +1,4 @@
-package br.com.facil.dezoito.resultado;
+package br.com.facil.dezoito.resultado.rnp07;
 
 import java.io.FileReader;
 import java.io.FileWriter;

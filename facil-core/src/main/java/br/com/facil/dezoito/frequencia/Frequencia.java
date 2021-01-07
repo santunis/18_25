@@ -34,8 +34,8 @@ public class Frequencia {
 					linhaNumeros1_25Nova[i] = Integer.parseInt(String.valueOf(linhaNumeros1_25[i]));
 				}
 
-				int retorno = resultado(linhaNumeros1_25Nova);
-				System.out.println("Numero" + cont + ": " + retorno);
+				int retorno = resultado(linhaNumeros1_25Nova, cont);
+				System.out.println("Não Saiu Numero" + cont + ": " + retorno);
 			}
 //            arq.close();
 //            gravarArq.close();
@@ -45,7 +45,7 @@ public class Frequencia {
 	}
 
 	@SuppressWarnings({ "deprecation" })
-	public static int resultado(int[] linhaNumeros1_25Nova)
+	public static int resultado(int[] linhaNumeros1_25Nova, int cont)
 			throws URISyntaxException, NumberFormatException, IOException {
 
 		int saiu = 0;
@@ -83,7 +83,7 @@ public class Frequencia {
 		} else {
 			System.out.println("### [resultado.csv] - Arquivo nao encontrado... ###");
 		}
-//		System.out.println("Saiu: " + saiusim);
+		System.out.println("Saiu Número" + cont + ": " + saiusim);
 		return naosaiu;
 	}
 }

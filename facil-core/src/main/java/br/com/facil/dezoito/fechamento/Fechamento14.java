@@ -23,10 +23,10 @@ public class Fechamento14 {
 	@SuppressWarnings({ "deprecation" })
 	public static void main(String[] args) throws URISyntaxException, IOException, LotoException  {
 		
-		FileWriter arq = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\fechamento\\jogo\\Fechamento20-rnp07.csv");
-		PrintWriter gravarArq = new PrintWriter(arq);
+//		FileWriter arq = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\fechamento\\jogo\\Fechamento20-rnp07.csv");
+//		PrintWriter gravarArq = new PrintWriter(arq);
 		
-		URL combinacoes = Fechamento14.class.getClassLoader().getResource("fechamento\\jogo\\GerarFechamento20-rnp07.csv");
+		URL combinacoes = Fechamento14.class.getClassLoader().getResource("fechamento\\jogo\\GerarFechamento06012021.csv");
 		List<String[]> listaNumeros = new ArrayList<String[]>();
 		int contCombinacoes = 0;
 		int contFechamento = 0;
@@ -56,7 +56,7 @@ public class Fechamento14 {
     					saida[5] + "," + saida[6] + "," + saida[7] + "," + saida[8] + "," + saida[9] + "," + 
     					saida[10] + "," + saida[11] + "," + saida[12] + "," + saida[13] + "," + saida[14];
     			
-    			gravarArq.printf("%s%n", lista);
+//    			gravarArq.printf("%s%n", lista);
     			
     			contFechamento++;
     			System.out.println(contFechamento + " - " + 
@@ -69,8 +69,8 @@ public class Fechamento14 {
             System.out.println("Numero de Combinacoes: " + contCombinacoes);
             System.out.println("Numero  de Fechamentos: " + contFechamento);
             
-            arq.close();
-            gravarArq.close();
+//            arq.close();
+//            gravarArq.close();
 		} else {
 			System.out.println("### Arquivo nao encontrado... ###");
 		}
@@ -99,7 +99,7 @@ public class Fechamento14 {
         		}
         	}
     		
-    		if (contJogo < NumeroEnum.QUATORZE.getValor()) {
+    		if (contJogo < NumeroEnum.TREZE.getValor()) {
     			retorno = true;
     		} else {
     			retorno = false;

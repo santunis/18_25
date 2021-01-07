@@ -1,7 +1,9 @@
 package br.com.facil.resultado;
 
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Path;
@@ -28,6 +30,10 @@ public class ResultadoParesImpares {
 	@SuppressWarnings({ "deprecation" })
 	public static void main(String[] args) throws URISyntaxException, IOException, LotoException {
 
+		FileWriter arqSaiu = new FileWriter(
+				"D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoParesImpares.csv");
+		PrintWriter gravarArqSaiu = new PrintWriter(arqSaiu);
+		
 		URL resultadoOrdenado = ResultadoParesImpares.class.getClassLoader().getResource("resultado.csv");
 		int contTotalLinhaArquivo = 0;
 		RNP02 rnp02 = new RNP02();
@@ -48,7 +54,6 @@ public class ResultadoParesImpares {
 		int cont05 = 0;
 		int cont06 = 0;
 		int cont07 = 0;
-//		int linha07 = 0;
 		int cont08 = 0;
 		int cont09 = 0;
 		int cont10 = 0;
@@ -62,7 +67,6 @@ public class ResultadoParesImpares {
 			String[] linha15;
 			while (Objects.nonNull((linha15 = csvReader.readNext()))) {
 				contTotalLinhaArquivo++;
-//				linha07++;
 				if (rnp02.aplicar(linha15)) {
 					cont02++;
 				} else if (rnp03.aplicar(linha15)) {
@@ -75,7 +79,6 @@ public class ResultadoParesImpares {
 					cont06++;
 				} else if (rnp07.aplicar(linha15)) {
 					cont07++;
-//					System.out.println("Linha: " + linha07);
 				} else if (rnp08.aplicar(linha15)) {
 					cont08++;
 				} else if (rnp09.aplicar(linha15)) {
@@ -90,21 +93,36 @@ public class ResultadoParesImpares {
 					System.out.println("#### FUDEU... ####");
 				}
 			}
+			
+			System.out.println("TOTAL DE LINHAS NO ARQUIVO: " + contTotalLinhaArquivo);
+			gravarArqSaiu.printf("%s%n", "TOTAL DE LINHAS NO ARQUIVO: " + contTotalLinhaArquivo);
+			System.out.println("TOTAL RNP02: " + cont02);
+			gravarArqSaiu.printf("%s%n", "TOTAL RNP02: " + cont02);
+			System.out.println("TOTAL RNP03: " + cont03);
+			gravarArqSaiu.printf("%s%n", "TOTAL RNP03: " + cont03);
+			System.out.println("TOTAL RNP04: " + cont04);
+			gravarArqSaiu.printf("%s%n", "TOTAL RNP04: " + cont04);
+			System.out.println("TOTAL RNP05: " + cont05);
+			gravarArqSaiu.printf("%s%n", "TOTAL RNP05: " + cont05);
+			System.out.println("TOTAL RNP06: " + cont06);
+			gravarArqSaiu.printf("%s%n", "TOTAL RNP06: " + cont06);
+			System.out.println("TOTAL RNP07: " + cont07);
+			gravarArqSaiu.printf("%s%n", "TOTAL RNP07: " + cont07);
+			System.out.println("TOTAL RNP08: " + cont08);
+			gravarArqSaiu.printf("%s%n", "TOTAL RNP08: " + cont08);
+			System.out.println("TOTAL RNP09: " + cont09);
+			gravarArqSaiu.printf("%s%n", "TOTAL RNP09: " + cont09);
+			System.out.println("TOTAL RNP10: " + cont10);
+			gravarArqSaiu.printf("%s%n", "TOTAL RNP10: " + cont10);
+			System.out.println("TOTAL RNP11: " + cont11);
+			gravarArqSaiu.printf("%s%n", "TOTAL RNP11: " + cont11);
+			System.out.println("TOTAL RNP12: " + cont12);
+			gravarArqSaiu.printf("%s%n", "TOTAL RNP12: " + cont12);
+			
+			arqSaiu.close();
+			gravarArqSaiu.close();
 		} else {
 			System.out.println("#### Arquivo nao encontrado... ####");
 		}
-
-		System.out.println("TOTAL DE LINHAS NO ARQUIVO: " + contTotalLinhaArquivo);
-		System.out.println("TOTAL RNP02: " + cont02);
-		System.out.println("TOTAL RNP03: " + cont03);
-		System.out.println("TOTAL RNP04: " + cont04);
-		System.out.println("TOTAL RNP05: " + cont05);
-		System.out.println("TOTAL RNP06: " + cont06);
-		System.out.println("TOTAL RNP07: " + cont07);
-		System.out.println("TOTAL RNP08: " + cont08);
-		System.out.println("TOTAL RNP09: " + cont09);
-		System.out.println("TOTAL RNP10: " + cont10);
-		System.out.println("TOTAL RNP11: " + cont11);
-		System.out.println("TOTAL RNP12: " + cont12);
 	}
 }

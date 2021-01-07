@@ -19,14 +19,15 @@ public class ResultadoRNP07MAISSAIU {
 
 	@SuppressWarnings({ "deprecation" })
 	public static void main(String[] args) throws URISyntaxException, IOException, LotoException {
-		
-		FileWriter arqSaiu = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP07NAOSAIU.csv");
+
+		FileWriter arqSaiu = new FileWriter(
+				"D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\dezoito\\resultado\\ResultadoRNP07NAOSAIU.csv");
 		PrintWriter gravarArqSaiu = new PrintWriter(arqSaiu);
 
 		int cont = 0;
 		URL combinacao1825 = ResultadoRNP07MAISSAIU.class.getClassLoader().getResource("18_25.csv");
 		if (Objects.nonNull(combinacao1825)) {
-			
+
 			Path caminho = Paths.get(combinacao1825.toURI());
 			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
 			String[] linhaCombinacao;
@@ -40,16 +41,18 @@ public class ResultadoRNP07MAISSAIU {
 				String lista = null;
 				int retorno = ResultadoRNP07SAIU(linhaCombinacao1825);
 				if (retorno == NumeroEnum.ZERO.getValor()) {
-					lista = linhaCombinacao1825[0] + "," + linhaCombinacao1825[1] + "," + linhaCombinacao1825[2] + "," + linhaCombinacao1825[3] + ","
-							+ linhaCombinacao1825[4] + "," + linhaCombinacao1825[5] + "," + linhaCombinacao1825[6] + "," + linhaCombinacao1825[7] + ","
-							+ linhaCombinacao1825[8] + "," + linhaCombinacao1825[9] + "," + linhaCombinacao1825[10] + "," + linhaCombinacao1825[11] + ","
-							+ linhaCombinacao1825[12] + "," + linhaCombinacao1825[13] + "," + linhaCombinacao1825[14] + "," + linhaCombinacao1825[15] + ","
-							+ linhaCombinacao1825[16] + "," + linhaCombinacao1825[17] + "," + retorno;
+					lista = linhaCombinacao1825[0] + "," + linhaCombinacao1825[1] + "," + linhaCombinacao1825[2] + ","
+							+ linhaCombinacao1825[3] + "," + linhaCombinacao1825[4] + "," + linhaCombinacao1825[5] + ","
+							+ linhaCombinacao1825[6] + "," + linhaCombinacao1825[7] + "," + linhaCombinacao1825[8] + ","
+							+ linhaCombinacao1825[9] + "," + linhaCombinacao1825[10] + "," + linhaCombinacao1825[11]
+							+ "," + linhaCombinacao1825[12] + "," + linhaCombinacao1825[13] + ","
+							+ linhaCombinacao1825[14] + "," + linhaCombinacao1825[15] + "," + linhaCombinacao1825[16]
+							+ "," + linhaCombinacao1825[17] + "," + retorno;
 					gravarArqSaiu.printf("%s%n", lista);
 				}
 				System.out.println(cont++);
 			}
-			
+
 			arqSaiu.close();
 			gravarArqSaiu.close();
 		} else {
@@ -58,13 +61,15 @@ public class ResultadoRNP07MAISSAIU {
 	}
 
 	@SuppressWarnings({ "deprecation" })
-	public static int ResultadoRNP07SAIU(int[] linhaCombinacao1825) throws URISyntaxException, NumberFormatException, IOException {
+	public static int ResultadoRNP07SAIU(int[] linhaCombinacao1825)
+			throws URISyntaxException, NumberFormatException, IOException {
 
 		int contJogo = 0;
 		int qtdJogoSaiu = 0;
-		URL resultado1825SAIU = ResultadoRNP07MAISSAIU.class.getClassLoader().getResource("\\resultado\\ResultadoRNP07.csv");
+		URL resultado1825SAIU = ResultadoRNP07MAISSAIU.class.getClassLoader()
+				.getResource("\\resultado\\ResultadoRNP07.csv");
 		if (Objects.nonNull(resultado1825SAIU)) {
-			
+
 			Path caminho = Paths.get(resultado1825SAIU.toURI());
 			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
 			String[] linhaResultado1825SAIU;
@@ -83,7 +88,7 @@ public class ResultadoRNP07MAISSAIU {
 						}
 					}
 				}
-				
+
 				if (contJogo == NumeroEnum.QUINZE.getValor()) {
 					qtdJogoSaiu++;
 				}
@@ -91,11 +96,7 @@ public class ResultadoRNP07MAISSAIU {
 		} else {
 			System.out.println("### [Resultado1825SAIU.csv] Arquivo nao encontrado... ###");
 		}
-		
+
 		return qtdJogoSaiu;
 	}
-
-
-
-
 }

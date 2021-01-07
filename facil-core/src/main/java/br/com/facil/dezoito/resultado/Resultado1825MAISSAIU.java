@@ -20,7 +20,7 @@ public class Resultado1825MAISSAIU {
 	@SuppressWarnings({ "deprecation" })
 	public static void main(String[] args) throws URISyntaxException, IOException, LotoException {
 		
-		FileWriter arqSaiu = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\dezoito\\resultado\\Resultado1825MAISSAIU.csv");
+		FileWriter arqSaiu = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\dezoito\\resultado\\Resultado1825MAISSAIU_07012021.csv");
 		PrintWriter gravarArqSaiu = new PrintWriter(arqSaiu);
 
 		int cont = 0;
@@ -44,7 +44,7 @@ public class Resultado1825MAISSAIU {
 							+ linhaCombinacao1825[4] + "," + linhaCombinacao1825[5] + "," + linhaCombinacao1825[6] + "," + linhaCombinacao1825[7] + ","
 							+ linhaCombinacao1825[8] + "," + linhaCombinacao1825[9] + "," + linhaCombinacao1825[10] + "," + linhaCombinacao1825[11] + ","
 							+ linhaCombinacao1825[12] + "," + linhaCombinacao1825[13] + "," + linhaCombinacao1825[14] + "," + linhaCombinacao1825[15] + ","
-							+ linhaCombinacao1825[16] + "," + linhaCombinacao1825[17] + "," + retorno;
+							+ linhaCombinacao1825[16] + "," + linhaCombinacao1825[17];
 					gravarArqSaiu.printf("%s%n", lista);
 				}
 				

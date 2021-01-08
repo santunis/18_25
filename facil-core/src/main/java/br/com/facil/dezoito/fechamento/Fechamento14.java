@@ -26,7 +26,7 @@ public class Fechamento14 {
 //		FileWriter arq = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\fechamento\\jogo\\Fechamento20-rnp07.csv");
 //		PrintWriter gravarArq = new PrintWriter(arq);
 		
-		URL combinacoes = Fechamento14.class.getClassLoader().getResource("fechamento\\jogo\\GerarFechamento07012021.csv");
+		URL combinacoes = Fechamento14.class.getClassLoader().getResource("fechamento\\jogo\\GerarFechamento2097.csv");
 		List<String[]> listaNumeros = new ArrayList<String[]>();
 		int contCombinacoes = 0;
 		int contFechamento = 0;

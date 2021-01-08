@@ -83,7 +83,7 @@ public class Frequencia {
 		} else {
 			System.out.println("### [resultado.csv] - Arquivo nao encontrado... ###");
 		}
-		System.out.println("Saiu Número" + cont + ": " + saiusim);
+//		System.out.println("Saiu Número" + cont + ": " + saiusim);
 		return naosaiu;
 	}
 }

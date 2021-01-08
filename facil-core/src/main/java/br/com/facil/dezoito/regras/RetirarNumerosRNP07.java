@@ -26,7 +26,7 @@ public class RetirarNumerosRNP07 {
 	public static void main(String[] args) throws URISyntaxException, IOException, LotoException {
 
 		FileWriter arqSaiu = new FileWriter(
-				"D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\regras\\RetirarNumerosRNP07_07012021.csv");
+				"D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\regras\\RetirarNumerosRNP07.csv");
 		PrintWriter gravarArq = new PrintWriter(arqSaiu);
 
 		int cont = 0;
@@ -39,8 +39,7 @@ public class RetirarNumerosRNP07 {
 		RNS1115 rns1115 = new RNS1115();
 		RNS1620 rns1620 = new RNS1620();
 		RNS2125 rns2125 = new RNS2125();
-		URL resultado = RetirarNumerosRNP07.class.getClassLoader()
-				.getResource("dezoito\\resultado\\Resultado1825SAIU.csv");
+		URL resultado = RetirarNumerosRNP07.class.getClassLoader().getResource("18_25.csv");
 		if (Objects.nonNull(resultado)) {
 
 			Path caminho = Paths.get(resultado.toURI());
@@ -63,12 +62,12 @@ public class RetirarNumerosRNP07 {
 
 					String lista = null;
 					for (int i = 0; i < linha1825rnp07.length; i++) {
-						if (linha1825rnp07[i] == NumeroEnum.VINTE_TRES.getValor()
-								|| linha1825rnp07[i] == NumeroEnum.VINTE_CINCO.getValor()) {
+						if (linha1825rnp07[i] == NumeroEnum.DOIS.getValor()
+								|| linha1825rnp07[i] == NumeroEnum.DEZENOVE.getValor()) {
 							naoquero++;
 						}
 
-						if (linha1825rnp07[i] == NumeroEnum.DOIS.getValor()) {
+						if (linha1825rnp07[i] == NumeroEnum.CINCO.getValor()) {
 							quero++;
 						}
 
@@ -79,7 +78,7 @@ public class RetirarNumerosRNP07 {
 
 					if (naoquero == NumeroEnum.ZERO.getValor()) {
 						if (quero > NumeroEnum.ZERO.getValor()) {
-							if (menorquedez == NumeroEnum.SETE.getValor()) {
+							if (menorquedez == NumeroEnum.SEIS.getValor()) {
 								lista = linha1825rnp07[0] + "," + linha1825rnp07[1] + "," + linha1825rnp07[2] + ","
 										+ linha1825rnp07[3] + "," + linha1825rnp07[4] + "," + linha1825rnp07[5] + ","
 										+ linha1825rnp07[6] + "," + linha1825rnp07[7] + "," + linha1825rnp07[8] + ","

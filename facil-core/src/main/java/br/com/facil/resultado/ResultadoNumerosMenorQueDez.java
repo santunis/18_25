@@ -20,9 +20,9 @@ public class ResultadoNumerosMenorQueDez {
 	@SuppressWarnings({ "deprecation" })
 	public static void main(String[] args) throws URISyntaxException, IOException, LotoException {
 
-		FileWriter arqSaiu = new FileWriter(
-				"D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_CINCO.csv");
-		PrintWriter gravarArq = new PrintWriter(arqSaiu);
+//		FileWriter arqSaiu = new FileWriter(
+//				"D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_CINCO.csv");
+//		PrintWriter gravarArq = new PrintWriter(arqSaiu);
 		
 		URL resultado1525 = ResultadoNumerosMenorQueDez.class.getClassLoader().getResource("resultado.csv");
 
@@ -58,7 +58,7 @@ public class ResultadoNumerosMenorQueDez {
 					}
 				}
 
-				String lista = null;
+//				String lista = null;
 				if (contlinha == NumeroEnum.ZERO.getValor()) {
 					zero++;
 				} else if (contlinha == NumeroEnum.UM.getValor()) {
@@ -70,12 +70,12 @@ public class ResultadoNumerosMenorQueDez {
 				} else if (contlinha == NumeroEnum.QUATRO.getValor()) {
 					quatro++;
 				} else if (contlinha == NumeroEnum.CINCO.getValor()) {
-					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-					gravarArq.printf("%s%n", lista);
+//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
+//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
+//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
+//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
+//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
+//					gravarArq.printf("%s%n", lista);
 					cinco++;
 				} else if (contlinha == NumeroEnum.SEIS.getValor()) {
 					seis++;
@@ -89,8 +89,8 @@ public class ResultadoNumerosMenorQueDez {
 
 			}
 			
-			arqSaiu.close();
-			gravarArq.close();
+//			arqSaiu.close();
+//			gravarArq.close();
 		} else {
 			System.out.println("### Arquivo nao encontrado... ###");
 		}

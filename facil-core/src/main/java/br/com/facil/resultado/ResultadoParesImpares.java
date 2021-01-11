@@ -30,9 +30,9 @@ public class ResultadoParesImpares {
 	@SuppressWarnings({ "deprecation" })
 	public static void main(String[] args) throws URISyntaxException, IOException, LotoException {
 
-		FileWriter arqSaiu = new FileWriter(
-				"D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoParesImpares.csv");
-		PrintWriter gravarArqSaiu = new PrintWriter(arqSaiu);
+//		FileWriter arqSaiu = new FileWriter(
+//				"D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoParesImpares.csv");
+//		PrintWriter gravarArqSaiu = new PrintWriter(arqSaiu);
 		
 		URL resultadoOrdenado = ResultadoParesImpares.class.getClassLoader().getResource("resultado.csv");
 		int contTotalLinhaArquivo = 0;
@@ -95,32 +95,32 @@ public class ResultadoParesImpares {
 			}
 			
 			System.out.println("TOTAL DE LINHAS NO ARQUIVO: " + contTotalLinhaArquivo);
-			gravarArqSaiu.printf("%s%n", "TOTAL DE LINHAS NO ARQUIVO: " + contTotalLinhaArquivo);
+//			gravarArqSaiu.printf("%s%n", "TOTAL DE LINHAS NO ARQUIVO: " + contTotalLinhaArquivo);
 			System.out.println("TOTAL RNP02: " + cont02);
-			gravarArqSaiu.printf("%s%n", "TOTAL RNP02: " + cont02);
+//			gravarArqSaiu.printf("%s%n", "TOTAL RNP02: " + cont02);
 			System.out.println("TOTAL RNP03: " + cont03);
-			gravarArqSaiu.printf("%s%n", "TOTAL RNP03: " + cont03);
+//			gravarArqSaiu.printf("%s%n", "TOTAL RNP03: " + cont03);
 			System.out.println("TOTAL RNP04: " + cont04);
-			gravarArqSaiu.printf("%s%n", "TOTAL RNP04: " + cont04);
+//			gravarArqSaiu.printf("%s%n", "TOTAL RNP04: " + cont04);
 			System.out.println("TOTAL RNP05: " + cont05);
-			gravarArqSaiu.printf("%s%n", "TOTAL RNP05: " + cont05);
+//			gravarArqSaiu.printf("%s%n", "TOTAL RNP05: " + cont05);
 			System.out.println("TOTAL RNP06: " + cont06);
-			gravarArqSaiu.printf("%s%n", "TOTAL RNP06: " + cont06);
+//			gravarArqSaiu.printf("%s%n", "TOTAL RNP06: " + cont06);
 			System.out.println("TOTAL RNP07: " + cont07);
-			gravarArqSaiu.printf("%s%n", "TOTAL RNP07: " + cont07);
+//			gravarArqSaiu.printf("%s%n", "TOTAL RNP07: " + cont07);
 			System.out.println("TOTAL RNP08: " + cont08);
-			gravarArqSaiu.printf("%s%n", "TOTAL RNP08: " + cont08);
+//			gravarArqSaiu.printf("%s%n", "TOTAL RNP08: " + cont08);
 			System.out.println("TOTAL RNP09: " + cont09);
-			gravarArqSaiu.printf("%s%n", "TOTAL RNP09: " + cont09);
+//			gravarArqSaiu.printf("%s%n", "TOTAL RNP09: " + cont09);
 			System.out.println("TOTAL RNP10: " + cont10);
-			gravarArqSaiu.printf("%s%n", "TOTAL RNP10: " + cont10);
+//			gravarArqSaiu.printf("%s%n", "TOTAL RNP10: " + cont10);
 			System.out.println("TOTAL RNP11: " + cont11);
-			gravarArqSaiu.printf("%s%n", "TOTAL RNP11: " + cont11);
+//			gravarArqSaiu.printf("%s%n", "TOTAL RNP11: " + cont11);
 			System.out.println("TOTAL RNP12: " + cont12);
-			gravarArqSaiu.printf("%s%n", "TOTAL RNP12: " + cont12);
+//			gravarArqSaiu.printf("%s%n", "TOTAL RNP12: " + cont12);
 			
-			arqSaiu.close();
-			gravarArqSaiu.close();
+//			arqSaiu.close();
+//			gravarArqSaiu.close();
 		} else {
 			System.out.println("#### Arquivo nao encontrado... ####");
 		}

@@ -35,14 +35,14 @@ public class AnaliseRNP07UM {
 					linhaCombinacao1825[i] = Integer.parseInt(String.valueOf(linhaCombinacao[i]));
 				}
 
-				String lista = null;
+//				String lista = null;
 				int retorno = Analise(linhaCombinacao1825);
 				if (retorno > NumeroEnum.ZERO.getValor()) {
-					lista = linhaCombinacao1825[0] + "," + linhaCombinacao1825[1] + "," + linhaCombinacao1825[2] + "," + linhaCombinacao1825[3] + ","
-							+ linhaCombinacao1825[4] + "," + linhaCombinacao1825[5] + "," + linhaCombinacao1825[6] + "," + linhaCombinacao1825[7] + ","
-							+ linhaCombinacao1825[8] + "," + linhaCombinacao1825[9] + "," + linhaCombinacao1825[10] + "," + linhaCombinacao1825[11] + ","
-							+ linhaCombinacao1825[12] + "," + linhaCombinacao1825[13] + "," + linhaCombinacao1825[14] + "," + linhaCombinacao1825[15] + ","
-							+ linhaCombinacao1825[16] + "," + linhaCombinacao1825[17] + "," + retorno;
+//					lista = linhaCombinacao1825[0] + "," + linhaCombinacao1825[1] + "," + linhaCombinacao1825[2] + "," + linhaCombinacao1825[3] + ","
+//							+ linhaCombinacao1825[4] + "," + linhaCombinacao1825[5] + "," + linhaCombinacao1825[6] + "," + linhaCombinacao1825[7] + ","
+//							+ linhaCombinacao1825[8] + "," + linhaCombinacao1825[9] + "," + linhaCombinacao1825[10] + "," + linhaCombinacao1825[11] + ","
+//							+ linhaCombinacao1825[12] + "," + linhaCombinacao1825[13] + "," + linhaCombinacao1825[14] + "," + linhaCombinacao1825[15] + ","
+//							+ linhaCombinacao1825[16] + "," + linhaCombinacao1825[17] + "," + retorno;
 //					gravarArqSaiu.printf("%s%n", lista);
 					System.out.println("QTOS JOGOS: " + retorno);
 				}

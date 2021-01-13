@@ -1,9 +1,7 @@
 package br.com.facil.resultado;
 
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Path;

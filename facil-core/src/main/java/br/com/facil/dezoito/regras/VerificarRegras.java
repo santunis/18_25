@@ -1,9 +1,7 @@
 package br.com.facil.dezoito.regras;
 
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Path;
@@ -25,7 +23,7 @@ public class VerificarRegras {
 //		FileWriter arqSaiu = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\regras\\VerificarRegras.csv");
 //		PrintWriter gravarArqSaiu = new PrintWriter(arqSaiu);
 
-		int cont = 0;
+//		int cont = 0;
 		URL resultado = VerificarRegras.class.getClassLoader().getResource("resultado\\ResultadoRNP07.csv");
 		if (Objects.nonNull(resultado)) {
 			

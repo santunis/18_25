@@ -10,7 +10,6 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>facil-api</module>
 		<module>facil-core</module>
 		<module>facil-ear</module>
 	</modules>

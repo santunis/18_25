@@ -1,7 +1,9 @@
-package br.com.facil.resultado;
+package br.com.facil.dezoito.resultado.hoje;
 
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Path;
@@ -13,50 +15,56 @@ import com.opencsv.CSVReader;
 import br.com.facil.enumerador.NumeroEnum;
 import br.com.facil.excecao.LotoException;
 
-public class JaSaiu {
+public class ResultadoSaiuHoje {
 
 	@SuppressWarnings({ "deprecation" })
 	public static void main(String[] args) throws URISyntaxException, IOException, LotoException {
 
-//		int[] jogo = { 1,2,3,4,6,9,10,12,13,14,15,17,18,19,20 };
-//		int[] jogo = { 1,2,3,4,6,9,10,12,13,14,21,22,23,24,25 };
-//		int[] jogo = { 1,2,3,4,6,15,17,18,19,20,21,22,23,24,25 };
-		int[] jogo = { 9,10,12,13,14,15,17,18,19,20,21,22,23,24,25 };
+//		int[] jogo = { 1,3,4,6,7,8,10,11,14,15,19,20,21,22,24 };
+		int[] jogo = { 2,3,4,6,7,9,10,11,14,16,17,18,22,23,25 };
 		
-		//1,3,4,6,7,8,10,11,14,15,19,20,21,22,24
 
+		int cont = 0;
 		int contonze = 0;
 		int contdoze = 0;
 		int conttreze = 0;
 		int contquatorze = 0;
 		int contquinze = 0;
 
-		URL combinacoes = JaSaiu.class.getClassLoader().getResource("resultado.csv");
+		FileWriter arqSaiu = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\dezoito\\resultado\\hoje\\ResultadoSaiuHoje112.csv");
+		PrintWriter gravarArq = new PrintWriter(arqSaiu);
+		URL combinacoes = ResultadoSaiuHoje.class.getClassLoader().getResource("dezoito\\fechamento\\Fechamento15_25_ONZE.csv");
 		if (Objects.nonNull(combinacoes)) {
 			Path caminho = Paths.get(combinacoes.toURI());
 			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
 
 			String[] linhaCombinacoes;
 			while (Objects.nonNull((linhaCombinacoes = csvReader.readNext()))) {
+				cont++;
 				if (comparaNumeros(linhaCombinacoes, jogo) == NumeroEnum.ONZE.getValor()) {
+					gravarArq.printf("%s%n",  cont);
 					contonze++;
 				}
 
-				if (comparaNumeros(linhaCombinacoes, jogo) == NumeroEnum.DOZE.getValor()) {
-					contdoze++;
-				}
-
-				if (comparaNumeros(linhaCombinacoes, jogo) == NumeroEnum.TREZE.getValor()) {
-					conttreze++;
-				}
-
-				if (comparaNumeros(linhaCombinacoes, jogo) == NumeroEnum.QUATORZE.getValor()) {
-					contquatorze++;
-				}
-
-				if (comparaNumeros(linhaCombinacoes, jogo) == NumeroEnum.QUINZE.getValor()) {
-					contquinze++;
-				}
+//				if (comparaNumeros(linhaCombinacoes, jogo) == NumeroEnum.DOZE.getValor()) {
+//					gravarArq.printf("%s%n", "Linha: " + cont + " Fez DOZE pontos");
+//					contdoze++;
+//				}
+//
+//				if (comparaNumeros(linhaCombinacoes, jogo) == NumeroEnum.TREZE.getValor()) {
+//					gravarArq.printf("%s%n", "Linha: " + cont + " Fez TREZE pontos");
+//					conttreze++;
+//				}
+//
+//				if (comparaNumeros(linhaCombinacoes, jogo) == NumeroEnum.QUATORZE.getValor()) {
+//					gravarArq.printf("%s%n", "Linha: " + cont + " Fez QUATORZE pontos");
+//					contquatorze++;
+//				}
+//
+//				if (comparaNumeros(linhaCombinacoes, jogo) == NumeroEnum.QUINZE.getValor()) {
+//					gravarArq.printf("%s%n", "Linha: " + cont + " Fez QUINZE pontos");
+//					contquinze++;
+//				}
 			}
 
 			System.out.println("ONZE: " + contonze);
@@ -65,6 +73,8 @@ public class JaSaiu {
 			System.out.println("QUATROZE: " + contquatorze);
 			System.out.println("QUINZE: " + contquinze);
 
+			arqSaiu.close();
+			gravarArq.close();
 		} else {
 			System.out.println("### Arquivo nao encontrado... ###");
 		}
@@ -109,5 +119,7 @@ public class JaSaiu {
 
 		return retorno;
 	}
+
+
 
 }

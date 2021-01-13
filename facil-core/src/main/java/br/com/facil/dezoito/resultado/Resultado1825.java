@@ -1,9 +1,7 @@
 package br.com.facil.dezoito.resultado;
 
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Path;
@@ -23,7 +21,7 @@ public class Resultado1825 {
 //		FileWriter arqSaiu = new FileWriter("D:\\projetos_loto\\loto\\loto-core\\src\\main\\resources\\dezoito\\resultado\\resultado\\1825SAIU-1.csv");
 //		PrintWriter gravarArqSaiu = new PrintWriter(arqSaiu);
 		
-		int cont = 1;
+//		int cont = 1;
 		URL resultado = Resultado1825.class.getClassLoader().getResource("hoje.csv");
 		if (Objects.nonNull(resultado)) {
 			
@@ -37,7 +35,7 @@ public class Resultado1825 {
             		linhaResultado[i] = Integer.parseInt(String.valueOf(linha[i]));
         		}
             	
-            	String lista = null;
+//            	String lista = null;
             	int qtd = combinacoes1825(linhaResultado);
             	if (qtd > NumeroEnum.ZERO.getValor()) {
 //            		System.out.println(
@@ -49,7 +47,7 @@ public class Resultado1825 {
 //            		System.out.println("SAIU - " + cont + " - " + qtd);
             	}
             	
-            	cont++;
+//            	cont++;
             }
             
 //            arqSaiu.close();
@@ -88,7 +86,7 @@ public class Resultado1825 {
             		}
             	}
             	
-            	String lista = null;
+//            	String lista = null;
             	if (contJogo == NumeroEnum.QUINZE.getValor()) {
             		System.out.println(contLinha 
 //            				+ " - " +

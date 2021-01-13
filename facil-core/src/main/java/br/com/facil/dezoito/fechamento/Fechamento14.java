@@ -23,10 +23,10 @@ public class Fechamento14 {
 	@SuppressWarnings({ "deprecation" })
 	public static void main(String[] args) throws URISyntaxException, IOException, LotoException  {
 		
-//		FileWriter arq = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\dezoito\\fechamento\\Fechamento18_25_QUATORZE.csv");
-//		PrintWriter gravarArq = new PrintWriter(arq);
+		FileWriter arq = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\dezoito\\fechamento\\Fechamento15_25_ONZE.csv");
+		PrintWriter gravarArq = new PrintWriter(arq);
 		
-		URL combinacoes = Fechamento14.class.getClassLoader().getResource("dezoito\\fechamento\\GerarFechamento23.csv");
+		URL combinacoes = Fechamento14.class.getClassLoader().getResource("combinacoes\\15_25.csv");
 		List<String[]> listaNumeros = new ArrayList<String[]>();
 		int contCombinacoes = 0;
 		int contFechamento = 0;
@@ -50,14 +50,13 @@ public class Fechamento14 {
             }
             
             for (String[] saida : listaNumeros) {
-//            	String lista = null;
-//    			
-//    			lista = saida[0] + "," + saida[1] + "," + saida[2] + "," + saida[3] + "," + saida[4] + "," + 
-//    					saida[5] + "," + saida[6] + "," + saida[7] + "," + saida[8] + "," + saida[9] + "," + 
-//    					saida[10] + "," + saida[11] + "," + saida[12] + "," + saida[13] + "," + saida[14] + "," + 
-//    					saida[15] + "," + saida[16] + "," + saida[17];
-//    			
-//    			gravarArq.printf("%s%n", lista);
+            	String lista = null;
+    			
+    			lista = saida[0] + "," + saida[1] + "," + saida[2] + "," + saida[3] + "," + saida[4] + "," + 
+    					saida[5] + "," + saida[6] + "," + saida[7] + "," + saida[8] + "," + saida[9] + "," + 
+    					saida[10] + "," + saida[11] + "," + saida[12] + "," + saida[13] + "," + saida[14];
+    			
+    			gravarArq.printf("%s%n", lista);
     			
     			contFechamento++;
     			System.out.println(contFechamento + " - " + 
@@ -70,8 +69,8 @@ public class Fechamento14 {
             System.out.println("Numero de Combinacoes: " + contCombinacoes);
             System.out.println("Numero  de Fechamentos: " + contFechamento);
             
-//            arq.close();
-//            gravarArq.close();
+            arq.close();
+            gravarArq.close();
 		} else {
 			System.out.println("### Arquivo nao encontrado... ###");
 		}
@@ -81,13 +80,14 @@ public class Fechamento14 {
 	public static boolean comparaNumeros(List<String[]> listaNumeros, String[] linhaCombinacoes) {
 		
 		boolean retorno = false;
+		int contJogo = 0;
 		int[] linhaCombinacoesInteiro = new int[linhaCombinacoes.length];
     	for (int i = 0; i < linhaCombinacoes.length; i++) {
     		linhaCombinacoesInteiro[i] = Integer.parseInt(String.valueOf(linhaCombinacoes[i]));
 		}
     	
     	for (String[] linha : listaNumeros) {
-    		int contJogo = 0;
+    		contJogo = 0;
     		int[] linhaInteiro = new int[linha.length];
         	for (int i = 0; i < linha.length; i++) {
         		linhaInteiro[i] = Integer.parseInt(String.valueOf(linha[i]));
@@ -101,7 +101,7 @@ public class Fechamento14 {
         		}
         	}
     		
-    		if (contJogo < NumeroEnum.QUATORZE.getValor()) {
+    		if (contJogo < NumeroEnum.ONZE.getValor()) {
     			retorno = true;
     		} else {
     			retorno = false;

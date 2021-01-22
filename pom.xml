@@ -12,12 +12,14 @@
 	<modules>
 		<module>facil-core</module>
 		<module>facil-ear</module>
+		<module>facil-war</module>
 	</modules>
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<javaee.api.version>7.0</javaee.api.version>
 
+		<primefaces.version>7.0</primefaces.version>
 		<okhttp.version>3.9.1</okhttp.version>
         <commons.lang.version>3.8</commons.lang.version>
         <commons.codec.version>1.10</commons.codec.version>
@@ -50,6 +52,12 @@
 				<groupId>javax</groupId>
 				<artifactId>javaee-api</artifactId>
 				<version>${javaee.api.version}</version>
+			</dependency>
+			
+			<dependency>
+			    <groupId>org.primefaces</groupId>
+			    <artifactId>primefaces</artifactId>
+			    <version>${primefaces.version}</version>
 			</dependency>
 			
 			<dependency>

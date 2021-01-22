@@ -19,62 +19,61 @@ public class AnaliseResultadoSaiuHoje {
 	@SuppressWarnings({ "deprecation" })
 	public static void main(String[] args) throws URISyntaxException, IOException, LotoException {
 
-		FileWriter arqSaiu = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\dezoito\\resultado\\hoje\\ResultadoSaiuHoje_Repetidos.csv");
+		FileWriter arqSaiu = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\dezoito\\resultado\\hoje\\ResultadoSaiuHojeONZE2131_REP.csv");
 		PrintWriter gravarArq = new PrintWriter(arqSaiu);
-		URL resultado1525 = AnaliseResultadoSaiuHoje.class.getClassLoader().getResource("dezoito\\resultado\\hoje\\ResultadoSaiuHoje.csv");
-		if (Objects.nonNull(resultado1525)) {
-			Path caminho = Paths.get(resultado1525.toURI());
+		URL comparaUM = AnaliseResultadoSaiuHoje.class.getClassLoader().getResource("dezoito\\resultado\\hoje\\ResultadoSaiuHojeONZE2127.csv");
+		if (Objects.nonNull(comparaUM)) {
+			Path caminho = Paths.get(comparaUM.toURI());
 			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
 
-			String[] linhaResultado1525;
-			while (Objects.nonNull((linhaResultado1525 = csvReader.readNext()))) {
-				int[] linha1525 = new int[linhaResultado1525.length];
-				for (int i = 0; i < linhaResultado1525.length; i++) {
-					linha1525[i] = Integer.parseInt(String.valueOf(linhaResultado1525[i]));
+			String[] linhaCompara;
+			while (Objects.nonNull((linhaCompara = csvReader.readNext()))) {
+				int[] linha = new int[linhaCompara.length];
+				for (int i = 0; i < linhaCompara.length; i++) {
+					linha[i] = Integer.parseInt(String.valueOf(linhaCompara[i]));
 				}
 
-				if (combinacoes1825(linha1525)) {
-					System.out.println(linha1525[0]);
-					gravarArq.printf("%s%n", linha1525[0]);
+				if (combinacoes1825(linha)) {
+					System.out.println(linha[0]);
+					gravarArq.printf("%s%n", linha[0]);
 				}
 			}
 			
 			arqSaiu.close();
 			gravarArq.close();
 		} else {
-			System.out.println("### Arquivo nao encontrado... ###");
+			System.out.println("### Arquivo UM nao encontrado... ###");
 		}
 		System.out.println("FIM");
 	}
 
 	@SuppressWarnings({ "deprecation" })
-	public static boolean combinacoes1825(int[] linha1525)
-			throws URISyntaxException, NumberFormatException, IOException {
+	public static boolean combinacoes1825(int[] linha) throws URISyntaxException, NumberFormatException, IOException {
 
 		boolean retorno = false;
-		URL combinacoes1825 = AnaliseResultadoSaiuHoje.class.getClassLoader().getResource("dezoito\\resultado\\hoje\\ResultadoSaiuHoje1.csv");
-		if (Objects.nonNull(combinacoes1825)) {
-			Path caminho = Paths.get(combinacoes1825.toURI());
+		URL comparaDOIS = AnaliseResultadoSaiuHoje.class.getClassLoader().getResource("dezoito\\resultado\\hoje\\ResultadoSaiuHojeONZE2131.csv");
+		if (Objects.nonNull(comparaDOIS)) {
+			Path caminho = Paths.get(comparaDOIS.toURI());
 			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
 
-			String[] linhaCombinacoes1825;
-			while (Objects.nonNull((linhaCombinacoes1825 = csvReader.readNext()))) {
+			String[] linhaCompara;
+			while (Objects.nonNull((linhaCompara = csvReader.readNext()))) {
 
-				int[] linha1825 = new int[linhaCombinacoes1825.length];
-				for (int i = 0; i < linhaCombinacoes1825.length; i++) {
-					linha1825[i] = Integer.parseInt(String.valueOf(linhaCombinacoes1825[i]));
+				int[] linhaComparaDOIS = new int[linhaCompara.length];
+				for (int i = 0; i < linhaCompara.length; i++) {
+					linhaComparaDOIS[i] = Integer.parseInt(String.valueOf(linhaCompara[i]));
 				}
 
-				for (int i = 0; i < linha1525.length; i++) {
-					for (int j = 0; j < linha1825.length; j++) {
-						if (linha1525[i] == linha1825[j]) {
+				for (int i = 0; i < linha.length; i++) {
+					for (int j = 0; j < linhaComparaDOIS.length; j++) {
+						if (linha[i] == linhaComparaDOIS[j]) {
 							retorno = true;
 						}
 					}
 				}
 			}
 		} else {
-			System.out.println("### Arquivo nao encontrado... ###");
+			System.out.println("### Arquivo DOIS nao encontrado... ###");
 		}
 
 		return retorno;

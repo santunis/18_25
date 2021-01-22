@@ -35,7 +35,13 @@ public class FrequenciaRNP07 {
 			while (Objects.nonNull((linhaResultado = csvReader.readNext()))) {
 				cont++;
 				saiu = 0;
-				if (rnp07.aplicar(linhaResultado)) {
+				
+				int[] linha = new int[linhaResultado.length];
+				for (int i = 0; i < linhaResultado.length; i++) {
+					linha[i] = Integer.parseInt(String.valueOf(linhaResultado[i]));
+				}
+				
+				if (rnp07.aplicar(linha)) {
 					saiu++;
 				}
 				

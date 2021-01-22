@@ -26,7 +26,7 @@ public class GerarNumerosMenorQueDez {
 	public static void main(String[] args) throws URISyntaxException, IOException, LotoException {
 
 		FileWriter arqSaiu = new FileWriter(
-				"D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\dezoito\\regras\\GerarNumerosMenorQueDez.csv");
+				"D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\dezoito\\regras\\GerarRNP07MenorQueDez_SEIS.csv");
 		PrintWriter gravarArq = new PrintWriter(arqSaiu);
 
 		int cont = 0;
@@ -36,7 +36,7 @@ public class GerarNumerosMenorQueDez {
 		RNS1115 rns1115 = new RNS1115();
 		RNS1620 rns1620 = new RNS1620();
 		RNS2125 rns2125 = new RNS2125();
-		URL resultado = GerarNumerosMenorQueDez.class.getClassLoader().getResource("18_25.csv");
+		URL resultado = GerarNumerosMenorQueDez.class.getClassLoader().getResource("dezoito\\regras\\GerarRNP07.csv");
 		if (Objects.nonNull(resultado)) {
 
 			Path caminho = Paths.get(resultado.toURI());
@@ -67,8 +67,7 @@ public class GerarNumerosMenorQueDez {
 								+ linha1825rnp07[3] + "," + linha1825rnp07[4] + "," + linha1825rnp07[5] + ","
 								+ linha1825rnp07[6] + "," + linha1825rnp07[7] + "," + linha1825rnp07[8] + ","
 								+ linha1825rnp07[9] + "," + linha1825rnp07[10] + "," + linha1825rnp07[11] + ","
-								+ linha1825rnp07[12] + "," + linha1825rnp07[13] + "," + linha1825rnp07[14] + ","
-								+ linha1825rnp07[15] + "," + linha1825rnp07[16] + "," + linha1825rnp07[17];
+								+ linha1825rnp07[12] + "," + linha1825rnp07[13] + "," + linha1825rnp07[14];
 						gravarArq.printf("%s%n", lista);
 					}
 					

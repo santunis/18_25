@@ -12,12 +12,12 @@ public class GerarFechamento {
 	public static void main(String[] args) throws IOException, LotoException {
 		
 		//1,2,3,4,6,9,10,12,13,14,15,17,18,19,20,21,22,23,24,25
-		String[] str = { "1","2","3","4","6","9","10","12","13","14","15","17","18","19","20","21","22","23","24","25" };
+		int[] str = { 7, 1, 2, 3, 4, 6, 9, 10, 12, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25 };
 		
-		FileWriter arq = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\dezoito\\fechamento\\GerarFechamento20_maissaiu.csv");
+		FileWriter arq = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\dezoito\\fechamento\\GerarFechamento21.csv");
 		PrintWriter gravarArq = new PrintWriter(arq);
 		
-		String[] saida;
+		int[] saida;
 		long cont = 0;
 		Combinacoes comb1 = new Combinacoes(str, 15);
 		while (comb1.hasNext()) {

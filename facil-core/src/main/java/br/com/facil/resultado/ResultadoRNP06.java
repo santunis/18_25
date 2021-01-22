@@ -31,9 +31,14 @@ public class ResultadoRNP06 {
 
 			Path caminho = Paths.get(resultado.toURI());
 			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
-			String[] saida;
-			while (Objects.nonNull((saida = csvReader.readNext()))) {
+			String[] linha;
+			while (Objects.nonNull((linha = csvReader.readNext()))) {
 				String lista = null;
+				int[] saida = new int[linha.length];
+				for (int i = 0; i < linha.length; i++) {
+					saida[i] = Integer.parseInt(String.valueOf(linha[i]));
+				}
+				
 				if (rnp06.aplicar(saida)) {
 					lista = saida[0] + "," + saida[1] + "," + saida[2] + "," + saida[3] + "," + saida[4] + ","
 							+ saida[5] + "," + saida[6] + "," + saida[7] + "," + saida[8] + "," + saida[9] + ","

@@ -3,11 +3,11 @@ package br.com.facil;
 public class Combinacoes {
 
 	private int r;
-	private String[] entrada;
+	private int[] entrada;
 	private int MAX;
 	private int N;
 
-	public Combinacoes(String[] entrada, int r) {
+	public Combinacoes(int[] entrada, int r) {
 		this.r = r;
 		this.entrada = entrada;
 		this.MAX = ~(1 << entrada.length);
@@ -44,10 +44,10 @@ public class Combinacoes {
 		return this.countbits();
 	}
 
-	public String[] next() {
+	public int[] next() {
 		int saida_index, entrada_index, i;
 
-		String[] saida = new String[this.getSaidaLength()];
+		int[] saida = new int[this.getSaidaLength()];
 
 		entrada_index = 0;
 		saida_index = 0;

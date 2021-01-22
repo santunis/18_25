@@ -63,7 +63,7 @@ public class Resultado1825 {
 		int retorno = 0;
 		int contJogo = 0;
 		int contLinha = 0;
-		URL combinacoes1825 = Resultado1825.class.getClassLoader().getResource("18_25.csv");
+		URL combinacoes1825 = Resultado1825.class.getClassLoader().getResource("combinacoes\\18_25.csv");
 		if (Objects.nonNull(combinacoes1825)) {
 			
 			Path caminho = Paths.get(combinacoes1825.toURI());

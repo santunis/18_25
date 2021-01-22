@@ -12,26 +12,14 @@ public class GerarRNP06 {
 
 	public static void main(String[] args) throws IOException, LotoException {
 
-		String[] str = {
-/*			|#########################################|
-/*			|*/		"1", "2", "3", "4", "5",		//|
-/*			|#########################################|
-/*			|*/		"6", "7", "8", "9", "10",		//|
-/*			|#########################################|
-/*			|*/		"11", "12", "13", "14", "15",	//|
-/*			|#########################################|
-/*			|*/		"16", "17", "18", "19", "20",	//|
-/*			|#########################################|
-/*			|*/		"21", "22", "23", "24", "25"	//|
-//			|#########################################|
-		};
+		int[] str = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 };
 
 		FileWriter arq = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\dezoito\\regras\\GerarRNP06.csv");
 		PrintWriter gravarArq = new PrintWriter(arq);
 		
 		RNP06 rnp06 = new RNP06();
 		
-		String[] saida;
+		int[] saida;
 		int cont = 1;
 		Combinacoes comb1 = new Combinacoes(str, 15);
 		while (comb1.hasNext()) {

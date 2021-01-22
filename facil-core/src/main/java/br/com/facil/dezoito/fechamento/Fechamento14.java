@@ -23,10 +23,10 @@ public class Fechamento14 {
 	@SuppressWarnings({ "deprecation" })
 	public static void main(String[] args) throws URISyntaxException, IOException, LotoException  {
 		
-		FileWriter arq = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\dezoito\\fechamento\\Fechamento15_25_ONZE.csv");
+		FileWriter arq = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\dezoito\\fechamento\\FechamentoGerarRNP07_QUATORZE.csv");
 		PrintWriter gravarArq = new PrintWriter(arq);
 		
-		URL combinacoes = Fechamento14.class.getClassLoader().getResource("combinacoes\\15_25.csv");
+		URL combinacoes = Fechamento14.class.getClassLoader().getResource("dezoito\\regras\\GerarRNP07.csv");
 		List<String[]> listaNumeros = new ArrayList<String[]>();
 		int contCombinacoes = 0;
 		int contFechamento = 0;
@@ -40,7 +40,7 @@ public class Fechamento14 {
             	if (contCombinacoes == NumeroEnum.ZERO.getValor()) {
             		listaNumeros.add(linhaCombinacoes);
             	}
-            	
+
             	if (comparaNumeros(listaNumeros, linhaCombinacoes)) {
             		listaNumeros.add(linhaCombinacoes);
             	}
@@ -101,7 +101,7 @@ public class Fechamento14 {
         		}
         	}
     		
-    		if (contJogo < NumeroEnum.ONZE.getValor()) {
+    		if (contJogo < NumeroEnum.QUATORZE.getValor()) {
     			retorno = true;
     		} else {
     			retorno = false;

@@ -65,27 +65,32 @@ public class ResultadoParesImpares {
 			String[] linha15;
 			while (Objects.nonNull((linha15 = csvReader.readNext()))) {
 				contTotalLinhaArquivo++;
-				if (rnp02.aplicar(linha15)) {
+				int[] linha = new int[linha15.length];
+				for (int i = 0; i < linha15.length; i++) {
+					linha[i] = Integer.parseInt(String.valueOf(linha15[i]));
+				}
+				
+				if (rnp02.aplicar(linha)) {
 					cont02++;
-				} else if (rnp03.aplicar(linha15)) {
+				} else if (rnp03.aplicar(linha)) {
 					cont03++;
-				} else if (rnp04.aplicar(linha15)) {
+				} else if (rnp04.aplicar(linha)) {
 					cont04++;
-				} else if (rnp05.aplicar(linha15)) {
+				} else if (rnp05.aplicar(linha)) {
 					cont05++;
-				} else if (rnp06.aplicar(linha15)) {
+				} else if (rnp06.aplicar(linha)) {
 					cont06++;
-				} else if (rnp07.aplicar(linha15)) {
+				} else if (rnp07.aplicar(linha)) {
 					cont07++;
-				} else if (rnp08.aplicar(linha15)) {
+				} else if (rnp08.aplicar(linha)) {
 					cont08++;
-				} else if (rnp09.aplicar(linha15)) {
+				} else if (rnp09.aplicar(linha)) {
 					cont09++;
-				} else if (rnp10.aplicar(linha15)) {
+				} else if (rnp10.aplicar(linha)) {
 					cont10++;
-				} else if (rnp11.aplicar(linha15)) {
+				} else if (rnp11.aplicar(linha)) {
 					cont11++;
-				} else if (rnp12.aplicar(linha15)) {
+				} else if (rnp12.aplicar(linha)) {
 					cont12++;
 				} else {
 					System.out.println("#### FUDEU... ####");

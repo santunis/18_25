@@ -11,24 +11,12 @@ public class Gerar2025CSV {
 
 	public static void main(String[] args) throws IOException, LotoException {
 
-		String[] str = {
-/*			|#########################################|
-/*			|*/		"1", "2", "3", "4", "5",		//|
-/*			|#########################################|
-/*			|*/		"6", "7", "8", "9", "10",		//|
-/*			|#########################################|
-/*			|*/		"11", "12", "13", "14", "15",	//|
-/*			|#########################################|
-/*			|*/		"16", "17", "18", "19", "20",	//|
-/*			|#########################################|
-/*			|*/		"21", "22", "23", "24", "25"	//|
-//			|#########################################|
-		};
+		int[] str = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 };
 
 		FileWriter arq = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\20_25.csv");
 		PrintWriter gravarArq = new PrintWriter(arq);
 
-		String[] saida;
+		int[] saida;
 		long cont = 1;
 		Combinacoes comb1 = new Combinacoes(str, 20);
 		while (comb1.hasNext()) {

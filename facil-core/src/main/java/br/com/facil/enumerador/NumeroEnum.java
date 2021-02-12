@@ -204,6 +204,20 @@ public enum NumeroEnum {
     
     DUZENTOS_E_CINQUENTA_E_CINCO(255),
     
+    TREZENTOS(300),
+    
+    QUATROCENTOS(400),
+    
+    QUINHENTOS(500),
+    
+    SEISCENTOS(600),
+    
+    SETECENTOS(700),
+    
+    OITOCENTOS(800),
+    
+    NOVECENTOS(900),
+    
     MIL(1000),
 	DEZ_MIL(10000),
 	CEM_MIL(100000);

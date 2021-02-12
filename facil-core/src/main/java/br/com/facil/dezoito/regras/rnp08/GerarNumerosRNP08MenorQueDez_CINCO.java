@@ -1,4 +1,4 @@
-package br.com.facil.dezoito.regras;
+package br.com.facil.dezoito.regras.rnp08;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -20,22 +20,22 @@ import br.com.facil.regras.sequencia.RNS1115;
 import br.com.facil.regras.sequencia.RNS1620;
 import br.com.facil.regras.sequencia.RNS2125;
 
-public class GerarNumerosMenorQueDez {
+public class GerarNumerosRNP08MenorQueDez_CINCO {
 
 	@SuppressWarnings({ "deprecation" })
 	public static void main(String[] args) throws URISyntaxException, IOException, LotoException {
 
-		FileWriter arqSaiu = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\dezoito\\regras\\GerarRNP07MenorQueDez_CINCORNP07.csv");
+		FileWriter arqSaiu = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\dezoito\\regras\\GerarNumerosRNP08MenorQueDez_CINCO.csv");
 		PrintWriter gravarArq = new PrintWriter(arqSaiu);
 
 		int cont = 0;
 		int menorquedez = 0;
-//		RNS0105 rns0105 = new RNS0105();
-//		RNS0610 rns0610 = new RNS0610();
-//		RNS1115 rns1115 = new RNS1115();
-//		RNS1620 rns1620 = new RNS1620();
-//		RNS2125 rns2125 = new RNS2125();
-		URL resultado = GerarNumerosMenorQueDez.class.getClassLoader().getResource("dezoito\\regras\\GerarRNP07.csv");
+		RNS0105 rns0105 = new RNS0105();
+		RNS0610 rns0610 = new RNS0610();
+		RNS1115 rns1115 = new RNS1115();
+		RNS1620 rns1620 = new RNS1620();
+		RNS2125 rns2125 = new RNS2125();
+		URL resultado = GerarNumerosRNP08MenorQueDez_CINCO.class.getClassLoader().getResource("dezoito\\regras\\RetirarNumerosRNP08JaSaiu.csv");
 		if (Objects.nonNull(resultado)) {
 
 			Path caminho = Paths.get(resultado.toURI());
@@ -45,9 +45,9 @@ public class GerarNumerosMenorQueDez {
 				
 				cont++;
 				menorquedez = 0;
-//				if (!rns0105.aplicar(linhaResultado) && !rns0610.aplicar(linhaResultado)
-//						&& !rns1115.aplicar(linhaResultado) && !rns1620.aplicar(linhaResultado)
-//						&& !rns2125.aplicar(linhaResultado)) {
+				if (!rns0105.aplicar(linhaResultado) && !rns0610.aplicar(linhaResultado)
+						&& !rns1115.aplicar(linhaResultado) && !rns1620.aplicar(linhaResultado)
+						&& !rns2125.aplicar(linhaResultado)) {
 
 					int[] linha1825rnp07 = new int[linhaResultado.length];
 					for (int i = 0; i < linhaResultado.length; i++) {
@@ -71,7 +71,7 @@ public class GerarNumerosMenorQueDez {
 					}
 					
 					System.out.println("Linha: " + cont);
-//				}
+				}
 			}
 
 			arqSaiu.close();
@@ -80,5 +80,4 @@ public class GerarNumerosMenorQueDez {
 			System.out.println("### Arquivo nao encontrado... ###");
 		}
 	}
-
 }

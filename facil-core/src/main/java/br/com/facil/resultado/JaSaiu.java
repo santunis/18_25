@@ -18,19 +18,13 @@ public class JaSaiu {
 	@SuppressWarnings({ "deprecation" })
 	public static void main(String[] args) throws URISyntaxException, IOException, LotoException {
 
-//		int[] jogo = { 1,2,3,4,6,9,10,12,13,14,15,17,18,19,20 };
-//		int[] jogo = { 1,2,3,4,6,9,10,12,13,14,21,22,23,24,25 };
-//		int[] jogo = { 1,2,3,4,6,15,17,18,19,20,21,22,23,24,25 };
-		int[] jogo = { 9,10,12,13,14,15,17,18,19,20,21,22,23,24,25 };
-		
-		//1,3,4,6,7,8,10,11,14,15,19,20,21,22,24
-
 		int contonze = 0;
 		int contdoze = 0;
 		int conttreze = 0;
 		int contquatorze = 0;
 		int contquinze = 0;
 
+		int[] jogo = { 1,2,3,5,8,10,11,13,14,17,18,20,21,22,25 };
 		URL combinacoes = JaSaiu.class.getClassLoader().getResource("resultado.csv");
 		if (Objects.nonNull(combinacoes)) {
 			Path caminho = Paths.get(combinacoes.toURI());

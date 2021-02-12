@@ -1,11 +1,15 @@
 package br.com.facil.dezoito.resultado;
 
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import com.opencsv.CSVReader;
@@ -18,51 +22,47 @@ public class Resultado1825 {
 	@SuppressWarnings({ "deprecation" })
 	public static void main(String[] args) throws URISyntaxException, IOException, LotoException {
 
-//		FileWriter arqSaiu = new FileWriter("D:\\projetos_loto\\loto\\loto-core\\src\\main\\resources\\dezoito\\resultado\\resultado\\1825SAIU-1.csv");
-//		PrintWriter gravarArqSaiu = new PrintWriter(arqSaiu);
+		FileWriter arqSaiu = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\dezoito\\resultado\\1825NUMEROSLINHA.csv");
+		PrintWriter gravarArqSaiu = new PrintWriter(arqSaiu);
 		
-//		int cont = 1;
-		URL resultado = Resultado1825.class.getClassLoader().getResource("hoje.csv");
+		int cont = 0;
+		URL resultado = Resultado1825.class.getClassLoader().getResource("resultado.csv");
 		if (Objects.nonNull(resultado)) {
 			
 			Path caminho = Paths.get(resultado.toURI());
             CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
-            String[] linha;
-            while (Objects.nonNull((linha = csvReader.readNext()))) {
+            String[] linhaResultado;
+            while (Objects.nonNull((linhaResultado = csvReader.readNext()))) {
             	
-            	int[] linhaResultado = new int[linha.length];
-            	for (int i = 0; i < linha.length; i++) {
-            		linhaResultado[i] = Integer.parseInt(String.valueOf(linha[i]));
+            	cont++;
+            	int[] linha = new int[linhaResultado.length];
+            	for (int i = 0; i < linhaResultado.length; i++) {
+            		linha[i] = Integer.parseInt(String.valueOf(linhaResultado[i]));
         		}
             	
-//            	String lista = null;
-            	int qtd = combinacoes1825(linhaResultado);
-            	if (qtd > NumeroEnum.ZERO.getValor()) {
-//            		System.out.println(
-//            		lista = linhaResultado[0]+","+linhaResultado[1]+","+linhaResultado[2]+","+linhaResultado[3]+","+linhaResultado[4]+","+
-//            				linhaResultado[5]+","+linhaResultado[6]+","+linhaResultado[7]+","+linhaResultado[8]+","+linhaResultado[9]+","+
-//            				linhaResultado[10]+","+linhaResultado[11]+","+linhaResultado[12]+","+linhaResultado[13]+","+linhaResultado[14] + " - " + qtd
-//            		);
-////            		gravarArqSaiu.printf("%s%n", lista);
-//            		System.out.println("SAIU - " + cont + " - " + qtd);
+            	List<Integer> qtd = combinacoes1825(linha);
+            	StringBuilder lista = new StringBuilder();
+            	for (int t : qtd) {
+            		lista.append(t+",");
             	}
-            	
-//            	cont++;
+
+            	gravarArqSaiu.printf("%s%n", lista);
+            	System.out.println(cont);
             }
             
-//            arqSaiu.close();
-//            gravarArqSaiu.close();
+            arqSaiu.close();
+            gravarArqSaiu.close();
 		} else {
 			System.out.println("### Arquivo nao encontrado... ###");
 		}
 	}
 	
 	@SuppressWarnings({ "deprecation" })
-	public static int combinacoes1825(int[] linhaResultado) throws URISyntaxException, NumberFormatException, IOException {
-		
-		int retorno = 0;
+	public static List<Integer> combinacoes1825(int[] linha) throws URISyntaxException, NumberFormatException, IOException {
+
 		int contJogo = 0;
 		int contLinha = 0;
+		List<Integer> listaPerfeita = new ArrayList<Integer>();
 		URL combinacoes1825 = Resultado1825.class.getClassLoader().getResource("combinacoes\\18_25.csv");
 		if (Objects.nonNull(combinacoes1825)) {
 			
@@ -78,33 +78,23 @@ public class Resultado1825 {
             		linha1825[i] = Integer.parseInt(String.valueOf(linhaCombinacoes1825[i]));
         		}
             	
-            	for (int i = 0; i < linhaResultado.length; i++) {
+            	for (int i = 0; i < linha.length; i++) {
             		for (int j = 0; j < linha1825.length; j++) {
-            			if (linhaResultado[i] == linha1825[j]) {
+            			if (linha[i] == linha1825[j]) {
             				contJogo++;
             			}
             		}
             	}
             	
-//            	String lista = null;
             	if (contJogo == NumeroEnum.QUINZE.getValor()) {
-            		System.out.println(contLinha 
-//            				+ " - " +
-//            				linha1825[0]+","+linha1825[1]+","+linha1825[2]+","+linha1825[3]+","+linha1825[4]+","+
-//            				linha1825[5]+","+linha1825[6]+","+linha1825[7]+","+linha1825[8]+","+linha1825[9]+","+
-//            				linha1825[10]+","+linha1825[11]+","+linha1825[12]+","+linha1825[13]+","+linha1825[14]+","+
-//            				linha1825[15]+","+linha1825[16]+","+linha1825[17]
-            		);
-//            		gravarArqSaiu.printf("%s%n", lista);
-            		
-            		retorno++;
+            		listaPerfeita.add(contLinha);
             	}
             }
 		} else {
 			System.out.println("### Arquivo nao encontrado... ###");
 		}
 		
-		return retorno;
+		return listaPerfeita;
 	}
 
 

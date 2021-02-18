@@ -24,7 +24,7 @@ public class JaSaiu {
 		int contquatorze = 0;
 		int contquinze = 0;
 
-		int[] jogo = { 1,2,3,5,8,10,11,13,14,17,18,20,21,22,25 };
+		int[] jogo = { 2,3,5,6,7,12,13,16,18,19,20,21,22,23,24 };
 		URL combinacoes = JaSaiu.class.getClassLoader().getResource("resultado.csv");
 		if (Objects.nonNull(combinacoes)) {
 			Path caminho = Paths.get(combinacoes.toURI());

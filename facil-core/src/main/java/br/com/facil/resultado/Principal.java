@@ -32,28 +32,30 @@ public class Principal {
 	public static void main(String[] args) throws URISyntaxException, IOException, LotoException {
 		
 		Principal principal = new Principal();
-//		principal.resultadoParesImpares();
-//		
-//		// gerar resultado RNP06
+		principal.resultadoParesImpares();
+		
+		// gerar resultado RNP06
 //		principal.resultadoRNP06();
-//		
-//		// gerar resultado RNP07
+		
+		// gerar resultado RNP07
 //		principal.resultadoRNP07();
-//		
-//		// gerar resultado RNP08
+		
+		// gerar resultado RNP08
 //		principal.resultadoRNP08();
-//		
-//		// gerar resultado numeros menor que dez
+		
+		// gerar resultado numeros menor que dez
 //		principal.resultadoNumerosMenorQueDez();
-//		
+		
+		// verificar resultado numeros menor que dez RNP06
 //		principal.resultadoNumerosMenorQueDezRNP06();
-//		
+		
+		// verificar resultado numeros menor que dez RNP07
 //		principal.resultadoNumerosMenorQueDezRNP07();
-//		
-//		// verificar resultado numeros menor que dez RNP08
-//		principal.resultadoNumerosMenorQueDezRNP08();
-//		
-//		// gerar resultado fechamento quatorze
+		
+		// verificar resultado numeros menor que dez RNP08
+		principal.resultadoNumerosMenorQueDezRNP08();
+		
+		// gerar resultado fechamento quatorze
 //		FileWriter arquivo = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\GerarNumerosRNP08MenorQueDez_CINCO.csv");
 //		PrintWriter gravarArquivo = new PrintWriter(arquivo);
 //		URL combinacoes = Principal.class.getClassLoader().getResource("dezoito\\regras\\GerarNumerosRNP08MenorQueDez_CINCO.csv");
@@ -78,8 +80,8 @@ public class Principal {
 //		
 //		principal.analisarRepetidosNoConcurso();
 //		
-		// gerar apostas ganhadoras.
-		principal.analiseResultadoGanhador();
+//		// gerar apostas ganhadoras.
+//		principal.analiseResultadoGanhador();
 
 		System.out.println("PRINCIPAL - FIM");
 	}
@@ -183,7 +185,7 @@ public class Principal {
 	public void resultadoRNP06() throws URISyntaxException, IOException, LotoException {
 		
 		int cont = 0;
-		FileWriter arquivo = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP06.csv");
+		FileWriter arquivo = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP06.csv");
 		PrintWriter gravarArquivo = new PrintWriter(arquivo);
 		RNP06 rnp06 = new RNP06();
 		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
@@ -218,7 +220,7 @@ public class Principal {
 	public void resultadoRNP07() throws URISyntaxException, IOException, LotoException {
 		
 		int cont = 0;
-		FileWriter arquivo = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP07.csv");
+		FileWriter arquivo = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP07.csv");
 		PrintWriter gravarArquivo = new PrintWriter(arquivo);
 		RNP07 rnp07 = new RNP07();
 		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
@@ -253,7 +255,7 @@ public class Principal {
 	public void resultadoRNP08() throws URISyntaxException, IOException, LotoException {
 		
 		int cont = 0;
-		FileWriter arquivo = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP08.csv");
+		FileWriter arquivo = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP08.csv");
 		PrintWriter gravarArquivo = new PrintWriter(arquivo);
 		RNP08 rnp08 = new RNP08();
 		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
@@ -287,25 +289,25 @@ public class Principal {
 	@SuppressWarnings("deprecation")
 	public void resultadoNumerosMenorQueDez() throws URISyntaxException, IOException, LotoException {
 		
-		FileWriter arquivoZERO = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_ZERO.csv");
+		FileWriter arquivoZERO = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_ZERO.csv");
 		PrintWriter gravarArquivoZERO = new PrintWriter(arquivoZERO);
-		FileWriter arquivoUM = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_UM.csv");
+		FileWriter arquivoUM = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_UM.csv");
 		PrintWriter gravarArquivoUM = new PrintWriter(arquivoUM);
-		FileWriter arquivoDOIS = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_DOIS.csv");
+		FileWriter arquivoDOIS = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_DOIS.csv");
 		PrintWriter gravarArquivoDOIS = new PrintWriter(arquivoDOIS);
-		FileWriter arquivoTRES = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_TRES.csv");
+		FileWriter arquivoTRES = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_TRES.csv");
 		PrintWriter gravarArquivoTRES = new PrintWriter(arquivoTRES);
-		FileWriter arquivoQUATRO = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_QUATRO.csv");
+		FileWriter arquivoQUATRO = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_QUATRO.csv");
 		PrintWriter gravarArquivoQUATRO = new PrintWriter(arquivoQUATRO);
-		FileWriter arquivoCINCO = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_CINCO.csv");
+		FileWriter arquivoCINCO = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_CINCO.csv");
 		PrintWriter gravarArquivoCINCO = new PrintWriter(arquivoCINCO);
-		FileWriter arquivoSEIS = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_SEIS.csv");
+		FileWriter arquivoSEIS = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_SEIS.csv");
 		PrintWriter gravarArquivoSEIS = new PrintWriter(arquivoSEIS);
-		FileWriter arquivoSETE = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_SETE.csv");
+		FileWriter arquivoSETE = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_SETE.csv");
 		PrintWriter gravarArquivoSETE = new PrintWriter(arquivoSETE);
-		FileWriter arquivoOITO = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_OITO.csv");
+		FileWriter arquivoOITO = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_OITO.csv");
 		PrintWriter gravarArquivoOITO = new PrintWriter(arquivoOITO);
-		FileWriter arquivoNOVE = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_NOVE.csv");
+		FileWriter arquivoNOVE = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_NOVE.csv");
 		PrintWriter gravarArquivoNOVE = new PrintWriter(arquivoNOVE);
 		
 		int cont = 0;
@@ -478,27 +480,6 @@ public class Principal {
 	@SuppressWarnings("deprecation")
 	public void resultadoNumerosMenorQueDezRNP06() throws URISyntaxException, IOException, LotoException {
 		
-//		FileWriter arquivoZERO = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_ZERO.csv");
-//		PrintWriter gravarArquivoZERO = new PrintWriter(arquivoZERO);
-//		FileWriter arquivoUM = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_UM.csv");
-//		PrintWriter gravarArquivoUM = new PrintWriter(arquivoUM);
-//		FileWriter arquivoDOIS = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_DOIS.csv");
-//		PrintWriter gravarArquivoDOIS = new PrintWriter(arquivoDOIS);
-//		FileWriter arquivoTRES = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_TRES.csv");
-//		PrintWriter gravarArquivoTRES = new PrintWriter(arquivoTRES);
-//		FileWriter arquivoQUATRO = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_QUATRO.csv");
-//		PrintWriter gravarArquivoQUATRO = new PrintWriter(arquivoQUATRO);
-//		FileWriter arquivoCINCO = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_CINCO.csv");
-//		PrintWriter gravarArquivoCINCO = new PrintWriter(arquivoCINCO);
-//		FileWriter arquivoSEIS = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_SEIS.csv");
-//		PrintWriter gravarArquivoSEIS = new PrintWriter(arquivoSEIS);
-//		FileWriter arquivoSETE = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_SETE.csv");
-//		PrintWriter gravarArquivoSETE = new PrintWriter(arquivoSETE);
-//		FileWriter arquivoOITO = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_OITO.csv");
-//		PrintWriter gravarArquivoOITO = new PrintWriter(arquivoOITO);
-//		FileWriter arquivoNOVE = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_NOVE.csv");
-//		PrintWriter gravarArquivoNOVE = new PrintWriter(arquivoNOVE);
-		
 		int cont = 0;
 		int contlinha = 0;
 		int zero = 0;
@@ -533,119 +514,27 @@ public class Principal {
 				}
 
 				if (contlinha == NumeroEnum.ZERO.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoZERO.printf("%s%n", lista);
 					zero++;
 				} else if (contlinha == NumeroEnum.UM.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoUM.printf("%s%n", lista);
 					um++;
 				} else if (contlinha == NumeroEnum.DOIS.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoDOIS.printf("%s%n", lista);
 					dois++;
 				} else if (contlinha == NumeroEnum.TRES.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoTRES.printf("%s%n", lista);
 					tres++;
 				} else if (contlinha == NumeroEnum.QUATRO.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoQUATRO.printf("%s%n", lista);
 					quatro++;
 				} else if (contlinha == NumeroEnum.CINCO.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoCINCO.printf("%s%n", lista);
 					cinco++;
 				} else if (contlinha == NumeroEnum.SEIS.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoSEIS.printf("%s%n", lista);
 					seis++;
 				} else if (contlinha == NumeroEnum.SETE.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoSETE.printf("%s%n", lista);
 					sete++;
 				} else if (contlinha == NumeroEnum.OITO.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoOITO.printf("%s%n", lista);
 					oito++;
 				} else if (contlinha == NumeroEnum.NOVE.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoNOVE.printf("%s%n", lista);
 					nove++;
 				}
-
 			}
-			
-//			arquivoZERO.close();
-//			gravarArquivoZERO.close();
-//			arquivoUM.close();
-//			gravarArquivoUM.close();
-//			arquivoDOIS.close();
-//			gravarArquivoDOIS.close();
-//			arquivoTRES.close();
-//			gravarArquivoTRES.close();
-//			arquivoQUATRO.close();
-//			gravarArquivoQUATRO.close();
-//			arquivoCINCO.close();
-//			gravarArquivoCINCO.close();
-//			arquivoSEIS.close();
-//			gravarArquivoSEIS.close();
-//			arquivoSETE.close();
-//			gravarArquivoSETE.close();
-//			arquivoOITO.close();
-//			gravarArquivoOITO.close();
-//			arquivoNOVE.close();
-//			gravarArquivoNOVE.close();
 		} else {
 			System.out.println("### [resultadoNumerosMenorQueDezRNP06] - Arquivo nao encontrado... ###");
 		}
@@ -668,27 +557,6 @@ public class Principal {
 	
 	@SuppressWarnings("deprecation")
 	public void resultadoNumerosMenorQueDezRNP07() throws URISyntaxException, IOException, LotoException {
-		
-//		FileWriter arquivoZERO = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_ZERO.csv");
-//		PrintWriter gravarArquivoZERO = new PrintWriter(arquivoZERO);
-//		FileWriter arquivoUM = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_UM.csv");
-//		PrintWriter gravarArquivoUM = new PrintWriter(arquivoUM);
-//		FileWriter arquivoDOIS = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_DOIS.csv");
-//		PrintWriter gravarArquivoDOIS = new PrintWriter(arquivoDOIS);
-//		FileWriter arquivoTRES = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_TRES.csv");
-//		PrintWriter gravarArquivoTRES = new PrintWriter(arquivoTRES);
-//		FileWriter arquivoQUATRO = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_QUATRO.csv");
-//		PrintWriter gravarArquivoQUATRO = new PrintWriter(arquivoQUATRO);
-//		FileWriter arquivoCINCO = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_CINCO.csv");
-//		PrintWriter gravarArquivoCINCO = new PrintWriter(arquivoCINCO);
-//		FileWriter arquivoSEIS = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_SEIS.csv");
-//		PrintWriter gravarArquivoSEIS = new PrintWriter(arquivoSEIS);
-//		FileWriter arquivoSETE = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_SETE.csv");
-//		PrintWriter gravarArquivoSETE = new PrintWriter(arquivoSETE);
-//		FileWriter arquivoOITO = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_OITO.csv");
-//		PrintWriter gravarArquivoOITO = new PrintWriter(arquivoOITO);
-//		FileWriter arquivoNOVE = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_NOVE.csv");
-//		PrintWriter gravarArquivoNOVE = new PrintWriter(arquivoNOVE);
 		
 		int cont = 0;
 		int contlinha = 0;
@@ -724,119 +592,27 @@ public class Principal {
 				}
 
 				if (contlinha == NumeroEnum.ZERO.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoZERO.printf("%s%n", lista);
 					zero++;
 				} else if (contlinha == NumeroEnum.UM.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoUM.printf("%s%n", lista);
 					um++;
 				} else if (contlinha == NumeroEnum.DOIS.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoDOIS.printf("%s%n", lista);
 					dois++;
 				} else if (contlinha == NumeroEnum.TRES.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoTRES.printf("%s%n", lista);
 					tres++;
 				} else if (contlinha == NumeroEnum.QUATRO.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoQUATRO.printf("%s%n", lista);
 					quatro++;
 				} else if (contlinha == NumeroEnum.CINCO.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoCINCO.printf("%s%n", lista);
 					cinco++;
 				} else if (contlinha == NumeroEnum.SEIS.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoSEIS.printf("%s%n", lista);
 					seis++;
 				} else if (contlinha == NumeroEnum.SETE.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoSETE.printf("%s%n", lista);
 					sete++;
 				} else if (contlinha == NumeroEnum.OITO.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoOITO.printf("%s%n", lista);
 					oito++;
 				} else if (contlinha == NumeroEnum.NOVE.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoNOVE.printf("%s%n", lista);
 					nove++;
 				}
-
 			}
-			
-//			arquivoZERO.close();
-//			gravarArquivoZERO.close();
-//			arquivoUM.close();
-//			gravarArquivoUM.close();
-//			arquivoDOIS.close();
-//			gravarArquivoDOIS.close();
-//			arquivoTRES.close();
-//			gravarArquivoTRES.close();
-//			arquivoQUATRO.close();
-//			gravarArquivoQUATRO.close();
-//			arquivoCINCO.close();
-//			gravarArquivoCINCO.close();
-//			arquivoSEIS.close();
-//			gravarArquivoSEIS.close();
-//			arquivoSETE.close();
-//			gravarArquivoSETE.close();
-//			arquivoOITO.close();
-//			gravarArquivoOITO.close();
-//			arquivoNOVE.close();
-//			gravarArquivoNOVE.close();
 		} else {
 			System.out.println("### [resultadoNumerosMenorQueDezRNP07] - Arquivo nao encontrado... ###");
 		}
@@ -859,27 +635,6 @@ public class Principal {
 	
 	@SuppressWarnings("deprecation")
 	public void resultadoNumerosMenorQueDezRNP08() throws URISyntaxException, IOException, LotoException {
-		
-//		FileWriter arquivoZERO = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_ZERO.csv");
-//		PrintWriter gravarArquivoZERO = new PrintWriter(arquivoZERO);
-//		FileWriter arquivoUM = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_UM.csv");
-//		PrintWriter gravarArquivoUM = new PrintWriter(arquivoUM);
-//		FileWriter arquivoDOIS = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_DOIS.csv");
-//		PrintWriter gravarArquivoDOIS = new PrintWriter(arquivoDOIS);
-//		FileWriter arquivoTRES = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_TRES.csv");
-//		PrintWriter gravarArquivoTRES = new PrintWriter(arquivoTRES);
-//		FileWriter arquivoQUATRO = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_QUATRO.csv");
-//		PrintWriter gravarArquivoQUATRO = new PrintWriter(arquivoQUATRO);
-//		FileWriter arquivoCINCO = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_CINCO.csv");
-//		PrintWriter gravarArquivoCINCO = new PrintWriter(arquivoCINCO);
-//		FileWriter arquivoSEIS = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_SEIS.csv");
-//		PrintWriter gravarArquivoSEIS = new PrintWriter(arquivoSEIS);
-//		FileWriter arquivoSETE = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_SETE.csv");
-//		PrintWriter gravarArquivoSETE = new PrintWriter(arquivoSETE);
-//		FileWriter arquivoOITO = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_OITO.csv");
-//		PrintWriter gravarArquivoOITO = new PrintWriter(arquivoOITO);
-//		FileWriter arquivoNOVE = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_NOVE.csv");
-//		PrintWriter gravarArquivoNOVE = new PrintWriter(arquivoNOVE);
 		
 		int cont = 0;
 		int contlinha = 0;
@@ -915,119 +670,27 @@ public class Principal {
 				}
 
 				if (contlinha == NumeroEnum.ZERO.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoZERO.printf("%s%n", lista);
 					zero++;
 				} else if (contlinha == NumeroEnum.UM.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoUM.printf("%s%n", lista);
 					um++;
 				} else if (contlinha == NumeroEnum.DOIS.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoDOIS.printf("%s%n", lista);
 					dois++;
 				} else if (contlinha == NumeroEnum.TRES.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoTRES.printf("%s%n", lista);
 					tres++;
 				} else if (contlinha == NumeroEnum.QUATRO.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoQUATRO.printf("%s%n", lista);
 					quatro++;
 				} else if (contlinha == NumeroEnum.CINCO.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoCINCO.printf("%s%n", lista);
 					cinco++;
 				} else if (contlinha == NumeroEnum.SEIS.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoSEIS.printf("%s%n", lista);
 					seis++;
 				} else if (contlinha == NumeroEnum.SETE.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoSETE.printf("%s%n", lista);
 					sete++;
 				} else if (contlinha == NumeroEnum.OITO.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoOITO.printf("%s%n", lista);
 					oito++;
 				} else if (contlinha == NumeroEnum.NOVE.getValor()) {
-//					String lista = null;
-//					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-//							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-//							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-//							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-//							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-//					gravarArquivoNOVE.printf("%s%n", lista);
 					nove++;
 				}
-
 			}
-			
-//			arquivoZERO.close();
-//			gravarArquivoZERO.close();
-//			arquivoUM.close();
-//			gravarArquivoUM.close();
-//			arquivoDOIS.close();
-//			gravarArquivoDOIS.close();
-//			arquivoTRES.close();
-//			gravarArquivoTRES.close();
-//			arquivoQUATRO.close();
-//			gravarArquivoQUATRO.close();
-//			arquivoCINCO.close();
-//			gravarArquivoCINCO.close();
-//			arquivoSEIS.close();
-//			gravarArquivoSEIS.close();
-//			arquivoSETE.close();
-//			gravarArquivoSETE.close();
-//			arquivoOITO.close();
-//			gravarArquivoOITO.close();
-//			arquivoNOVE.close();
-//			gravarArquivoNOVE.close();
 		} else {
 			System.out.println("### [resultadoNumerosMenorQueDezRNP08] - Arquivo nao encontrado... ###");
 		}

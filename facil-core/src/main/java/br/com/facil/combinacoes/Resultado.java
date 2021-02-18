@@ -1,4 +1,4 @@
-package br.com.facil.dezoito.principal;
+package br.com.facil.combinacoes;
 
 import java.io.FileReader;
 import java.io.IOException;

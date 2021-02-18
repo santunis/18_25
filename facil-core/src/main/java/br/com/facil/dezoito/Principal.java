@@ -5,9 +5,8 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.facil.dezoito.principal.Combinacoes1525;
-import br.com.facil.dezoito.principal.Combinacoes2025;
-import br.com.facil.dezoito.principal.Resultado;
+import br.com.facil.combinacoes.Combinacoes2025;
+import br.com.facil.combinacoes.Resultado;
 import br.com.facil.enumerador.NumeroEnum;
 import br.com.facil.excecao.LotoException;
 

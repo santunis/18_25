@@ -1,4 +1,4 @@
-package br.com.facil.dezoito.principal;
+package br.com.facil.combinacoes;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -11,13 +11,15 @@
 
 	<modules>
 		<module>facil-core</module>
+		<module>facil-war</module>
+		<module>facil-ear</module>
 	</modules>
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<javaee.api.version>7.0</javaee.api.version>
 
-		
+		<primefaces.version>7.0</primefaces.version>
         <opencsv.version>4.4</opencsv.version>
         <jackson.databind.version>2.11.2</jackson.databind.version>
         <jackson.dataformat.csv.version>2.11.2</jackson.dataformat.csv.version>
@@ -37,6 +39,12 @@
 				<groupId>javax</groupId>
 				<artifactId>javaee-api</artifactId>
 				<version>${javaee.api.version}</version>
+			</dependency>
+			
+			<dependency>
+			    <groupId>org.primefaces</groupId>
+			    <artifactId>primefaces</artifactId>
+			    <version>${primefaces.version}</version>
 			</dependency>
 			
 			<dependency>

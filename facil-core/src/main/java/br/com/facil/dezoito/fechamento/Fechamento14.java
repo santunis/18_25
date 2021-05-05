@@ -1,9 +1,7 @@
 package br.com.facil.dezoito.fechamento;
 
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Path;
@@ -26,7 +24,7 @@ public class Fechamento14 {
 //		FileWriter arq = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\dezoito\\fechamento\\FechamentoGerarRNP07_QUATORZE.csv");
 //		PrintWriter gravarArq = new PrintWriter(arq);
 		
-		URL combinacoes = Fechamento14.class.getClassLoader().getResource("dezoito\\regras\\GerarRNP07MenorQueDez_CINCORNP07.csv");
+		URL combinacoes = Fechamento14.class.getClassLoader().getResource("combinacoes\\15_25\\15_25-RNP07\\15_25-RNP07_CINCO.csv");
 		List<String[]> listaNumeros = new ArrayList<String[]>();
 		int contCombinacoes = 0;
 		int contFechamento = 0;
@@ -101,7 +99,7 @@ public class Fechamento14 {
         		}
         	}
     		
-    		if (contJogo < NumeroEnum.QUATORZE.getValor()) {
+    		if (contJogo < NumeroEnum.ONZE.getValor()) {
     			retorno = true;
     		} else {
     			retorno = false;

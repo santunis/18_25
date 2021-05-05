@@ -35,7 +35,7 @@ public class Frequencia {
 				}
 
 				int retorno = resultado(linhaNumeros1_25Nova, cont);
-				System.out.println("Não Saiu Numero" + cont + ": " + retorno);
+				System.out.println("Nao sau numero: " + cont + ": " + retorno);
 			}
 //            arq.close();
 //            gravarArq.close();
@@ -83,7 +83,7 @@ public class Frequencia {
 		} else {
 			System.out.println("### [resultado.csv] - Arquivo nao encontrado... ###");
 		}
-		System.out.println("Saiu Número" + cont + ": " + saiusim);
+		System.out.println("Saiu Numero: " + cont + ": " + saiusim);
 		return naosaiu;
 	}
 }

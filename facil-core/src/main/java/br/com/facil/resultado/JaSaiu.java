@@ -18,13 +18,20 @@ public class JaSaiu {
 	@SuppressWarnings({ "deprecation" })
 	public static void main(String[] args) throws URISyntaxException, IOException, LotoException {
 
+		int contTotal = 0;
 		int contonze = 0;
 		int contdoze = 0;
 		int conttreze = 0;
 		int contquatorze = 0;
 		int contquinze = 0;
 
-		int[] jogo = { 2,3,5,6,7,12,13,16,18,19,20,21,22,23,24 };
+//		ONZE: 177
+//		DOZE: 45
+//		TREZE: 15
+//		QUATROZE: 0
+//		QUINZE: 0
+//		TOTAL: 2201
+		int[] jogo = { 1,2,3,6,9,12,13,14,15,19,20,21,22,24,25 };
 		URL combinacoes = JaSaiu.class.getClassLoader().getResource("resultado.csv");
 		if (Objects.nonNull(combinacoes)) {
 			Path caminho = Paths.get(combinacoes.toURI());
@@ -32,6 +39,7 @@ public class JaSaiu {
 
 			String[] linhaCombinacoes;
 			while (Objects.nonNull((linhaCombinacoes = csvReader.readNext()))) {
+				contTotal++;
 				if (comparaNumeros(linhaCombinacoes, jogo) == NumeroEnum.ONZE.getValor()) {
 					contonze++;
 				}
@@ -58,6 +66,7 @@ public class JaSaiu {
 			System.out.println("TREZE: " + conttreze);
 			System.out.println("QUATROZE: " + contquatorze);
 			System.out.println("QUINZE: " + contquinze);
+			System.out.println("TOTAL: " + contTotal);
 
 		} else {
 			System.out.println("### Arquivo nao encontrado... ###");

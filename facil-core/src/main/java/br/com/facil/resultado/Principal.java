@@ -32,28 +32,52 @@ public class Principal {
 		
 		Principal principal = new Principal();
 		principal.resultadoParesImpares();
-		
-		// gerar resultado RNP06
+//		
+//		// gerar resultado RNP02
+//		principal.resultadoRNP02();
+//		principal.resultadoNumerosMenorQueDezRNP02();
+//		
+//		// gerar resultado RNP03
+//		principal.resultadoRNP03();
+//		principal.resultadoNumerosMenorQueDezRNP03();
+//		
+//		// gerar resultado RNP04
+//		principal.resultadoRNP04();
+//		principal.resultadoNumerosMenorQueDezRNP04();
+//		
+//		// gerar resultado RNP05
 //		principal.resultadoRNP05();
 //		principal.resultadoNumerosMenorQueDezRNP05();
-		
-		// gerar resultado RNP06
+//		
+//		// gerar resultado RNP06
 //		principal.resultadoRNP06();
 //		principal.resultadoNumerosMenorQueDezRNP06();
-		
-		// gerar resultado RNP07
+//		
+//		// gerar resultado RNP07
 //		principal.resultadoRNP07();
 //		principal.resultadoNumerosMenorQueDezRNP07();
-		
-		// gerar resultado RNP08
+//		
+//		// gerar resultado RNP08
 //		principal.resultadoRNP08();
 //		principal.resultadoNumerosMenorQueDezRNP08();
-		
-		// gerar resultado RNP09
+//		
+//		// gerar resultado RNP09
 //		principal.resultadoRNP09();
 //		principal.resultadoNumerosMenorQueDezRNP09();
-		
-		// gerar resultado numeros menor que dez
+//		
+//		// gerar resultado RNP10
+//		principal.resultadoRNP10();
+//		principal.resultadoNumerosMenorQueDezRNP10();
+//		
+//		// gerar resultado RNP11
+//		principal.resultadoRNP11();
+//		principal.resultadoNumerosMenorQueDezRNP11();
+//		
+//		// gerar resultado RNP12
+//		principal.resultadoRNP12();
+//		principal.resultadoNumerosMenorQueDezRNP12();
+//		
+//		// gerar resultado numeros menor que dez
 //		principal.resultadoNumerosMenorQueDez();
 		
 		
@@ -78,15 +102,15 @@ public class Principal {
 //			gravarArquivo.close();
 //		}
 //		
-		principal.gerarArquivoARFF();
-		
+//		principal.gerarArquivoARFF();
+//		
 //		principal.resultadofechamentoQUATORZE();
 //		
 //		principal.analise15_25();
 //		
 //		principal.analisarRepetidosNoConcurso();
 //		
-//		// gerar apostas ganhadoras.
+		// gerar apostas ganhadoras.
 //		principal.analiseResultadoGanhador();
 
 		System.out.println("PRINCIPAL - FIM");
@@ -120,8 +144,6 @@ public class Principal {
 		int cont10 = 0;
 		int cont11 = 0;
 		int cont12 = 0;
-		
-		int contLinha = 0;
 
 		if (Objects.nonNull(resultadoOrdenado)) {
 
@@ -160,14 +182,9 @@ public class Principal {
 				} else {
 					System.out.println("#### FUDEU... ####");
 				}
-				
-				if (linha[0] > NumeroEnum.NOVE.getValor()) {
-					contLinha++;
-				}
-				
 			}
 			
-			System.out.println("TOTAL DE LINHAS NO ARQUIVO: " + contTotalLinhaArquivo);
+			System.out.println("TOTAL DE LINHAS NO ARQUIVO-3268760: " + contTotalLinhaArquivo);
 			System.out.println("TOTAL RNP02: " + cont02);
 			System.out.println("TOTAL RNP03: " + cont03);
 			System.out.println("TOTAL RNP04: " + cont04);
@@ -179,12 +196,118 @@ public class Principal {
 			System.out.println("TOTAL RNP10: " + cont10);
 			System.out.println("TOTAL RNP11: " + cont11);
 			System.out.println("TOTAL RNP12: " + cont12);
-			System.out.println("TOTAL >9: " + contLinha);
+			Double total = (double) (contTotalLinhaArquivo * 100)/3268760;
+			System.out.println("TOTAL %: " + total);
 			
 		} else {
 			System.out.println("#### [resultadoParesImpares] - Arquivo nao encontrado... ####");
 		}
 		
+	}
+	
+	@SuppressWarnings({ "deprecation", "unused" })
+	public void resultadoRNP02() throws URISyntaxException, IOException, LotoException {
+		
+		int cont = 0;
+		FileWriter arquivo = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP02.csv");
+		PrintWriter gravarArquivo = new PrintWriter(arquivo);
+		RNP02 rnp02 = new RNP02();
+		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
+		if (Objects.nonNull(resultado)) {
+			Path caminho = Paths.get(resultado.toURI());
+			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
+			String[] linha;
+			while (Objects.nonNull((linha = csvReader.readNext()))) {
+				String lista = null;
+				int[] saida = new int[linha.length];
+				for (int i = 0; i < linha.length; i++) {
+					saida[i] = Integer.parseInt(String.valueOf(linha[i]));
+				}
+				
+				if (rnp02.aplicar(saida)) {
+					lista = saida[0] + "," + saida[1] + "," + saida[2] + "," + saida[3] + "," + saida[4] + ","
+							+ saida[5] + "," + saida[6] + "," + saida[7] + "," + saida[8] + "," + saida[9] + ","
+							+ saida[10] + "," + saida[11] + "," + saida[12] + "," + saida[13] + "," + saida[14];
+					gravarArquivo.printf("%s%n", lista);
+					cont++;
+				}
+			}
+
+			arquivo.close();
+			gravarArquivo.close();
+		} else {
+			System.out.println("### [resultadoRNP02] - Arquivo nao encontrado... ###");
+		}
+	}
+	
+	@SuppressWarnings({ "deprecation", "unused" })
+	public void resultadoRNP03() throws URISyntaxException, IOException, LotoException {
+		
+		int cont = 0;
+		FileWriter arquivo = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP03.csv");
+		PrintWriter gravarArquivo = new PrintWriter(arquivo);
+		RNP03 rnp03 = new RNP03();
+		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
+		if (Objects.nonNull(resultado)) {
+			Path caminho = Paths.get(resultado.toURI());
+			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
+			String[] linha;
+			while (Objects.nonNull((linha = csvReader.readNext()))) {
+				String lista = null;
+				int[] saida = new int[linha.length];
+				for (int i = 0; i < linha.length; i++) {
+					saida[i] = Integer.parseInt(String.valueOf(linha[i]));
+				}
+				
+				if (rnp03.aplicar(saida)) {
+					lista = saida[0] + "," + saida[1] + "," + saida[2] + "," + saida[3] + "," + saida[4] + ","
+							+ saida[5] + "," + saida[6] + "," + saida[7] + "," + saida[8] + "," + saida[9] + ","
+							+ saida[10] + "," + saida[11] + "," + saida[12] + "," + saida[13] + "," + saida[14];
+					gravarArquivo.printf("%s%n", lista);
+					cont++;
+				}
+			}
+
+			arquivo.close();
+			gravarArquivo.close();
+		} else {
+			System.out.println("### [resultadoRNP03] - Arquivo nao encontrado... ###");
+		}
+	}
+	
+	@SuppressWarnings({ "deprecation", "unused" })
+	public void resultadoRNP04() throws URISyntaxException, IOException, LotoException {
+		
+		int cont = 0;
+		FileWriter arquivo = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP04.csv");
+		PrintWriter gravarArquivo = new PrintWriter(arquivo);
+		RNP04 rnp04 = new RNP04();
+		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
+		if (Objects.nonNull(resultado)) {
+			Path caminho = Paths.get(resultado.toURI());
+			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
+			String[] linha;
+			while (Objects.nonNull((linha = csvReader.readNext()))) {
+				String lista = null;
+				int[] saida = new int[linha.length];
+				for (int i = 0; i < linha.length; i++) {
+					saida[i] = Integer.parseInt(String.valueOf(linha[i]));
+				}
+				
+				if (rnp04.aplicar(saida)) {
+					lista = saida[0] + "," + saida[1] + "," + saida[2] + "," + saida[3] + "," + saida[4] + ","
+							+ saida[5] + "," + saida[6] + "," + saida[7] + "," + saida[8] + "," + saida[9] + ","
+							+ saida[10] + "," + saida[11] + "," + saida[12] + "," + saida[13] + "," + saida[14];
+					gravarArquivo.printf("%s%n", lista);
+					cont++;
+				}
+			}
+
+			arquivo.close();
+			gravarArquivo.close();
+		} else {
+			System.out.println("### [resultadoRNP04] - Arquivo nao encontrado... ###");
+		}
 	}
 	
 	@SuppressWarnings({ "deprecation", "unused" })
@@ -359,6 +482,111 @@ public class Principal {
 			gravarArquivo.close();
 		} else {
 			System.out.println("### [resultadoRNP09] - Arquivo nao encontrado... ###");
+		}
+	}
+	
+	@SuppressWarnings({ "deprecation", "unused" })
+	public void resultadoRNP10() throws URISyntaxException, IOException, LotoException {
+		
+		int cont = 0;
+		FileWriter arquivo = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP10.csv");
+		PrintWriter gravarArquivo = new PrintWriter(arquivo);
+		RNP10 rnp10 = new RNP10();
+		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
+		if (Objects.nonNull(resultado)) {
+			Path caminho = Paths.get(resultado.toURI());
+			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
+			String[] linha;
+			while (Objects.nonNull((linha = csvReader.readNext()))) {
+				String lista = null;
+				int[] saida = new int[linha.length];
+				for (int i = 0; i < linha.length; i++) {
+					saida[i] = Integer.parseInt(String.valueOf(linha[i]));
+				}
+				
+				if (rnp10.aplicar(saida)) {
+					lista = saida[0] + "," + saida[1] + "," + saida[2] + "," + saida[3] + "," + saida[4] + ","
+							+ saida[5] + "," + saida[6] + "," + saida[7] + "," + saida[8] + "," + saida[9] + ","
+							+ saida[10] + "," + saida[11] + "," + saida[12] + "," + saida[13] + "," + saida[14];
+					gravarArquivo.printf("%s%n", lista);
+					cont++;
+				}
+			}
+
+			arquivo.close();
+			gravarArquivo.close();
+		} else {
+			System.out.println("### [resultadoRNP10] - Arquivo nao encontrado... ###");
+		}
+	}
+	
+	@SuppressWarnings({ "deprecation", "unused" })
+	public void resultadoRNP11() throws URISyntaxException, IOException, LotoException {
+		
+		int cont = 0;
+		FileWriter arquivo = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP11.csv");
+		PrintWriter gravarArquivo = new PrintWriter(arquivo);
+		RNP11 rnp11 = new RNP11();
+		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
+		if (Objects.nonNull(resultado)) {
+			Path caminho = Paths.get(resultado.toURI());
+			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
+			String[] linha;
+			while (Objects.nonNull((linha = csvReader.readNext()))) {
+				String lista = null;
+				int[] saida = new int[linha.length];
+				for (int i = 0; i < linha.length; i++) {
+					saida[i] = Integer.parseInt(String.valueOf(linha[i]));
+				}
+				
+				if (rnp11.aplicar(saida)) {
+					lista = saida[0] + "," + saida[1] + "," + saida[2] + "," + saida[3] + "," + saida[4] + ","
+							+ saida[5] + "," + saida[6] + "," + saida[7] + "," + saida[8] + "," + saida[9] + ","
+							+ saida[10] + "," + saida[11] + "," + saida[12] + "," + saida[13] + "," + saida[14];
+					gravarArquivo.printf("%s%n", lista);
+					cont++;
+				}
+			}
+
+			arquivo.close();
+			gravarArquivo.close();
+		} else {
+			System.out.println("### [resultadoRNP11] - Arquivo nao encontrado... ###");
+		}
+	}
+	
+	@SuppressWarnings({ "deprecation", "unused" })
+	public void resultadoRNP12() throws URISyntaxException, IOException, LotoException {
+		
+		int cont = 0;
+		FileWriter arquivo = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP12.csv");
+		PrintWriter gravarArquivo = new PrintWriter(arquivo);
+		RNP12 rnp12 = new RNP12();
+		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
+		if (Objects.nonNull(resultado)) {
+			Path caminho = Paths.get(resultado.toURI());
+			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
+			String[] linha;
+			while (Objects.nonNull((linha = csvReader.readNext()))) {
+				String lista = null;
+				int[] saida = new int[linha.length];
+				for (int i = 0; i < linha.length; i++) {
+					saida[i] = Integer.parseInt(String.valueOf(linha[i]));
+				}
+				
+				if (rnp12.aplicar(saida)) {
+					lista = saida[0] + "," + saida[1] + "," + saida[2] + "," + saida[3] + "," + saida[4] + ","
+							+ saida[5] + "," + saida[6] + "," + saida[7] + "," + saida[8] + "," + saida[9] + ","
+							+ saida[10] + "," + saida[11] + "," + saida[12] + "," + saida[13] + "," + saida[14];
+					gravarArquivo.printf("%s%n", lista);
+					cont++;
+				}
+			}
+
+			arquivo.close();
+			gravarArquivo.close();
+		} else {
+			System.out.println("### [resultadoRNP12] - Arquivo nao encontrado... ###");
 		}
 	}
 	
@@ -554,12 +782,190 @@ public class Principal {
 	}
 	
 	@SuppressWarnings("deprecation")
+	public void resultadoNumerosMenorQueDezRNP02() throws URISyntaxException, IOException, LotoException {
+		
+		int cont = 0;
+		int contlinha = 0;
+		int cinco = 0;
+		int seis = 0;
+		int sete = 0;
+		URL resultado1525 = Principal.class.getClassLoader().getResource("resultado\\ResultadoRNP02.csv");
+		if (Objects.nonNull(resultado1525)) {
+			Path caminho = Paths.get(resultado1525.toURI());
+			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
+
+			String[] linhaResultado1525;
+			while (Objects.nonNull((linhaResultado1525 = csvReader.readNext()))) {
+
+				cont++;
+				contlinha = 0;
+				int[] linha1525 = new int[linhaResultado1525.length];
+				for (int i = 0; i < linhaResultado1525.length; i++) {
+					linha1525[i] = Integer.parseInt(String.valueOf(linhaResultado1525[i]));
+				}
+
+				for (int i = 0; i < linha1525.length; i++) {
+					if (linha1525[i] < NumeroEnum.DEZ.getValor()) {
+						contlinha++;
+					}
+				}
+
+				if (contlinha == NumeroEnum.CINCO.getValor()) {
+					cinco++;
+				} else if (contlinha == NumeroEnum.SEIS.getValor()) {
+					seis++;
+				} else if (contlinha == NumeroEnum.SETE.getValor()) {
+					sete++;
+				}
+			}
+		} else {
+			System.out.println("### [resultadoNumerosMenorQueDezRNP02] - Arquivo nao encontrado... ###");
+		}
+
+		System.out.println();
+		System.out.println();
+		System.out.println("TOTAL DE LINHAS NO ARQUIVO RNP02-66: " + cont);
+		System.out.println("CINCO: " + cinco);
+		System.out.println("SEIS: " + seis);
+		System.out.println("SETE: " + sete);
+		Double total = (double) (cont * 100)/66;
+		System.out.println("TOTAL %: " + total);
+		
+	}
+	
+	@SuppressWarnings("deprecation")
+	public void resultadoNumerosMenorQueDezRNP03() throws URISyntaxException, IOException, LotoException {
+		
+		int cont = 0;
+		int contlinha = 0;
+		int quatro = 0;
+		int cinco = 0;
+		int seis = 0;
+		int sete = 0;
+		int oito = 0;
+		URL resultado1525 = Principal.class.getClassLoader().getResource("resultado\\ResultadoRNP03.csv");
+		if (Objects.nonNull(resultado1525)) {
+			Path caminho = Paths.get(resultado1525.toURI());
+			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
+
+			String[] linhaResultado1525;
+			while (Objects.nonNull((linhaResultado1525 = csvReader.readNext()))) {
+
+				cont++;
+				contlinha = 0;
+				int[] linha1525 = new int[linhaResultado1525.length];
+				for (int i = 0; i < linhaResultado1525.length; i++) {
+					linha1525[i] = Integer.parseInt(String.valueOf(linhaResultado1525[i]));
+				}
+
+				for (int i = 0; i < linha1525.length; i++) {
+					if (linha1525[i] < NumeroEnum.DEZ.getValor()) {
+						contlinha++;
+					}
+				}
+
+				if (contlinha == NumeroEnum.QUATRO.getValor()) {
+					quatro++;
+				} else if (contlinha == NumeroEnum.CINCO.getValor()) {
+					cinco++;
+				} else if (contlinha == NumeroEnum.SEIS.getValor()) {
+					seis++;
+				} else if (contlinha == NumeroEnum.SETE.getValor()) {
+					sete++;
+				} else if (contlinha == NumeroEnum.OITO.getValor()) {
+					oito++;
+				}
+			}
+		} else {
+			System.out.println("### [resultadoNumerosMenorQueDezRNP03] - Arquivo nao encontrado... ###");
+		}
+
+		System.out.println();
+		System.out.println();
+		System.out.println("TOTAL DE LINHAS NO ARQUIVO RNP03-2860: " + cont);
+		System.out.println("QUATRO: " + quatro);
+		System.out.println("CINCO: " + cinco);
+		System.out.println("SEIS: " + seis);
+		System.out.println("SETE: " + sete);
+		System.out.println("OITO: " + oito);
+		Double total = (double) (cont * 100)/2860;
+		System.out.println("TOTAL %: " + total);
+		
+	}
+	
+	@SuppressWarnings("deprecation")
+	public void resultadoNumerosMenorQueDezRNP04() throws URISyntaxException, IOException, LotoException {
+		
+		int cont = 0;
+		int contlinha = 0;
+		int tres = 0;
+		int quatro = 0;
+		int cinco = 0;
+		int seis = 0;
+		int sete = 0;
+		int oito = 0;
+		int nove = 0;
+		URL resultado1525 = Principal.class.getClassLoader().getResource("resultado\\ResultadoRNP04.csv");
+		if (Objects.nonNull(resultado1525)) {
+			Path caminho = Paths.get(resultado1525.toURI());
+			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
+
+			String[] linhaResultado1525;
+			while (Objects.nonNull((linhaResultado1525 = csvReader.readNext()))) {
+
+				cont++;
+				contlinha = 0;
+				int[] linha1525 = new int[linhaResultado1525.length];
+				for (int i = 0; i < linhaResultado1525.length; i++) {
+					linha1525[i] = Integer.parseInt(String.valueOf(linhaResultado1525[i]));
+				}
+
+				for (int i = 0; i < linha1525.length; i++) {
+					if (linha1525[i] < NumeroEnum.DEZ.getValor()) {
+						contlinha++;
+					}
+				}
+
+				if (contlinha == NumeroEnum.TRES.getValor()) {
+					tres++;
+				} else if (contlinha == NumeroEnum.QUATRO.getValor()) {
+					quatro++;
+				} else if (contlinha == NumeroEnum.CINCO.getValor()) {
+					cinco++;
+				} else if (contlinha == NumeroEnum.SEIS.getValor()) {
+					seis++;
+				} else if (contlinha == NumeroEnum.SETE.getValor()) {
+					sete++;
+				} else if (contlinha == NumeroEnum.OITO.getValor()) {
+					oito++;
+				} else if (contlinha == NumeroEnum.NOVE.getValor()) {
+					nove++;
+				}
+			}
+		} else {
+			System.out.println("### [resultadoNumerosMenorQueDezRNP04] - Arquivo nao encontrado... ###");
+		}
+
+		System.out.println();
+		System.out.println();
+		System.out.println("TOTAL DE LINHAS NO ARQUIVO RNP04-38610: " + cont);
+		System.out.println("TRES: " + tres);
+		System.out.println("QUATRO: " + quatro);
+		System.out.println("CINCO: " + cinco);
+		System.out.println("SEIS: " + seis);
+		System.out.println("SETE: " + sete);
+		System.out.println("OITO: " + oito);
+		System.out.println("NOVE: " + nove);
+		Double total = (double) (cont * 100)/38610;
+		System.out.println("TOTAL %: " + total);
+		
+	}
+	
+	@SuppressWarnings("deprecation")
 	public void resultadoNumerosMenorQueDezRNP05() throws URISyntaxException, IOException, LotoException {
 		
 		int cont = 0;
 		int contlinha = 0;
-		int zero = 0;
-		int um = 0;
 		int dois = 0;
 		int tres = 0;
 		int quatro = 0;
@@ -589,11 +995,7 @@ public class Principal {
 					}
 				}
 
-				if (contlinha == NumeroEnum.ZERO.getValor()) {
-					zero++;
-				} else if (contlinha == NumeroEnum.UM.getValor()) {
-					um++;
-				} else if (contlinha == NumeroEnum.DOIS.getValor()) {
+				if (contlinha == NumeroEnum.DOIS.getValor()) {
 					dois++;
 				} else if (contlinha == NumeroEnum.TRES.getValor()) {
 					tres++;
@@ -617,9 +1019,7 @@ public class Principal {
 
 		System.out.println();
 		System.out.println();
-		System.out.println("TOTAL DE LINHAS NO ARQUIVO RNP05: " + cont);
-		System.out.println("ZERO: " + zero);
-		System.out.println("UM: " + um);
+		System.out.println("TOTAL DE LINHAS NO ARQUIVO RNP05-226512: " + cont);
 		System.out.println("DOIS: " + dois);
 		System.out.println("TRES: " + tres);
 		System.out.println("QUATRO: " + quatro);
@@ -628,6 +1028,8 @@ public class Principal {
 		System.out.println("SETE: " + sete);
 		System.out.println("OITO: " + oito);
 		System.out.println("NOVE: " + nove);
+		Double total = (double) (cont * 100)/226512;
+		System.out.println("TOTAL %: " + total);
 		
 	}
 	
@@ -636,7 +1038,6 @@ public class Principal {
 		
 		int cont = 0;
 		int contlinha = 0;
-		int zero = 0;
 		int um = 0;
 		int dois = 0;
 		int tres = 0;
@@ -667,9 +1068,7 @@ public class Principal {
 					}
 				}
 
-				if (contlinha == NumeroEnum.ZERO.getValor()) {
-					zero++;
-				} else if (contlinha == NumeroEnum.UM.getValor()) {
+				if (contlinha == NumeroEnum.UM.getValor()) {
 					um++;
 				} else if (contlinha == NumeroEnum.DOIS.getValor()) {
 					dois++;
@@ -695,8 +1094,7 @@ public class Principal {
 
 		System.out.println();
 		System.out.println();
-		System.out.println("TOTAL DE LINHAS NO ARQUIVO RNP06: " + cont);
-		System.out.println("ZERO: " + zero);
+		System.out.println("TOTAL DE LINHAS NO ARQUIVO RNP06-660660: " + cont);
 		System.out.println("UM: " + um);
 		System.out.println("DOIS: " + dois);
 		System.out.println("TRES: " + tres);
@@ -706,6 +1104,8 @@ public class Principal {
 		System.out.println("SETE: " + sete);
 		System.out.println("OITO: " + oito);
 		System.out.println("NOVE: " + nove);
+		Double total = (double) (cont * 100)/660660;
+		System.out.println("TOTAL %: " + total);
 		
 	}
 	
@@ -773,7 +1173,7 @@ public class Principal {
 
 		System.out.println();
 		System.out.println();
-		System.out.println("TOTAL DE LINHAS NO ARQUIVO RNP07: " + cont);
+		System.out.println("TOTAL DE LINHAS NO ARQUIVO RNP07-1019304: " + cont);
 		System.out.println("ZERO: " + zero);
 		System.out.println("UM: " + um);
 		System.out.println("DOIS: " + dois);
@@ -784,6 +1184,8 @@ public class Principal {
 		System.out.println("SETE: " + sete);
 		System.out.println("OITO: " + oito);
 		System.out.println("NOVE: " + nove);
+		Double total = (double) (cont * 100)/1019304;
+		System.out.println("TOTAL %: " + total);
 		
 	}
 	
@@ -851,7 +1253,7 @@ public class Principal {
 
 		System.out.println();
 		System.out.println();
-		System.out.println("TOTAL DE LINHAS NO ARQUIVO RNP08: " + cont);
+		System.out.println("TOTAL DE LINHAS NO ARQUIVO RNP08-849420: " + cont);
 		System.out.println("ZERO: " + zero);
 		System.out.println("UM: " + um);
 		System.out.println("DOIS: " + dois);
@@ -862,6 +1264,8 @@ public class Principal {
 		System.out.println("SETE: " + sete);
 		System.out.println("OITO: " + oito);
 		System.out.println("NOVE: " + nove);
+		Double total = (double) (cont * 100)/849420;
+		System.out.println("TOTAL %: " + total);
 		
 	}
 	
@@ -870,7 +1274,6 @@ public class Principal {
 		
 		int cont = 0;
 		int contlinha = 0;
-		int zero = 0;
 		int um = 0;
 		int dois = 0;
 		int tres = 0;
@@ -901,9 +1304,7 @@ public class Principal {
 					}
 				}
 
-				if (contlinha == NumeroEnum.ZERO.getValor()) {
-					zero++;
-				} else if (contlinha == NumeroEnum.UM.getValor()) {
+				if (contlinha == NumeroEnum.UM.getValor()) {
 					um++;
 				} else if (contlinha == NumeroEnum.DOIS.getValor()) {
 					dois++;
@@ -929,8 +1330,7 @@ public class Principal {
 
 		System.out.println();
 		System.out.println();
-		System.out.println("TOTAL DE LINHAS NO ARQUIVO RNP09: " + cont);
-		System.out.println("ZERO: " + zero);
+		System.out.println("TOTAL DE LINHAS NO ARQUIVO RNP09-377520: " + cont);
 		System.out.println("UM: " + um);
 		System.out.println("DOIS: " + dois);
 		System.out.println("TRES: " + tres);
@@ -940,6 +1340,200 @@ public class Principal {
 		System.out.println("SETE: " + sete);
 		System.out.println("OITO: " + oito);
 		System.out.println("NOVE: " + nove);
+		Double total = (double) (cont * 100)/377520;
+		System.out.println("TOTAL %: " + total);
+		
+	}
+	
+	@SuppressWarnings("deprecation")
+	public void resultadoNumerosMenorQueDezRNP10() throws URISyntaxException, IOException, LotoException {
+		
+		int cont = 0;
+		int contlinha = 0;
+		int dois = 0;
+		int tres = 0;
+		int quatro = 0;
+		int cinco = 0;
+		int seis = 0;
+		int sete = 0;
+		int oito = 0;
+		int nove = 0;
+		URL resultado1525 = Principal.class.getClassLoader().getResource("resultado\\ResultadoRNP10.csv");
+		if (Objects.nonNull(resultado1525)) {
+			Path caminho = Paths.get(resultado1525.toURI());
+			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
+
+			String[] linhaResultado1525;
+			while (Objects.nonNull((linhaResultado1525 = csvReader.readNext()))) {
+
+				cont++;
+				contlinha = 0;
+				int[] linha1525 = new int[linhaResultado1525.length];
+				for (int i = 0; i < linhaResultado1525.length; i++) {
+					linha1525[i] = Integer.parseInt(String.valueOf(linhaResultado1525[i]));
+				}
+
+				for (int i = 0; i < linha1525.length; i++) {
+					if (linha1525[i] < NumeroEnum.DEZ.getValor()) {
+						contlinha++;
+					}
+				}
+
+				if (contlinha == NumeroEnum.DOIS.getValor()) {
+					dois++;
+				} else if (contlinha == NumeroEnum.TRES.getValor()) {
+					tres++;
+				} else if (contlinha == NumeroEnum.QUATRO.getValor()) {
+					quatro++;
+				} else if (contlinha == NumeroEnum.CINCO.getValor()) {
+					cinco++;
+				} else if (contlinha == NumeroEnum.SEIS.getValor()) {
+					seis++;
+				} else if (contlinha == NumeroEnum.SETE.getValor()) {
+					sete++;
+				} else if (contlinha == NumeroEnum.OITO.getValor()) {
+					oito++;
+				} else if (contlinha == NumeroEnum.NOVE.getValor()) {
+					nove++;
+				}
+			}
+		} else {
+			System.out.println("### [resultadoNumerosMenorQueDezRNP10] - Arquivo nao encontrado... ###");
+		}
+
+		System.out.println();
+		System.out.println();
+		System.out.println("TOTAL DE LINHAS NO ARQUIVO RNP10-84942: " + cont);
+		System.out.println("DOIS: " + dois);
+		System.out.println("TRES: " + tres);
+		System.out.println("QUATRO: " + quatro);
+		System.out.println("CINCO: " + cinco);
+		System.out.println("SEIS: " + seis);
+		System.out.println("SETE: " + sete);
+		System.out.println("OITO: " + oito);
+		System.out.println("NOVE: " + nove);
+		Double total = (double) (cont * 100)/84942;
+		System.out.println("TOTAL %: " + total);
+		
+	}
+	
+	@SuppressWarnings("deprecation")
+	public void resultadoNumerosMenorQueDezRNP11() throws URISyntaxException, IOException, LotoException {
+		
+		int cont = 0;
+		int contlinha = 0;
+		int tres = 0;
+		int quatro = 0;
+		int cinco = 0;
+		int seis = 0;
+		int sete = 0;
+		int oito = 0;
+		URL resultado1525 = Principal.class.getClassLoader().getResource("resultado\\ResultadoRNP11.csv");
+		if (Objects.nonNull(resultado1525)) {
+			Path caminho = Paths.get(resultado1525.toURI());
+			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
+
+			String[] linhaResultado1525;
+			while (Objects.nonNull((linhaResultado1525 = csvReader.readNext()))) {
+
+				cont++;
+				contlinha = 0;
+				int[] linha1525 = new int[linhaResultado1525.length];
+				for (int i = 0; i < linhaResultado1525.length; i++) {
+					linha1525[i] = Integer.parseInt(String.valueOf(linhaResultado1525[i]));
+				}
+
+				for (int i = 0; i < linha1525.length; i++) {
+					if (linha1525[i] < NumeroEnum.DEZ.getValor()) {
+						contlinha++;
+					}
+				}
+
+				if (contlinha == NumeroEnum.TRES.getValor()) {
+					tres++;
+				} else if (contlinha == NumeroEnum.QUATRO.getValor()) {
+					quatro++;
+				} else if (contlinha == NumeroEnum.CINCO.getValor()) {
+					cinco++;
+				} else if (contlinha == NumeroEnum.SEIS.getValor()) {
+					seis++;
+				} else if (contlinha == NumeroEnum.SETE.getValor()) {
+					sete++;
+				} else if (contlinha == NumeroEnum.OITO.getValor()) {
+					oito++;
+				}
+			}
+		} else {
+			System.out.println("### [resultadoNumerosMenorQueDezRNP11] - Arquivo nao encontrado... ###");
+		}
+
+		System.out.println();
+		System.out.println();
+		System.out.println("TOTAL DE LINHAS NO ARQUIVO RNP11-8580: " + cont);
+		System.out.println("TRES: " + tres);
+		System.out.println("QUATRO: " + quatro);
+		System.out.println("CINCO: " + cinco);
+		System.out.println("SEIS: " + seis);
+		System.out.println("SETE: " + sete);
+		System.out.println("OITO: " + oito);
+		Double total = (double) (cont * 100)/8580;
+		System.out.println("TOTAL %: " + total);
+		
+	}
+	
+	@SuppressWarnings("deprecation")
+	public void resultadoNumerosMenorQueDezRNP12() throws URISyntaxException, IOException, LotoException {
+		
+		int cont = 0;
+		int contlinha = 0;
+		int quatro = 0;
+		int cinco = 0;
+		int seis = 0;
+		int sete = 0;
+		URL resultado1525 = Principal.class.getClassLoader().getResource("resultado\\ResultadoRNP12.csv");
+		if (Objects.nonNull(resultado1525)) {
+			Path caminho = Paths.get(resultado1525.toURI());
+			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
+
+			String[] linhaResultado1525;
+			while (Objects.nonNull((linhaResultado1525 = csvReader.readNext()))) {
+
+				cont++;
+				contlinha = 0;
+				int[] linha1525 = new int[linhaResultado1525.length];
+				for (int i = 0; i < linhaResultado1525.length; i++) {
+					linha1525[i] = Integer.parseInt(String.valueOf(linhaResultado1525[i]));
+				}
+
+				for (int i = 0; i < linha1525.length; i++) {
+					if (linha1525[i] < NumeroEnum.DEZ.getValor()) {
+						contlinha++;
+					}
+				}
+
+				if (contlinha == NumeroEnum.QUATRO.getValor()) {
+					quatro++;
+				} else if (contlinha == NumeroEnum.CINCO.getValor()) {
+					cinco++;
+				} else if (contlinha == NumeroEnum.SEIS.getValor()) {
+					seis++;
+				} else if (contlinha == NumeroEnum.SETE.getValor()) {
+					sete++;
+				}
+			}
+		} else {
+			System.out.println("### [resultadoNumerosMenorQueDezRNP12] - Arquivo nao encontrado... ###");
+		}
+
+		System.out.println();
+		System.out.println();
+		System.out.println("TOTAL DE LINHAS NO ARQUIVO RNP12-286: " + cont);
+		System.out.println("QUATRO: " + quatro);
+		System.out.println("CINCO: " + cinco);
+		System.out.println("SEIS: " + seis);
+		System.out.println("SETE: " + sete);
+		Double total = (double) (cont * 100)/286;
+		System.out.println("TOTAL %: " + total);
 		
 	}
 	
@@ -1031,12 +1625,13 @@ public class Principal {
 	
 	@SuppressWarnings("deprecation")
 	public void gerarArquivoARFF() throws URISyntaxException, IOException, LotoException {
-		FileWriter arqSaiu = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\dezoito\\resultado\\fechamento1525-14\\resultado.arff");
+		FileWriter arqSaiu = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources"
+				+ "\\combinacoes\\15_25\\RNP10-1.csv");
 		PrintWriter gravarArq = new PrintWriter(arqSaiu);
-		gravarArq.printf("@RELATION resultado%n");
-		gravarArq.printf("%n@ATTRIBUTE valor	integer");
-		gravarArq.printf("%n@ATTRIBUTE class 	{sim,nao}%n");
-		gravarArq.printf("%n@DATA%n");
+//		gravarArq.printf("@RELATION resultado%n");
+//		gravarArq.printf("%n@ATTRIBUTE valor	integer");
+//		gravarArq.printf("%n@ATTRIBUTE class 	{sim,nao}%n");
+//		gravarArq.printf("%n@DATA%n");
 		int cont = 0;
 		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
 		if (Objects.nonNull(resultado)) {
@@ -1063,11 +1658,12 @@ public class Principal {
 	public void compararArquivoARFF(int[] linha, PrintWriter gravarArq) throws URISyntaxException, IOException, LotoException {
 		int cont = 0;
 		int contJogo = 0;
-		URL fechamento = Principal.class.getClassLoader().getResource("combinacoes\\15_25\\15_25-FECHAMENTO14.csv");
+		StringBuilder lista = new StringBuilder();
+		URL fechamento = Principal.class.getClassLoader().getResource("combinacoes\\15_25\\RNP10.csv");
 		if (Objects.nonNull(fechamento)) {
 			Path caminho = Paths.get(fechamento.toURI());
 			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
-
+//			List<String[]> listaSimNao = new ArrayList<String[]>();
 			String[] linhaFechamento;
 			while (Objects.nonNull((linhaFechamento = csvReader.readNext()))) {
 				cont++;
@@ -1086,12 +1682,16 @@ public class Principal {
 				}
 				
 				if (contJogo == NumeroEnum.ONZE.getValor()) {
-					gravarArq.printf("%s%n", cont + ",saiu");
+//					listaSimNao.add("");
+					lista.append("1,");
+//					gravarArq.printf("%s%n", ",saiu");
 				} else {
-					gravarArq.printf("%s%n", cont + ",nao");
+					lista.append("0,");
+//					gravarArq.printf("%s%n", ",nao");
 				}
 			}
 		}
+		gravarArq.printf("%s%n", lista);
 		System.out.println("TOTAL DE LINHAS DO FECHAMENTO: " + cont);
 	}
 	
@@ -1108,7 +1708,7 @@ public class Principal {
 
 //		FileWriter arqSaiu = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\dezoito\\resultado\\hoje\\conc2140.csv");
 //		PrintWriter gravarArq = new PrintWriter(arqSaiu);
-		URL combinacoes = Principal.class.getClassLoader().getResource("combinacoes\\15_25\\15_25-FECHAMENTO14.csv");
+		URL combinacoes = Principal.class.getClassLoader().getResource("combinacoes\\15_25\\15_25-RNP07\\15_25-RNP07_DOIS-FECHAMENTO11.csv");
 		if (Objects.nonNull(combinacoes)) {
 			Path caminho = Paths.get(combinacoes.toURI());
 			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
@@ -1169,7 +1769,7 @@ public class Principal {
 
 		int retorno = 0;
 		int contJogo = 0;
-		int[] jogo = { 2,4,5,6,8,11,12,14,15,16,18,19,21,24,25 };
+		int[] jogo = { 3,5,6,7,8,9,10,11,12,13,14,17,20,22,25 };
 		
 		for (int i = 0; i < jogo.length; i++) {
 			for (int j = 0; j < linha.length; j++) {
@@ -1317,9 +1917,9 @@ public class Principal {
 		int treze = 0;
 		int quatorze = 0;
 		int quinze = 0;
-		FileWriter arqSaiu = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoGanhador.csv");
+		FileWriter arqSaiu = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoGanhadorRNP09.csv");
 		PrintWriter gravarArq = new PrintWriter(arqSaiu);
-		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
+		URL resultado = Principal.class.getClassLoader().getResource("resultado\\ResultadoRNP09.csv");
 		if (Objects.nonNull(resultado)) {
 			Path caminho = Paths.get(resultado.toURI());
 			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');

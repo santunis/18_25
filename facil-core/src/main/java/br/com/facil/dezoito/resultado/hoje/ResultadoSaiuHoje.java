@@ -1,9 +1,7 @@
 package br.com.facil.dezoito.resultado.hoje;
 
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Path;
@@ -29,7 +27,7 @@ public class ResultadoSaiuHoje {
 
 //		FileWriter arqSaiu = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\dezoito\\resultado\\hoje\\ResultadoSaiuHojeONZE2132_REP.csv");
 //		PrintWriter gravarArq = new PrintWriter(arqSaiu);
-		URL combinacoes = ResultadoSaiuHoje.class.getClassLoader().getResource("dezoito\\fechamento\\Fechamento15_25_QUATORZE.csv");
+		URL combinacoes = ResultadoSaiuHoje.class.getClassLoader().getResource("combinacoes\\15_25\\15_25-FECHAMENTO11.csv");
 //		URL combinacoes = ResultadoSaiuHoje.class.getClassLoader().getResource("combinacoes\\Fechamento15_25_QUATORZE.csv");
 		if (Objects.nonNull(combinacoes)) {
 			Path caminho = Paths.get(combinacoes.toURI());
@@ -45,7 +43,7 @@ public class ResultadoSaiuHoje {
 				}
 				
 				int retorno = comparaNumeros(linha);
-				String lista = null;
+//				String lista = null;
 				if (retorno == NumeroEnum.ONZE.getValor()) {
 //					lista = linha[0]+","+linha[1]+","+linha[2]+","+linha[3]+","+linha[4]+","+
 //							linha[5]+","+linha[6]+","+linha[7]+","+linha[8]+","+linha[9]+","+
@@ -94,7 +92,7 @@ public class ResultadoSaiuHoje {
 		int retorno = 0;
 		int contJogo = 0;
 		//jogo 2146
-		int[] jogo = { 1,2,4,6,8,9,11,13,16,17,18,19,20,21,22 };
+		int[] jogo = { 2,3,8,10,11,13,14,15,16,17,19,20,21,24,25 };
 		
 		for (int i = 0; i < jogo.length; i++) {
 			for (int j = 0; j < linha.length; j++) {

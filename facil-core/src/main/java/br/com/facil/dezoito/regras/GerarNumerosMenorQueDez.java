@@ -14,11 +14,6 @@ import com.opencsv.CSVReader;
 
 import br.com.facil.enumerador.NumeroEnum;
 import br.com.facil.excecao.LotoException;
-import br.com.facil.regras.sequencia.RNS0105;
-import br.com.facil.regras.sequencia.RNS0610;
-import br.com.facil.regras.sequencia.RNS1115;
-import br.com.facil.regras.sequencia.RNS1620;
-import br.com.facil.regras.sequencia.RNS2125;
 
 public class GerarNumerosMenorQueDez {
 

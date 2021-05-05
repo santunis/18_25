@@ -41,9 +41,9 @@ public class Fechamento {
 			}
 			contLinha++;
 		}
-//		System.out.println("Total de linhas: " + contLinha);
-//		System.out.println("Total de acertos: " + contAcertos);
-//		System.out.println("Total de Primos: " + contPrimo);
+		System.out.println("Total de linhas: " + contLinha);
+		System.out.println("Total de acertos: " + contAcertos);
+		System.out.println("Total de Primos: " + contPrimo);
 		
 		return listaPrimos;
 	}
@@ -75,7 +75,7 @@ public class Fechamento {
 	public static void fechamento14(String[] linha) {
 		List<String[]> listaNumeros = new ArrayList<String[]>();
 		int contCombinacoes = 0;
-		int contJogo = 0;
+//		int contJogo = 0;
 		int[] linhaNova = new int[linha.length];
 		for (int i = 0; i < linha.length; i++) {
 			linhaNova[i] = Integer.parseInt(String.valueOf(linha[i]));

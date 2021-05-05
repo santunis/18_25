@@ -12,9 +12,9 @@ public class GerarFechamento {
 	public static void main(String[] args) throws IOException, LotoException {
 		
 		//1,2,3,4,6,9,10,12,13,14,15,17,18,19,20,21,22,23,24,25
-		int[] str = { 7, 1, 2, 3, 4, 6, 9, 10, 12, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25 };
+		int[] str = { 7, 1, 2, 3, 4, 6, 9, 10, 12, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 24 };
 		
-		FileWriter arq = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\dezoito\\fechamento\\GerarFechamento21.csv");
+		FileWriter arq = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\15_25\\analise\\GerarFechamento24.csv");
 		PrintWriter gravarArq = new PrintWriter(arq);
 		
 		int[] saida;

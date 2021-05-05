@@ -15,9 +15,9 @@
 	<dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>facil-war</artifactId>
+            <artifactId>facil-core</artifactId>
             <version>${project.version}</version>
-            <type>war</type>
+            <type>jar</type>
         </dependency>
     </dependencies>
 	
@@ -30,13 +30,11 @@
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                     <modules>
-                        <webModule>
+                    	<jarModule>
                             <groupId>${project.groupId}</groupId>
-                            <artifactId>facil-war</artifactId>
-                            <bundleFileName>facil-war.war</bundleFileName>
-                            <contextRoot>/facil</contextRoot>
-                            <unpack>false</unpack>
-                        </webModule>
+                            <artifactId>facil-core</artifactId>
+                            <bundleFileName>facil-core.jar</bundleFileName>
+                        </jarModule>
                     </modules>
                 </configuration>
             </plugin>

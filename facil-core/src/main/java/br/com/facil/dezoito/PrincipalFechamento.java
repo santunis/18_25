@@ -2,7 +2,6 @@ package br.com.facil.dezoito;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.List;
 
 import br.com.facil.enumerador.NumeroEnum;
 import br.com.facil.excecao.LotoException;

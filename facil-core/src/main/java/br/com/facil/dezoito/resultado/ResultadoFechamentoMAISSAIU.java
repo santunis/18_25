@@ -22,9 +22,13 @@ public class ResultadoFechamentoMAISSAIU {
 		
 //		FileWriter arqSaiu = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\dezoito\\resultado\\hoje\\ResultadoSaiuHojeQUATORZEMAISSAIU.csv");
 //		PrintWriter gravarArqSaiu = new PrintWriter(arqSaiu);
+		
+		FileWriter arqSaiu = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources"
+				+ "\\combinacoes\\15_25\\89_1416-MAISSAIU.csv");
+		PrintWriter gravarArqSaiu = new PrintWriter(arqSaiu);
 
 		int cont = 0;
-		URL combinacao1825 = ResultadoFechamentoMAISSAIU.class.getClassLoader().getResource("dezoito\\fechamento\\Fechamento15_25_QUATORZE.csv");
+		URL combinacao1825 = ResultadoFechamentoMAISSAIU.class.getClassLoader().getResource("combinacoes\\15_25\\89_1416.csv");
 		if (Objects.nonNull(combinacao1825)) {
 			
 			Path caminho = Paths.get(combinacao1825.toURI());
@@ -44,16 +48,18 @@ public class ResultadoFechamentoMAISSAIU {
 					lista = linhaCombinacao1825[0] + "," + linhaCombinacao1825[1] + "," + linhaCombinacao1825[2] + "," + linhaCombinacao1825[3] + ","
 							+ linhaCombinacao1825[4] + "," + linhaCombinacao1825[5] + "," + linhaCombinacao1825[6] + "," + linhaCombinacao1825[7] + ","
 							+ linhaCombinacao1825[8] + "," + linhaCombinacao1825[9] + "," + linhaCombinacao1825[10] + "," + linhaCombinacao1825[11] + ","
-							+ linhaCombinacao1825[12] + "," + linhaCombinacao1825[13] + "," + linhaCombinacao1825[14] + "," + retorno
+							+ linhaCombinacao1825[12] + "," + linhaCombinacao1825[13] + "," + linhaCombinacao1825[14] + "," + linhaCombinacao1825[15] + ","
+							+ linhaCombinacao1825[16] + "," + linhaCombinacao1825[17] + "," + linhaCombinacao1825[18] + "," + linhaCombinacao1825[19] + ","
+							+ linhaCombinacao1825[20] + "," + linhaCombinacao1825[21] + "," + retorno
 					);
-//					gravarArqSaiu.printf("%s%n", lista);
+					gravarArqSaiu.printf("%s%n", lista);
 				}
 				
-//				System.out.println(cont++);
+				System.out.println(cont++);
 			}
 			
-//			arqSaiu.close();
-//			gravarArqSaiu.close();
+			arqSaiu.close();
+			gravarArqSaiu.close();
 		} else {
 			System.out.println("### Arquivo nao encontrado... ###");
 		}
@@ -78,9 +84,9 @@ public class ResultadoFechamentoMAISSAIU {
 					linhaResultado[i] = Integer.parseInt(String.valueOf(linhaResultado1825SAIU[i]));
 				}
 
-				for (int i = 0; i < linhaCombinacao1825.length; i++) {
-					for (int j = 0; j < linhaResultado.length; j++) {
-						if (linhaCombinacao1825[i] == linhaResultado[j]) {
+				for (int i = 0; i < linhaResultado.length; i++) {
+					for (int j = 0; j < linhaCombinacao1825.length; j++) {
+						if (linhaResultado[i] == linhaCombinacao1825[j]) {
 							contJogo++;
 						}
 					}

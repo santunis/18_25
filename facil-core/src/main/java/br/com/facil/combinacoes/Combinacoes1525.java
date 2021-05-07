@@ -87,7 +87,7 @@ public class Combinacoes1525 {
 		PrintWriter gravarArquivo1525 = new PrintWriter(arquivo1525);
 		int cont = 0;
 		List<String> lista1525 = new ArrayList<String>();
-		int[] str = { 1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 17, 18, 20, 21, 22, 23, 24, 25 };
+		int[] str = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 };
 		int[] saida;
 		Combinacoes comb1 = new Combinacoes(str, 15);
 		while (comb1.hasNext()) {

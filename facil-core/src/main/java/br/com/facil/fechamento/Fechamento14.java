@@ -24,10 +24,10 @@ public class Fechamento14 {
 	public static void main(String[] args) throws URISyntaxException, IOException, LotoException  {
 		
 		FileWriter arq = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources"
-				+ "\\combinacoes\\15_25\\15_25-RNP07\\15_25-RNP07-FECHAMENTO14.csv");
+				+ "\\combinacoes\\20_25-MAISSAIU-30VEZES-FECHAMENTO14.csv");
 		PrintWriter gravarArq = new PrintWriter(arq);
 		
-		URL combinacoes = Fechamento14.class.getClassLoader().getResource("combinacoes\\15_25\\15_25-RNP07\\15_25-RNP07.csv");
+		URL combinacoes = Fechamento14.class.getClassLoader().getResource("combinacoes\\20_25-MAISSAIU-30VEZES.csv");
 		List<String[]> listaNumeros = new ArrayList<String[]>();
 		int contCombinacoes = 0;
 		int contFechamento = 0;

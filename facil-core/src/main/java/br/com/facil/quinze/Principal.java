@@ -20,7 +20,10 @@ public class Principal {
 	public static void main(String[] args) throws URISyntaxException, IOException, LotoException {
 		
 		Principal principal = new Principal();
-		principal.retirarSaiu1525();
+//		principal.retirarSaiu1525();
+		
+		principal.retirarSaiu14();
+//		principal.retirarSaiu13();
 		
 //		principal.maisSaiu1525RNP07();
 		
@@ -83,6 +86,168 @@ public class Principal {
 				}
 				
 				if (contador == NumeroEnum.QUINZE.getValor()) {
+					retorno = true;
+					break;
+				}
+			}
+		} else {
+			System.out.println("### [Resultado.csv] Arquivo nao encontrado... ###");
+		}
+		
+		return retorno;
+	}
+	
+	@SuppressWarnings("deprecation")
+	public void retirarSaiu14() throws URISyntaxException, IOException, LotoException {
+		FileWriter arqSaiu = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources"
+				+ "\\quinze\\14-SAIU.csv");
+		PrintWriter gravarArqSaiu = new PrintWriter(arqSaiu);
+		FileWriter arqNaoSaiu = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources"
+				+ "\\quinze\\14-NAOSAIU.csv");
+		PrintWriter gravarArqNaoSaiu = new PrintWriter(arqNaoSaiu);
+		
+		int cont = 0;
+		String lista = null;
+		URL combinacao = Principal.class.getClassLoader().getResource("quinze\\15-NAOSAIU-CONC2021.csv");
+		if (Objects.nonNull(combinacao)) {
+			Path caminho = Paths.get(combinacao.toURI());
+			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
+			String[] linha;
+			while (Objects.nonNull((linha = csvReader.readNext()))) {
+				cont++;
+				int[] linha1525 = new int[linha.length];
+				for (int i = 0; i < linha.length; i++) {
+					linha1525[i] = Integer.parseInt(String.valueOf(linha[i]));
+				}
+				if (resultado14(linha1525)) {
+					lista = linha1525[0]+","+linha1525[1]+","+linha1525[2]+","+linha1525[3]+","+linha1525[4]+","+
+							linha1525[5]+","+linha1525[6]+","+linha1525[7]+","+linha1525[8]+","+linha1525[9]+","+
+							linha1525[10]+","+linha1525[11]+","+linha1525[12]+","+linha1525[13]+","+linha1525[14];
+					gravarArqSaiu.printf("%s%n", lista);
+				} else {
+					lista = linha1525[0]+","+linha1525[1]+","+linha1525[2]+","+linha1525[3]+","+linha1525[4]+","+
+							linha1525[5]+","+linha1525[6]+","+linha1525[7]+","+linha1525[8]+","+linha1525[9]+","+
+							linha1525[10]+","+linha1525[11]+","+linha1525[12]+","+linha1525[13]+","+linha1525[14];
+					gravarArqNaoSaiu.printf("%s%n", lista);
+				}
+				System.out.println("Contador: " + cont);
+			}
+			
+			arqSaiu.close();
+			gravarArqSaiu.close();
+			arqNaoSaiu.close();
+			gravarArqNaoSaiu.close();
+		} else {
+			System.out.println("### Arquivo [15_25.csv] nao encontrado... ###");
+		}
+	}
+	
+	@SuppressWarnings("deprecation")
+	public boolean resultado14(int[] linha1525) throws URISyntaxException, NumberFormatException, IOException {
+		boolean retorno = false;
+		int contador = 0;
+		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
+		if (Objects.nonNull(resultado)) {
+			Path caminho = Paths.get(resultado.toURI());
+			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
+			String[] linhaResultado;
+			while (Objects.nonNull((linhaResultado = csvReader.readNext()))) {
+				contador = 0;
+				int[] resultado1525 = new int[linhaResultado.length];
+				for (int i = 0; i < linhaResultado.length; i++) {
+					resultado1525[i] = Integer.parseInt(String.valueOf(linhaResultado[i]));
+				}
+
+				for (int i = 0; i < linha1525.length; i++) {
+					for (int j = 0; j < resultado1525.length; j++) {
+						if (linha1525[i] == resultado1525[j]) {
+							contador++;
+						}
+					}
+				}
+				
+				if (contador == NumeroEnum.QUATORZE.getValor()) {
+					retorno = true;
+					break;
+				}
+			}
+		} else {
+			System.out.println("### [Resultado.csv] Arquivo nao encontrado... ###");
+		}
+		
+		return retorno;
+	}
+	
+	@SuppressWarnings("deprecation")
+	public void retirarSaiu13() throws URISyntaxException, IOException, LotoException {
+		FileWriter arqSaiu = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources"
+				+ "\\quinze\\13-SAIU.csv");
+		PrintWriter gravarArqSaiu = new PrintWriter(arqSaiu);
+		FileWriter arqNaoSaiu = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources"
+				+ "\\quinze\\13-NAOSAIU.csv");
+		PrintWriter gravarArqNaoSaiu = new PrintWriter(arqNaoSaiu);
+		
+		int cont = 0;
+		String lista = null;
+		URL combinacao = Principal.class.getClassLoader().getResource("quinze\\15-NAOSAIU-CONC2022.csv");
+		if (Objects.nonNull(combinacao)) {
+			Path caminho = Paths.get(combinacao.toURI());
+			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
+			String[] linha;
+			while (Objects.nonNull((linha = csvReader.readNext()))) {
+				cont++;
+				int[] linha1525 = new int[linha.length];
+				for (int i = 0; i < linha.length; i++) {
+					linha1525[i] = Integer.parseInt(String.valueOf(linha[i]));
+				}
+				if (resultado13(linha1525)) {
+					lista = linha1525[0]+","+linha1525[1]+","+linha1525[2]+","+linha1525[3]+","+linha1525[4]+","+
+							linha1525[5]+","+linha1525[6]+","+linha1525[7]+","+linha1525[8]+","+linha1525[9]+","+
+							linha1525[10]+","+linha1525[11]+","+linha1525[12]+","+linha1525[13]+","+linha1525[14];
+					gravarArqSaiu.printf("%s%n", lista);
+				} else {
+					lista = linha1525[0]+","+linha1525[1]+","+linha1525[2]+","+linha1525[3]+","+linha1525[4]+","+
+							linha1525[5]+","+linha1525[6]+","+linha1525[7]+","+linha1525[8]+","+linha1525[9]+","+
+							linha1525[10]+","+linha1525[11]+","+linha1525[12]+","+linha1525[13]+","+linha1525[14];
+					gravarArqNaoSaiu.printf("%s%n", lista);
+				}
+				System.out.println("Contador: " + cont);
+			}
+			
+			arqSaiu.close();
+			gravarArqSaiu.close();
+			arqNaoSaiu.close();
+			gravarArqNaoSaiu.close();
+		} else {
+			System.out.println("### Arquivo [15_25.csv] nao encontrado... ###");
+		}
+	}
+	
+	@SuppressWarnings("deprecation")
+	public boolean resultado13(int[] linha1525) throws URISyntaxException, NumberFormatException, IOException {
+		boolean retorno = false;
+		int contador = 0;
+		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
+		if (Objects.nonNull(resultado)) {
+			Path caminho = Paths.get(resultado.toURI());
+			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
+			String[] linhaResultado;
+			while (Objects.nonNull((linhaResultado = csvReader.readNext()))) {
+				contador = 0;
+				int[] resultado1525 = new int[linhaResultado.length];
+				for (int i = 0; i < linhaResultado.length; i++) {
+					resultado1525[i] = Integer.parseInt(String.valueOf(linhaResultado[i]));
+				}
+
+				for (int i = 0; i < linha1525.length; i++) {
+					for (int j = 0; j < resultado1525.length; j++) {
+						if (linha1525[i] == resultado1525[j]) {
+							contador++;
+						}
+					}
+				}
+				
+				if (contador == NumeroEnum.TREZE.getValor()) {
 					retorno = true;
 					break;
 				}

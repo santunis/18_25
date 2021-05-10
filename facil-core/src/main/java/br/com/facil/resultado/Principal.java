@@ -112,6 +112,8 @@ public class Principal {
 //		
 		// gerar apostas ganhadoras.
 //		principal.analiseResultadoGanhador();
+		
+		principal.frequencia();
 
 		System.out.println("PRINCIPAL - FIM");
 	}
@@ -1993,6 +1995,45 @@ public class Principal {
 			System.out.println("### Arquivo DOIS nao encontrado... ###");
 		}
 
+	}
+	
+	@SuppressWarnings("deprecation")
+	public void frequencia() throws URISyntaxException, IOException, LotoException {
+		
+		RNP07 rnp07 = new RNP07();
+		
+		int cont = 0;
+		int saiu = 0;
+		int naosaiu = 0;
+		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
+		if (Objects.nonNull(resultado)) {
+			Path caminho = Paths.get(resultado.toURI());
+			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
+			String[] linhaResultado;
+			while (Objects.nonNull((linhaResultado = csvReader.readNext()))) {
+				cont++;
+				saiu = 0;
+				
+				int[] linha = new int[linhaResultado.length];
+				for (int i = 0; i < linhaResultado.length; i++) {
+					linha[i] = Integer.parseInt(String.valueOf(linhaResultado[i]));
+				}
+				
+				if (rnp07.aplicar(linha)) {
+					saiu++;
+				}
+				
+				if (saiu == NumeroEnum.UM.getValor()) {
+					naosaiu = 0;
+				} else {
+					naosaiu++;
+				}
+			}
+		} else {
+			System.out.println("### [resultado.csv] - Arquivo nao encontrado... ###");
+		}
+		System.out.println("Linha" + cont + ": " + naosaiu);
+		System.out.println("Linha" + cont + ":");
 	}
 	
 	

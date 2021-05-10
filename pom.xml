@@ -23,7 +23,17 @@
         <opencsv.version>4.4</opencsv.version>
         <jackson.databind.version>2.11.2</jackson.databind.version>
         <jackson.dataformat.csv.version>2.11.2</jackson.dataformat.csv.version>
+        
+        <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
         <wildfly-jsf.version>23.0.2.Final</wildfly-jsf.version>
+        <primefaces.version>8.0</primefaces.version>
+        <omnifaces.version>3.6</omnifaces.version>
+        <log4j.version>1.2.17</log4j.version>
+        <commons-io.version>2.6</commons-io.version>
+        <commons-codec.version>1.14</commons-codec.version>
+        <commons-validator.version>1.6</commons-validator.version>
+        <lombok.version>1.18.12</lombok.version>
+        
 	</properties>
 	
 	<dependencies>
@@ -61,10 +71,59 @@
 			</dependency>
 			
 			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>${javax.servlet-api.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			
+			<dependency>
 			    <groupId>org.wildfly</groupId>
 			    <artifactId>wildfly-jsf</artifactId>
 			    <version>${wildfly-jsf.version}</version>
 			    <scope>provided</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.primefaces</groupId>
+				<artifactId>primefaces</artifactId>
+				<version>${primefaces.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.omnifaces</groupId>
+				<artifactId>omnifaces</artifactId>
+				<version>${omnifaces.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${commons-io.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>${commons-codec.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>commons-validator</groupId>
+				<artifactId>commons-validator</artifactId>
+				<version>${commons-validator.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

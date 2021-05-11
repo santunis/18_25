@@ -5,10 +5,4 @@
 		http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd"
 	version="2.3">
 
-	<lifecycle>
-		<phase-listener>    		      
-      		br.com.facil.component.dialog.DialogListener
-		</phase-listener>
-    </lifecycle>
-
 </faces-config>

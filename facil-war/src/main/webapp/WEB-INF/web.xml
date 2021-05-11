@@ -6,22 +6,10 @@
 	
 	<display-name>facil-war</display-name>
 	
-	<!-- Titulo do aplicativo -->
-  	<context-param>
-		<param-name>appTitle</param-name>
-		<param-value>Teste</param-value>
-  	</context-param>
-	
 	<!-- Pagina inicial -->
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
-	
-	<!-- THEMES -->
-	<context-param>
-		<param-name>primefaces.THEME</param-name>
-		<param-value>#{configBean.skinTheme}</param-value> 
-	</context-param>
 	
 	<!-- Configuracoes do JSF/Facelets -->
   	<context-param>

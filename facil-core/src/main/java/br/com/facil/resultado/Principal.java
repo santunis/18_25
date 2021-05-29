@@ -55,7 +55,7 @@ public class Principal {
 //		
 //		// gerar resultado RNP07
 //		principal.resultadoRNP07();
-//		principal.resultadoNumerosMenorQueDezRNP07();
+		principal.resultadoNumerosMenorQueDezRNP07();
 //		
 //		// gerar resultado RNP08
 //		principal.resultadoRNP08();
@@ -113,7 +113,7 @@ public class Principal {
 		// gerar apostas ganhadoras.
 //		principal.analiseResultadoGanhador();
 		
-		principal.frequencia();
+//		principal.frequencia();
 
 		System.out.println("PRINCIPAL - FIM");
 	}
@@ -187,17 +187,17 @@ public class Principal {
 			}
 			
 			System.out.println("TOTAL DE LINHAS NO ARQUIVO-3268760: " + contTotalLinhaArquivo);
-			System.out.println("TOTAL RNP02: " + cont02);
-			System.out.println("TOTAL RNP03: " + cont03);
-			System.out.println("TOTAL RNP04: " + cont04);
-			System.out.println("TOTAL RNP05: " + cont05);
-			System.out.println("TOTAL RNP06: " + cont06);
-			System.out.println("TOTAL RNP07: " + cont07);
-			System.out.println("TOTAL RNP08: " + cont08);
-			System.out.println("TOTAL RNP09: " + cont09);
-			System.out.println("TOTAL RNP10: " + cont10);
-			System.out.println("TOTAL RNP11: " + cont11);
-			System.out.println("TOTAL RNP12: " + cont12);
+			System.out.println("TOTAL RNP02-66: " + cont02);
+			System.out.println("TOTAL RNP03-2860: " + cont03);
+			System.out.println("TOTAL RNP04-38610: " + cont04);
+			System.out.println("TOTAL RNP05-226512: " + cont05);
+			System.out.println("TOTAL RNP06-660660: " + cont06);
+			System.out.println("TOTAL RNP07-1019304: " + cont07);
+			System.out.println("TOTAL RNP08-849420: " + cont08);
+			System.out.println("TOTAL RNP09-377520: " + cont09);
+			System.out.println("TOTAL RNP10-84942: " + cont10);
+			System.out.println("TOTAL RNP11-8580: " + cont11);
+			System.out.println("TOTAL RNP12-286: " + cont12);
 			Double total = (double) (contTotalLinhaArquivo * 100)/3268760;
 			System.out.println("TOTAL %: " + total);
 			

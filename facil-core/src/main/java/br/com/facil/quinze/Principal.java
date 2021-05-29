@@ -14,6 +14,7 @@ import java.util.Objects;
 
 import com.opencsv.CSVReader;
 
+import br.com.facil.combinacoes.Combinacoes1525;
 import br.com.facil.enumerador.NumeroEnum;
 import br.com.facil.excecao.LotoException;
 import br.com.facil.regras.pares.RNP07;
@@ -24,21 +25,58 @@ public class Principal {
 	public static void main(String[] args) throws URISyntaxException, IOException, LotoException {
 
 		Principal principal = new Principal();
-//		principal.retirarSaiu15();
+		Combinacoes1525 combinacoes1525 = new Combinacoes1525();
 
-		List<String> listaDados = principal.buscarDados();
-		System.out.println("Total: " + listaDados.size());
-		List<String> listaDadosRNP07 = principal.buscarRNP07(listaDados);
-		System.out.println("Total: " + listaDadosRNP07.size());
-		List<String> listaDadosRNP08 = principal.buscarRNP08(listaDados);
-		System.out.println("Total: " + listaDadosRNP08.size());
-		principal.retirarSaiu14(listaDadosRNP08);
+		List<String> listaCombinacoes1525 = combinacoes1525.gerar1525();
+		System.out.println("Lista Combinacoes 1525: " + listaCombinacoes1525.size());
+		principal.saiu(listaCombinacoes1525);
+
+//		List<String> listaCombinacoesRNP02 = combinacoes1525.gerar1525RNP02();
+//		System.out.println("Lista Combinacoes RNP02: " + listaCombinacoesRNP02.size());
+//		principal.saiu(listaCombinacoesRNP02);
+//
+//		List<String> listaCombinacoesRNP03 = combinacoes1525.gerar1525RNP03();
+//		System.out.println("Lista Combinacoes RNP03: " + listaCombinacoesRNP03.size());
+//		principal.saiu(listaCombinacoesRNP03);
+//
+//		List<String> listaCombinacoesRNP04 = combinacoes1525.gerar1525RNP04();
+//		System.out.println("Lista Combinacoes RNP04: " + listaCombinacoesRNP04.size());
+//		principal.saiu(listaCombinacoesRNP04);
+//
+//		List<String> listaCombinacoesRNP05 = combinacoes1525.gerar1525RNP05();
+//		System.out.println("Lista Combinacoes RNP05: " + listaCombinacoesRNP05.size());
+//		principal.saiu(listaCombinacoesRNP05);
+//
+//		List<String> listaCombinacoesRNP06 = combinacoes1525.gerar1525RNP06();
+//		System.out.println("Lista Combinacoes RNP06: " + listaCombinacoesRNP06.size());
+//		principal.saiu(listaCombinacoesRNP06);
+//
+//		List<String> listaCombinacoesRNP07 = combinacoes1525.gerar1525RNP07();
+//		System.out.println("Lista Combinacoes RNP07: " + listaCombinacoesRNP07.size());
+//		principal.saiu(listaCombinacoesRNP07);
+//
+//		List<String> listaCombinacoesRNP08 = combinacoes1525.gerar1525RNP08();
+//		System.out.println("Lista Combinacoes RNP08: " + listaCombinacoesRNP08.size());
+//		principal.saiu(listaCombinacoesRNP08);
+//
+//		List<String> listaCombinacoesRNP09 = combinacoes1525.gerar1525RNP09();
+//		System.out.println("Lista Combinacoes RNP09: " + listaCombinacoesRNP09.size());
+//		principal.saiu(listaCombinacoesRNP09);
+
+//		principal.retirarSaiu15();
+//		List<String> listaDados = principal.buscarDados();
+//		System.out.println("Total: " + listaDados.size());
+//		List<String> listaDadosRNP07 = principal.buscarRNP07(listaDados);
+//		System.out.println("Total: " + listaDadosRNP07.size());
+//		List<String> listaDadosRNP08 = principal.buscarRNP08(listaDados);
+//		System.out.println("Total: " + listaDadosRNP08.size());
+//		principal.retirarSaiu14(listaDadosRNP08);
 
 //		principal.retirarSaiu13();
 //		principal.maisSaiu1525RNP07();
 
 	}
-	
+
 	@SuppressWarnings("deprecation")
 	public List<String> buscarDados() throws URISyntaxException, IOException, LotoException {
 		List<String> listaBuscarDados = new ArrayList<String>();
@@ -49,27 +87,29 @@ public class Principal {
 			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
 			String[] linha1525;
 			while (Objects.nonNull((linha1525 = csvReader.readNext()))) {
-				lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + "," + linha1525[3] + ","
-						+ linha1525[4] + "," + linha1525[5] + "," + linha1525[6] + "," + linha1525[7] + ","
-						+ linha1525[8] + "," + linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-						+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
+				lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + "," + linha1525[3] + "," + linha1525[4]
+						+ "," + linha1525[5] + "," + linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
+						+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + "," + linha1525[12] + ","
+						+ linha1525[13] + "," + linha1525[14];
 				listaBuscarDados.add(lista);
 			}
 		} else {
 			System.out.println("### Arquivo [15_25.csv] nao encontrado... ###");
 		}
-		
+
 		return listaBuscarDados;
 	}
 
 	@SuppressWarnings("deprecation")
 	public void retirarSaiu15() throws URISyntaxException, IOException, LotoException {
 		FileWriter arqSaiu = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources"
-				+ "\\quinze\\15_25-NAOSAIU.csv");
+				+ "\\combinacoes\\15_25\\15_25-RNP07\\15_25-RNP07_QUATRO-170856-RETIRA14.csv");
 		PrintWriter gravarArqSaiu = new PrintWriter(arqSaiu);
 
+		int cont = 0;
 		String lista = null;
-		URL combinacao = Principal.class.getClassLoader().getResource("combinacoes\\15_25\\15_25.csv");
+		URL combinacao = Principal.class.getClassLoader()
+				.getResource("combinacoes\\15_25\\15_25-RNP07\\15_25-RNP07_QUATRO-170856-RETIRA15.csv");
 		if (Objects.nonNull(combinacao)) {
 			Path caminho = Paths.get(combinacao.toURI());
 			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
@@ -86,6 +126,7 @@ public class Principal {
 							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
 					gravarArqSaiu.printf("%s%n", lista);
 				}
+				System.out.println("Contador: " + cont++);
 			}
 
 			arqSaiu.close();
@@ -119,7 +160,7 @@ public class Principal {
 					}
 				}
 
-				if (contador == NumeroEnum.QUINZE.getValor()) {
+				if (contador == NumeroEnum.QUATORZE.getValor()) {
 					retorno = true;
 					break;
 				}
@@ -130,61 +171,65 @@ public class Principal {
 
 		return retorno;
 	}
-	
+
 	public List<String> buscarRNP07(List<String> listaDados) throws URISyntaxException, IOException, LotoException {
 		List<String> listaBuscarRNP07 = new ArrayList<String>();
-		
+
 		RNP07 rnp07 = new RNP07();
 		for (String lista15 : listaDados) {
 			String lista = null;
 			String[] linha15 = lista15.split(",");
-			
+
 			int[] linha1525 = new int[linha15.length];
 			for (int i = 0; i < linha15.length; i++) {
 				linha1525[i] = Integer.parseInt(String.valueOf(linha15[i]));
 			}
-			
+
 			if (rnp07.aplicar(linha1525)) {
-				lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + "," + linha1525[3] + "," + linha1525[4] + ","
-						+ linha1525[5] + "," + linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + "," + linha1525[9] + ","
-						+ linha1525[10] + "," + linha1525[11] + "," + linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
+				lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + "," + linha1525[3] + "," + linha1525[4]
+						+ "," + linha1525[5] + "," + linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
+						+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + "," + linha1525[12] + ","
+						+ linha1525[13] + "," + linha1525[14];
 				listaBuscarRNP07.add(lista);
 			}
 		}
-		
+
 		return listaBuscarRNP07;
 	}
-	
+
 	public List<String> buscarRNP08(List<String> listaDados) throws URISyntaxException, IOException, LotoException {
 		List<String> listaBuscarRNP08 = new ArrayList<String>();
-		
+
 		RNP08 rnp08 = new RNP08();
 		for (String lista15 : listaDados) {
 			String lista = null;
 			String[] linha15 = lista15.split(",");
-			
+
 			int[] linha1525 = new int[linha15.length];
 			for (int i = 0; i < linha15.length; i++) {
 				linha1525[i] = Integer.parseInt(String.valueOf(linha15[i]));
 			}
-			
+
 			if (rnp08.aplicar(linha1525)) {
-				lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + "," + linha1525[3] + "," + linha1525[4] + ","
-						+ linha1525[5] + "," + linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + "," + linha1525[9] + ","
-						+ linha1525[10] + "," + linha1525[11] + "," + linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
+				lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + "," + linha1525[3] + "," + linha1525[4]
+						+ "," + linha1525[5] + "," + linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
+						+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + "," + linha1525[12] + ","
+						+ linha1525[13] + "," + linha1525[14];
 				listaBuscarRNP08.add(lista);
 			}
 		}
-		
+
 		return listaBuscarRNP08;
 	}
 
 	public void retirarSaiu14(List<String> listaDados) throws URISyntaxException, IOException, LotoException {
-		FileWriter arqSaiu = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\quinze\\14-SAIU-RNP08.csv");
+		FileWriter arqSaiu = new FileWriter(
+				"D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\quinze\\14-SAIU-RNP08.csv");
 		PrintWriter gravarArqSaiu = new PrintWriter(arqSaiu);
-		FileWriter arqNaoSaiu = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\quinze\\14-NAOSAIU-RNP08.csv");
+		FileWriter arqNaoSaiu = new FileWriter(
+				"D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\quinze\\14-NAOSAIU-RNP08.csv");
 		PrintWriter gravarArqNaoSaiu = new PrintWriter(arqNaoSaiu);
-		
+
 		int cont = 0;
 		String lista = null;
 		for (String lista15 : listaDados) {
@@ -195,21 +240,21 @@ public class Principal {
 				linha1525[i] = Integer.parseInt(String.valueOf(linha15[i]));
 			}
 			if (resultado14(linha1525)) {
-				lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + "," + linha1525[3] + ","
-						+ linha1525[4] + "," + linha1525[5] + "," + linha1525[6] + "," + linha1525[7] + ","
-						+ linha1525[8] + "," + linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-						+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
+				lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + "," + linha1525[3] + "," + linha1525[4]
+						+ "," + linha1525[5] + "," + linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
+						+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + "," + linha1525[12] + ","
+						+ linha1525[13] + "," + linha1525[14];
 				gravarArqSaiu.printf("%s%n", lista);
 			} else {
-				lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + "," + linha1525[3] + ","
-						+ linha1525[4] + "," + linha1525[5] + "," + linha1525[6] + "," + linha1525[7] + ","
-						+ linha1525[8] + "," + linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-						+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
+				lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + "," + linha1525[3] + "," + linha1525[4]
+						+ "," + linha1525[5] + "," + linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
+						+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + "," + linha1525[12] + ","
+						+ linha1525[13] + "," + linha1525[14];
 				gravarArqNaoSaiu.printf("%s%n", lista);
 			}
 			System.out.println("Contador: " + cont);
 		}
-		
+
 		arqSaiu.close();
 		gravarArqSaiu.close();
 		arqNaoSaiu.close();
@@ -425,5 +470,42 @@ public class Principal {
 		} else {
 			System.out.println("### [Resultado1825SAIU.csv] Arquivo nao encontrado... ###");
 		}
+	}
+
+	public void saiu(List<String> listaCombinacoes1525) throws URISyntaxException, IOException, LotoException {
+
+		int contquatorze = 0;
+		int cont = 0;
+		int[] linhaJogo = { 3, 4, 5, 8, 9, 10, 11, 12, 16, 17, 19, 20, 21, 22, 25 };
+
+		for (String lista15 : listaCombinacoes1525) {
+			cont++;
+			String[] linha15 = lista15.split(",");
+
+			int[] jogo = new int[linha15.length];
+			for (int i = 0; i < linha15.length; i++) {
+				jogo[i] = Integer.parseInt(String.valueOf(linha15[i]));
+			}
+
+			if (comparaNumerosSaiu(linhaJogo, jogo) == NumeroEnum.TREZE.getValor()) {
+				contquatorze++;
+			}
+		}
+
+		System.out.println("TREZE: " + contquatorze);
+		System.out.println("Contador: " + cont);
+	}
+
+	public static int comparaNumerosSaiu(int[] linhaJogo, int[] jogo) {
+		int contJogo = 0;
+		for (int i = 0; i < jogo.length; i++) {
+			for (int j = 0; j < linhaJogo.length; j++) {
+				if (jogo[i] == linhaJogo[j]) {
+					contJogo++;
+				}
+			}
+		}
+
+		return contJogo;
 	}
 }

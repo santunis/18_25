@@ -23,11 +23,11 @@ public class Fechamento14 {
 	@SuppressWarnings({ "deprecation" })
 	public static void main(String[] args) throws URISyntaxException, IOException, LotoException  {
 		
-		FileWriter arq = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources"
-				+ "\\combinacoes\\20_25-MAISSAIU-30VEZES-FECHAMENTO14.csv");
-		PrintWriter gravarArq = new PrintWriter(arq);
+//		FileWriter arq = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources"
+//				+ "\\combinacoes\\15_25\\15_25-RNP07\\15_25-RNP07_QUATRO-170856-RETIRA14-FECHAMENTO11.csv");
+//		PrintWriter gravarArq = new PrintWriter(arq);
 		
-		URL combinacoes = Fechamento14.class.getClassLoader().getResource("combinacoes\\20_25-MAISSAIU-30VEZES.csv");
+		URL combinacoes = Fechamento14.class.getClassLoader().getResource("combinacoes\\15_25\\15_25-RNP05\\15_25-RNP05_QUATRO-33600.csv");
 		List<String[]> listaNumeros = new ArrayList<String[]>();
 		int contCombinacoes = 0;
 		int contFechamento = 0;
@@ -57,7 +57,7 @@ public class Fechamento14 {
     					saida[5] + "," + saida[6] + "," + saida[7] + "," + saida[8] + "," + saida[9] + "," + 
     					saida[10] + "," + saida[11] + "," + saida[12] + "," + saida[13] + "," + saida[14];
     			
-    			gravarArq.printf("%s%n", lista);
+//    			gravarArq.printf("%s%n", lista);
     			
     			contFechamento++;
 //    			System.out.println(contFechamento + " - " + 
@@ -70,8 +70,8 @@ public class Fechamento14 {
             System.out.println("Numero de Combinacoes: " + contCombinacoes);
             System.out.println("Numero  de Fechamentos: " + contFechamento);
             
-            arq.close();
-            gravarArq.close();
+//            arq.close();
+//            gravarArq.close();
 		} else {
 			System.out.println("### Arquivo nao encontrado... ###");
 		}

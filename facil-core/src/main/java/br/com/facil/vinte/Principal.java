@@ -20,44 +20,35 @@ import br.com.facil.excecao.LotoException;
 public class Principal {
 
 	public static void main(String[] args) throws URISyntaxException, IOException, LotoException {
-
-		
 		Principal principal = new Principal();
-//		principal.maisSaiu2025();
-		principal.gerar2025();
+		Combinacoes2025 combinacoes2025 = new Combinacoes2025();
+		List<String> listaCombinacoes2025 = combinacoes2025.gerar2025();
+		
+		principal.maisSaiu15(listaCombinacoes2025);
+//		principal.gerar2025();
 
 	}
 	
-	@SuppressWarnings("deprecation")
-	public void maisSaiu2025() throws URISyntaxException, IOException, LotoException {
+	public void maisSaiu15(List<String> lista) throws URISyntaxException, IOException, LotoException {
 		
-		FileWriter arqSaiu = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources"
-				+ "\\combinacoes\\20_25-MAISSAIU.csv");
+		FileWriter arqSaiu = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\vinte\\principal\\20_25-MAISSAIU.csv");
 		PrintWriter gravarArqSaiu = new PrintWriter(arqSaiu);
 		
-		int cont = 0;
 		int quinze = 0;
-		URL combinacao = Principal.class.getClassLoader().getResource("combinacoes\\20_25.csv");
-		if (Objects.nonNull(combinacao)) {
+		for (String lista20 : lista) {
+			String[] linha20 = lista20.split(",");
 			
-			Path caminho = Paths.get(combinacao.toURI());
-			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
-			String[] linha;
-			while (Objects.nonNull((linha = csvReader.readNext()))) {
-				quinze = 0;
-				int[] linha2025 = new int[linha.length];
-				for (int i = 0; i < linha.length; i++) {
-					linha2025[i] = Integer.parseInt(String.valueOf(linha[i]));
-				}
-				compararResultado(gravarArqSaiu, linha2025, quinze);
-				System.out.println(cont++);
+			quinze = 0;
+			int[] linha2025 = new int[linha20.length];
+			for (int i = 0; i < linha20.length; i++) {
+				linha2025[i] = Integer.parseInt(String.valueOf(linha20[i]));
 			}
 			
-			arqSaiu.close();
-			gravarArqSaiu.close();
-		} else {
-			System.out.println("### Arquivo [20_25.csv] nao encontrado... ###");
+			compararResultado(gravarArqSaiu, linha2025, quinze);
 		}
+		
+		arqSaiu.close();
+		gravarArqSaiu.close();
 	}
 	
 	@SuppressWarnings({ "deprecation" })
@@ -104,8 +95,7 @@ public class Principal {
 	
 	public void gerar2025() throws URISyntaxException, IOException, LotoException {
 		Combinacoes2025 combinacoes2025 = new Combinacoes2025();
-		FileWriter arqSaiu = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources"
-				+ "\\combinacoes\\20_25-MAISSAIU-30VEZES.csv");
+		FileWriter arqSaiu = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\20_25-MAISSAIU-30VEZES.csv");
 		PrintWriter gravarArqSaiu = new PrintWriter(arqSaiu);
 		
 		List<String> lista2025 = combinacoes2025.gerar2025();

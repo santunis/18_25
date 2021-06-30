@@ -18,70 +18,161 @@ import br.com.facil.combinacoes.Combinacoes1525;
 import br.com.facil.enumerador.NumeroEnum;
 import br.com.facil.excecao.LotoException;
 
-public class PrincipalRNP05 {
+public class PrincipalRNP08 {
 
 	public static void main(String[] args) throws URISyntaxException, IOException, LotoException {
-		PrincipalRNP05 principalRNP05 = new PrincipalRNP05();
+		PrincipalRNP08 principalRNP08 = new PrincipalRNP08();
 		Combinacoes1525 combinacoes1525 = new Combinacoes1525();
-		List<String> listaCombinacoesRNP05 = combinacoes1525.gerar1525RNP05();
-		System.out.println("Lista Combinacoes RNP05: " + listaCombinacoesRNP05.size());
-//		principalRNP05.saiu(listaCombinacoesRNP05);
+//			JaSaiu jaSaiu = new JaSaiu();
 
-//		List<String> listaDois = principalRNP05.resultadoNumerosMenorQueDezRNP05DOIS(listaCombinacoesRNP05);
-//		System.out.println("Lista Combinacoes DOIS: " + listaDois.size());
-//		principalRNP05.saiu(listaDois);
+		List<String> listaCombinacoesRNP08 = combinacoes1525.gerar1525RNP08();
+		System.out.println("Lista Combinacoes RNP08: " + listaCombinacoesRNP08.size());
 
-//		List<String> listaTres = principalRNP05.resultadoNumerosMenorQueDezRNP05TRES(listaCombinacoesRNP05);
-//		System.out.println("Lista Combinacoes TRES: " + listaTres.size());
-//		principalRNP05.saiu(listaTres);
+//			principalRNP07.gravaPraMim(listaFechamento, "listaFechamento.csv");
+//			System.out.println("Lista Combinacoes RNP07: " + listaCombinacoesRNP07.size());
+//			principalRNP07.saiu(listaCombinacoesRNP07);
+//			
+		// ZERO
+//			List<String> listaZero = principalRNP07.resultadoNumerosMenorQueDezRNP05ZERO(listaCombinacoesRNP07);
+//			System.out.println("Lista Combinacoes ZERO: " + listaZero.size());
+//			principalRNP07.saiu(listaZero);
+//			
+		// UM
+//			List<String> listaUm = principalRNP07.resultadoNumerosMenorQueDezRNP05UM(listaCombinacoesRNP07);
+//			System.out.println("Lista Combinacoes UM: " + listaUm.size());
+//			principalRNP07.saiu(listaUm);
+//			
+		// DOIS
+//			List<String> listaDois = principalRNP07.resultadoNumerosMenorQueDezRNP05DOIS(listaCombinacoesRNP07);
+//			System.out.println("Lista Combinacoes DOIS: " + listaDois.size());
+//			principalRNP07.saiu(listaDois);
+		//
+		// TRES
+//			List<String> listaTres = principalRNP07.resultadoNumerosMenorQueDezRNP05TRES(listaCombinacoesRNP07);
+//			System.out.println("Lista Combinacoes TRES: " + listaTres.size());
+//			principalRNP07.saiu(listaTres);
 
-//		List<String> listaQuatro = principalRNP05.resultadoNumerosMenorQueDezRNP05QUATRO(listaCombinacoesRNP05);
-//		System.out.println("Lista Combinacoes QUATRO: " + listaQuatro.size());
-//		List<String> listaFechamento = principalRNP05.fechamento14(listaQuatro);
-//		System.out.println("Lista Fechamento QUATRO: " + listaFechamento.size());
-//		principalRNP05.saiu(listaFechamento);
+		// QUATRO
+		List<String> listaQuatro = principalRNP08.resultadoNumerosMenorQueDezRNP05QUATRO(listaCombinacoesRNP08);
+		System.out.println("Lista Combinacoes QUATRO: " + listaQuatro.size());
 
-		List<String> listaCinco = principalRNP05.resultadoNumerosMenorQueDezRNP05CINCO(listaCombinacoesRNP05);
-		System.out.println("Lista Combinacoes CINCO: " + listaCinco.size());
-		principalRNP05.maisSaiuONZE(listaCinco);
-		
-//		principalRNP05.saiu(listaCinco);
-//		List<String> listaFechamentoCinco = principalRNP05.fechamento14(listaCinco);
-//		System.out.println("Lista Fechamento CINCO: " + listaFechamentoCinco.size());
-//		principalRNP05.saiu(listaFechamentoCinco);
+		// maisSaiu
+//			principalRNP07.maisSaiu(listaQuatro);
 
-//		List<String> listaSeis = principalRNP05.resultadoNumerosMenorQueDezRNP05SEIS(listaCombinacoesRNP05);
-//		System.out.println("Lista Combinacoes SEIS: " + listaSeis.size());
-//		principalRNP05.saiu(listaSeis);
+		List<String> listaSemQuinze = principalRNP08.retirarSaiu15(listaQuatro);
+		System.out.println("Lista Combinacoes QUATRO SEM15: " + listaSemQuinze.size());
+		List<String> listaSemQuatorze = principalRNP08.retirarSaiu14(listaQuatro);
+		System.out.println("Lista Combinacoes QUATRO SEM14: " + listaSemQuatorze.size());
+//			jaSaiu.verificarLista(listaSemQuatorze);
+//			List<String> listaFechamento = principalRNP07.fechamento14(listaSemQuatorze);
+//			jaSaiu.verificarLista(listaFechamento);
+//			List<String> listaSemTreze = principalRNP07.retirarSaiu13(listaQuatro);
+//			System.out.println("Lista Combinacoes QUATRO SEM13: " + listaSemTreze.size());
+//			List<String> listaFechamento2 = principalRNP07.fechamento14(listaSemTreze);
+//			System.out.println("Lista Fechamento QUATRO: " + listaFechamento2.size());
+//			principalRNP07.gravaPraMim(listaFechamento2, "testando2.csv");
 
-//		List<String> listaSete = principalRNP05.resultadoNumerosMenorQueDezRNP05SETE(listaCombinacoesRNP05);
-//		System.out.println("Lista Combinacoes SETE: " + listaSete.size());
-//		principalRNP05.saiu(listaSete);
+		// CINCO
+//			List<String> listaCinco = principalRNP07.resultadoNumerosMenorQueDezRNP05CINCO(listaCombinacoesRNP07);
+//			System.out.println("Lista Combinacoes CINCO: " + listaCinco.size());
+//			principalRNP07.saiu(listaCinco);
+//			List<String> listaFechamentoCinco = principalRNP07.fechamento14(listaCinco);
+//			System.out.println("Lista Fechamento CINCO: " + listaFechamentoCinco.size());
+//			principalRNP07.saiu(listaFechamentoCinco);
+		//
+		// SEIS
+//			List<String> listaSeis = principalRNP07.resultadoNumerosMenorQueDezRNP05SEIS(listaCombinacoesRNP07);
+//			System.out.println("Lista Combinacoes SEIS: " + listaSeis.size());
+//			principalRNP07.saiu(listaSeis);
+		//
+		// SETE
+//			List<String> listaSete = principalRNP07.resultadoNumerosMenorQueDezRNP05SETE(listaCombinacoesRNP07);
+//			System.out.println("Lista Combinacoes SETE: " + listaSete.size());
+//			principalRNP07.saiu(listaSete);
+		//
+		// OITO
+//			List<String> listaOito = principalRNP07.resultadoNumerosMenorQueDezRNP05OITO(listaCombinacoesRNP07);
+//			System.out.println("Lista Combinacoes OITO: " + listaOito.size());
+//			principalRNP07.saiu(listaOito);
+		//
+		// NOVE
+//			List<String> listaNove = principalRNP07.resultadoNumerosMenorQueDezRNP05NOVE(listaCombinacoesRNP07);
+//			System.out.println("Lista Combinacoes NOVE: " + listaNove.size());
+//			principalRNP07.saiu(listaNove);
 
-//		List<String> listaOito = principalRNP05.resultadoNumerosMenorQueDezRNP05OITO(listaCombinacoesRNP05);
-//		System.out.println("Lista Combinacoes OITO: " + listaOito.size());
-//		principalRNP05.saiu(listaOito);
+//			List<String> listaRetirarSaiu15 = principalRNP05.retirarSaiu15(listaCombinacoesRNP05);
+//			System.out.println("Lista Retirar Saiu 15 e 14: " + listaRetirarSaiu15.size());
+//			
+//			List<String> listaSaiu13 = principalRNP07.retirarSaiu13(listaCombinacoesRNP07);
+//			System.out.println("Lista Saiu 13: " + listaSaiu13.size());
+//			
+//			principalRNP05.maisSaiu(listaCombinacoesRNP05);
+	}
 
-//		List<String> listaNove = principalRNP05.resultadoNumerosMenorQueDezRNP05NOVE(listaCombinacoesRNP05);
-//		System.out.println("Lista Combinacoes NOVE: " + listaNove.size());
-//		principalRNP05.saiu(listaNove);
+	public List<String> resultadoNumerosMenorQueDezRNP05ZERO(List<String> listaCombinacoesRNP05)
+			throws URISyntaxException, IOException, LotoException {
 
-//		List<String> listaSaiu15 = principalRNP05.retirarSaiu15(listaCinco);
-//		System.out.println("Lista Retirar Saiu 15: " + listaSaiu15.size());
+		List<String> listaResultadoNumerosMenorQueDezRNP05 = new ArrayList<String>();
 
-//		List<String> listaSaiu14 = principalRNP05.retirarSaiu14(listaCinco);
-//		System.out.println("Lista Retirar Saiu 14: " + listaSaiu14.size());
+		for (String lista15 : listaCombinacoesRNP05) {
+			int contlinha = 0;
+			String lista = null;
+			String[] linha15 = lista15.split(",");
 
-//		List<String> listaSaiu12 = principalRNP05.retirarSaiu12(listaSaiu15);
-//		System.out.println("Lista Saiu 12: " + listaSaiu12.size());
+			int[] linha1525 = new int[linha15.length];
+			for (int i = 0; i < linha15.length; i++) {
+				linha1525[i] = Integer.parseInt(String.valueOf(linha15[i]));
+			}
 
-//		List<String> listaSaiu13 = principalRNP05.retirarSaiu13(listaSaiu12);
-//		System.out.println("Lista Saiu 13: " + listaSaiu13.size());
+			for (int i = 0; i < linha1525.length; i++) {
+				if (linha1525[i] < NumeroEnum.DEZ.getValor()) {
+					contlinha++;
+				}
+			}
 
-//		List<String> listaFechamento = principalRNP05.fechamento14(listaSaiu13);
-//		principalRNP05.saiu(listaCombinacoesRNP05);
+			if (contlinha == NumeroEnum.ZERO.getValor()) {
+				lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + "," + linha1525[3] + "," + linha1525[4]
+						+ "," + linha1525[5] + "," + linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
+						+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + "," + linha1525[12] + ","
+						+ linha1525[13] + "," + linha1525[14];
+				listaResultadoNumerosMenorQueDezRNP05.add(lista);
+			}
+		}
 
-//		principalRNP05.maisSaiu(listaCombinacoesRNP05);
+		return listaResultadoNumerosMenorQueDezRNP05;
+	}
+
+	public List<String> resultadoNumerosMenorQueDezRNP05UM(List<String> listaCombinacoesRNP05)
+			throws URISyntaxException, IOException, LotoException {
+
+		List<String> listaResultadoNumerosMenorQueDezRNP05 = new ArrayList<String>();
+
+		for (String lista15 : listaCombinacoesRNP05) {
+			int contlinha = 0;
+			String lista = null;
+			String[] linha15 = lista15.split(",");
+
+			int[] linha1525 = new int[linha15.length];
+			for (int i = 0; i < linha15.length; i++) {
+				linha1525[i] = Integer.parseInt(String.valueOf(linha15[i]));
+			}
+
+			for (int i = 0; i < linha1525.length; i++) {
+				if (linha1525[i] < NumeroEnum.DEZ.getValor()) {
+					contlinha++;
+				}
+			}
+
+			if (contlinha == NumeroEnum.UM.getValor()) {
+				lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + "," + linha1525[3] + "," + linha1525[4]
+						+ "," + linha1525[5] + "," + linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
+						+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + "," + linha1525[12] + ","
+						+ linha1525[13] + "," + linha1525[14];
+				listaResultadoNumerosMenorQueDezRNP05.add(lista);
+			}
+		}
+
+		return listaResultadoNumerosMenorQueDezRNP05;
 	}
 
 	public List<String> resultadoNumerosMenorQueDezRNP05DOIS(List<String> listaCombinacoesRNP05)
@@ -352,7 +443,7 @@ public class PrincipalRNP05 {
 
 		List<String[]> listaNumeros = new ArrayList<String[]>();
 		int contCombinacoes = 0;
-//		int contFechamento = 0;
+//			int contFechamento = 0;
 		for (String lista15 : lista) {
 			String[] linha15 = lista15.split(",");
 
@@ -407,7 +498,7 @@ public class PrincipalRNP05 {
 				}
 			}
 
-			if (contJogo < NumeroEnum.QUATORZE.getValor()) {
+			if (contJogo < NumeroEnum.ONZE.getValor()) {
 				retorno = true;
 			} else {
 				retorno = false;
@@ -420,13 +511,13 @@ public class PrincipalRNP05 {
 
 	@SuppressWarnings("deprecation")
 	public void saiu(List<String> lista) throws URISyntaxException, IOException, LotoException {
-//		int contLinha = 0;
-//		int contTotal = 0;
-//		int contonze = 0;
-//		int contdoze = 0;
-//		int conttreze = 0;
+//			int contLinha = 0;
+//			int contTotal = 0;
+//			int contonze = 0;
+//			int contdoze = 0;
+//			int conttreze = 0;
 		int contquatorze = 0;
-//		int contquinze = 0;
+		int contquinze = 0;
 
 		for (String lista15 : lista) {
 			String[] linha15 = lista15.split(",");
@@ -436,45 +527,41 @@ public class PrincipalRNP05 {
 				jogo[i] = Integer.parseInt(String.valueOf(linha15[i]));
 			}
 
-			URL combinacoes = PrincipalRNP05.class.getClassLoader().getResource("hoje.csv");
+			URL combinacoes = PrincipalRNP05.class.getClassLoader().getResource("resultado.csv");
 			if (Objects.nonNull(combinacoes)) {
 				Path caminho = Paths.get(combinacoes.toURI());
 				CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
 
 				String[] linhaCombinacoes;
 				while (Objects.nonNull((linhaCombinacoes = csvReader.readNext()))) {
-//					contLinha++;
-//					contTotal++;
-//					if (comparaNumerosSaiu(linhaCombinacoes, jogo) == NumeroEnum.ONZE.getValor()) {
-//						contonze++;
-//					}
+//						contLinha++;
+//						contTotal++;
+//						if (comparaNumerosSaiu(linhaCombinacoes, jogo) == NumeroEnum.ONZE.getValor()) {
+//							contonze++;
+//						}
 
-//					if (comparaNumerosSaiu(linhaCombinacoes, jogo) == NumeroEnum.DOZE.getValor()) {
-//						contdoze++;
-//					}
+//						if (comparaNumerosSaiu(linhaCombinacoes, jogo) == NumeroEnum.DOZE.getValor()) {
+//							contdoze++;
+//						}
 
-//					if (comparaNumerosSaiu(linhaCombinacoes, jogo) == NumeroEnum.TREZE.getValor()) {
-//						conttreze++;
-//					}
+//						if (comparaNumerosSaiu(linhaCombinacoes, jogo) == NumeroEnum.TREZE.getValor()) {
+//							conttreze++;
+//						}
 
 					if (comparaNumerosSaiu(linhaCombinacoes, jogo) == NumeroEnum.QUATORZE.getValor()) {
 						contquatorze++;
-//						System.out.println("Linha: " + contLinha);
 					}
 
-//					if (comparaNumerosSaiu(linhaCombinacoes, jogo) == NumeroEnum.QUINZE.getValor()) {
-//						contquinze++;
-//					}
+					if (comparaNumerosSaiu(linhaCombinacoes, jogo) == NumeroEnum.QUINZE.getValor()) {
+						contquinze++;
+					}
 				}
 
-//				System.out.println("ONZE: " + contonze);
-//				System.out.println("DOZE: " + contdoze);
-//				System.out.println("TREZE: " + conttreze);
-//				if (contquatorze > NumeroEnum.ZERO.getValor()) {
+//					System.out.println("ONZE: " + contonze);
+//					System.out.println("DOZE: " + contdoze);
+//					System.out.println("TREZE: " + conttreze);
 //					System.out.println("QUATROZE: " + contquatorze);
-//					contquatorze = 0;
-//				}
-//				System.out.println("QUINZE: " + contquinze);
+//					System.out.println("QUINZE: " + contquinze);
 
 			} else {
 				System.out.println("### Arquivo nao encontrado... ###");
@@ -482,6 +569,7 @@ public class PrincipalRNP05 {
 		}
 
 		System.out.println("QUATROZE: " + contquatorze);
+		System.out.println("QUINZE: " + contquinze);
 	}
 
 	public static int comparaNumerosSaiu(String[] linhaCombinacoes, int[] jogo) {
@@ -501,34 +589,86 @@ public class PrincipalRNP05 {
 			}
 		}
 
-//		if (contJogo == NumeroEnum.ONZE.getValor()) {
-//			retorno = NumeroEnum.ONZE.getValor();
-//		}
+//			if (contJogo == NumeroEnum.ONZE.getValor()) {
+//				retorno = NumeroEnum.ONZE.getValor();
+//			}
 
-//		if (contJogo == NumeroEnum.DOZE.getValor()) {
-//			retorno = NumeroEnum.DOZE.getValor();
-//		}
+//			if (contJogo == NumeroEnum.DOZE.getValor()) {
+//				retorno = NumeroEnum.DOZE.getValor();
+//			}
 
-//		if (contJogo == NumeroEnum.TREZE.getValor()) {
-//			retorno = NumeroEnum.TREZE.getValor();
-//		}
+//			if (contJogo == NumeroEnum.TREZE.getValor()) {
+//				retorno = NumeroEnum.TREZE.getValor();
+//			}
 
 		if (contJogo == NumeroEnum.QUATORZE.getValor()) {
 			retorno = NumeroEnum.QUATORZE.getValor();
 		}
 
-//		if (contJogo == NumeroEnum.QUINZE.getValor()) {
-//			retorno = NumeroEnum.QUINZE.getValor();
-//		}
+		if (contJogo == NumeroEnum.QUINZE.getValor()) {
+			retorno = NumeroEnum.QUINZE.getValor();
+		}
 
 		return retorno;
 	}
 
-	public List<String> retirarSaiu15(List<String> listaCombinacoesRNP05)
-			throws URISyntaxException, IOException, LotoException {
-		List<String> listaRNP05 = new ArrayList<String>();
-		for (String lista15 : listaCombinacoesRNP05) {
-			String lista = null;
+	@SuppressWarnings("deprecation")
+	public List<String> saiu14(List<String> lista) throws URISyntaxException, IOException, LotoException {
+		List<String> listaSaiu14 = new ArrayList<String>();
+		for (String lista15 : lista) {
+			String[] linha15 = lista15.split(",");
+
+			int[] jogo = new int[linha15.length];
+			for (int i = 0; i < linha15.length; i++) {
+				jogo[i] = Integer.parseInt(String.valueOf(linha15[i]));
+			}
+
+			URL combinacoes = PrincipalRNP07.class.getClassLoader().getResource("resultado.csv");
+			if (Objects.nonNull(combinacoes)) {
+				Path caminho = Paths.get(combinacoes.toURI());
+				CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
+
+				String[] linhaCombinacoes;
+				while (Objects.nonNull((linhaCombinacoes = csvReader.readNext()))) {
+					if (comparaNumerosSaiu14(linhaCombinacoes, jogo) != NumeroEnum.QUATORZE.getValor()) {
+						listaSaiu14.add(lista15);
+					}
+				}
+			} else {
+				System.out.println("### Arquivo nao encontrado... ###");
+			}
+		}
+
+		return listaSaiu14;
+	}
+
+	public static int comparaNumerosSaiu14(String[] linhaCombinacoes, int[] jogo) {
+
+		int retorno = 0;
+		int contJogo = 0;
+		int[] linhaCombinacoesInteiro = new int[linhaCombinacoes.length];
+		for (int i = 0; i < linhaCombinacoes.length; i++) {
+			linhaCombinacoesInteiro[i] = Integer.parseInt(String.valueOf(linhaCombinacoes[i]));
+		}
+
+		for (int i = 0; i < jogo.length; i++) {
+			for (int j = 0; j < linhaCombinacoesInteiro.length; j++) {
+				if (jogo[i] == linhaCombinacoesInteiro[j]) {
+					contJogo++;
+				}
+			}
+		}
+
+		if (contJogo == NumeroEnum.QUATORZE.getValor()) {
+			retorno = NumeroEnum.QUATORZE.getValor();
+		}
+
+		return retorno;
+	}
+
+	public List<String> retirarSaiu15(List<String> lista) throws URISyntaxException, IOException, LotoException {
+		List<String> listaRNP07 = new ArrayList<String>();
+		for (String lista15 : lista) {
 			String[] linha15 = lista15.split(",");
 
 			int[] linha1525 = new int[linha15.length];
@@ -536,23 +676,20 @@ public class PrincipalRNP05 {
 				linha1525[i] = Integer.parseInt(String.valueOf(linha15[i]));
 			}
 
-			if (!resultadoRNP0515(linha1525)) {
-				lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + "," + linha1525[3] + "," + linha1525[4]
-						+ "," + linha1525[5] + "," + linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-						+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + "," + linha1525[12] + ","
-						+ linha1525[13] + "," + linha1525[14];
-				listaRNP05.add(lista);
+			if (!resultadoRetirarSaiu15(linha1525)) {
+				listaRNP07.add(lista15);
 			}
 		}
 
-		return listaRNP05;
+		return listaRNP07;
 	}
 
 	@SuppressWarnings("deprecation")
-	public boolean resultadoRNP0515(int[] linha1525) throws URISyntaxException, NumberFormatException, IOException {
+	public boolean resultadoRetirarSaiu15(int[] linha1525)
+			throws URISyntaxException, NumberFormatException, IOException {
 		boolean retorno = false;
 		int contador = 0;
-		URL resultado = PrincipalRNP05.class.getClassLoader().getResource("resultado\\ResultadoRNP05.csv");
+		URL resultado = PrincipalRNP07.class.getClassLoader().getResource("resultado\\ResultadoRNP07.csv");
 		if (Objects.nonNull(resultado)) {
 			Path caminho = Paths.get(resultado.toURI());
 			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
@@ -584,11 +721,9 @@ public class PrincipalRNP05 {
 		return retorno;
 	}
 
-	public List<String> retirarSaiu14(List<String> listaCombinacoesRNP05)
-			throws URISyntaxException, IOException, LotoException {
-		List<String> listaRNP05 = new ArrayList<String>();
-		for (String lista15 : listaCombinacoesRNP05) {
-			String lista = null;
+	public List<String> retirarSaiu14(List<String> lista) throws URISyntaxException, IOException, LotoException {
+		List<String> listaRNP07 = new ArrayList<String>();
+		for (String lista15 : lista) {
 			String[] linha15 = lista15.split(",");
 
 			int[] linha1525 = new int[linha15.length];
@@ -596,23 +731,20 @@ public class PrincipalRNP05 {
 				linha1525[i] = Integer.parseInt(String.valueOf(linha15[i]));
 			}
 
-			if (!resultadoRNP0514(linha1525)) {
-				lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + "," + linha1525[3] + "," + linha1525[4]
-						+ "," + linha1525[5] + "," + linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-						+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + "," + linha1525[12] + ","
-						+ linha1525[13] + "," + linha1525[14];
-				listaRNP05.add(lista);
+			if (!resultadoRetirarSaiu14(linha1525)) {
+				listaRNP07.add(lista15);
 			}
 		}
 
-		return listaRNP05;
+		return listaRNP07;
 	}
 
 	@SuppressWarnings("deprecation")
-	public boolean resultadoRNP0514(int[] linha1525) throws URISyntaxException, NumberFormatException, IOException {
+	public boolean resultadoRetirarSaiu14(int[] linha1525)
+			throws URISyntaxException, NumberFormatException, IOException {
 		boolean retorno = false;
 		int contador = 0;
-		URL resultado = PrincipalRNP05.class.getClassLoader().getResource("resultado.csv");
+		URL resultado = PrincipalRNP07.class.getClassLoader().getResource("resultado.csv");
 		if (Objects.nonNull(resultado)) {
 			Path caminho = Paths.get(resultado.toURI());
 			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
@@ -638,7 +770,7 @@ public class PrincipalRNP05 {
 				}
 			}
 		} else {
-			System.out.println("### [ResultadoRNP05.csv] Arquivo nao encontrado... ###");
+			System.out.println("### [ResultadoRNP07.csv] Arquivo nao encontrado... ###");
 		}
 
 		return retorno;
@@ -648,7 +780,6 @@ public class PrincipalRNP05 {
 			throws URISyntaxException, IOException, LotoException {
 		List<String> listaRNP05 = new ArrayList<String>();
 		for (String lista15 : listaCombinacoes) {
-			String lista = null;
 			String[] linha15 = lista15.split(",");
 
 			int[] linha1525 = new int[linha15.length];
@@ -656,12 +787,8 @@ public class PrincipalRNP05 {
 				linha1525[i] = Integer.parseInt(String.valueOf(linha15[i]));
 			}
 
-			if (resultadoRNP0513(linha1525)) {
-				lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + "," + linha1525[3] + "," + linha1525[4]
-						+ "," + linha1525[5] + "," + linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-						+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + "," + linha1525[12] + ","
-						+ linha1525[13] + "," + linha1525[14];
-				listaRNP05.add(lista);
+			if (resultadoRetirarSaiu13(linha1525)) {
+				listaRNP05.add(lista15);
 			}
 		}
 
@@ -669,10 +796,11 @@ public class PrincipalRNP05 {
 	}
 
 	@SuppressWarnings("deprecation")
-	public boolean resultadoRNP0513(int[] linha1525) throws URISyntaxException, NumberFormatException, IOException {
+	public boolean resultadoRetirarSaiu13(int[] linha1525)
+			throws URISyntaxException, NumberFormatException, IOException {
 		boolean retorno = false;
 		int contador = 0;
-		URL resultado = PrincipalRNP05.class.getClassLoader().getResource("resultado\\ResultadoRNP05.csv");
+		URL resultado = PrincipalRNP07.class.getClassLoader().getResource("resultado.csv");
 		if (Objects.nonNull(resultado)) {
 			Path caminho = Paths.get(resultado.toURI());
 			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
@@ -698,67 +826,7 @@ public class PrincipalRNP05 {
 				}
 			}
 		} else {
-			System.out.println("### [ResultadoRNP05.csv] Arquivo nao encontrado... ###");
-		}
-
-		return retorno;
-	}
-
-	public List<String> retirarSaiu12(List<String> listaCombinacoes)
-			throws URISyntaxException, IOException, LotoException {
-		List<String> listaRNP05 = new ArrayList<String>();
-		for (String lista15 : listaCombinacoes) {
-			String lista = null;
-			String[] linha15 = lista15.split(",");
-
-			int[] linha1525 = new int[linha15.length];
-			for (int i = 0; i < linha15.length; i++) {
-				linha1525[i] = Integer.parseInt(String.valueOf(linha15[i]));
-			}
-
-			if (resultadoRNP0512(linha1525)) {
-				lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + "," + linha1525[3] + "," + linha1525[4]
-						+ "," + linha1525[5] + "," + linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-						+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + "," + linha1525[12] + ","
-						+ linha1525[13] + "," + linha1525[14];
-				listaRNP05.add(lista);
-			}
-		}
-
-		return listaRNP05;
-	}
-
-	@SuppressWarnings("deprecation")
-	public boolean resultadoRNP0512(int[] linha1525) throws URISyntaxException, NumberFormatException, IOException {
-		boolean retorno = false;
-		int contador = 0;
-		URL resultado = PrincipalRNP05.class.getClassLoader().getResource("resultado\\ResultadoRNP05.csv");
-		if (Objects.nonNull(resultado)) {
-			Path caminho = Paths.get(resultado.toURI());
-			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
-			String[] linhaResultado;
-			while (Objects.nonNull((linhaResultado = csvReader.readNext()))) {
-				contador = 0;
-				int[] resultado1525 = new int[linhaResultado.length];
-				for (int i = 0; i < linhaResultado.length; i++) {
-					resultado1525[i] = Integer.parseInt(String.valueOf(linhaResultado[i]));
-				}
-
-				for (int i = 0; i < linha1525.length; i++) {
-					for (int j = 0; j < resultado1525.length; j++) {
-						if (linha1525[i] == resultado1525[j]) {
-							contador++;
-						}
-					}
-				}
-
-				if (contador == NumeroEnum.DOZE.getValor()) {
-					retorno = true;
-					break;
-				}
-			}
-		} else {
-			System.out.println("### [ResultadoRNP05.csv] Arquivo nao encontrado... ###");
+			System.out.println("### [ResultadoRNP07.csv] Arquivo nao encontrado... ###");
 		}
 
 		return retorno;
@@ -766,7 +834,7 @@ public class PrincipalRNP05 {
 
 	public void maisSaiu(List<String> listaDados) throws URISyntaxException, IOException, LotoException {
 		FileWriter arqSaiu = new FileWriter(
-				"D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\quinze\\RNP05-MAISSAIU.csv");
+				"D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\quinze\\rnp07\\quatro\\RNP05-MAISSAIU.csv");
 		PrintWriter gravarArqSaiu = new PrintWriter(arqSaiu);
 
 		int cont = 0;
@@ -846,67 +914,17 @@ public class PrincipalRNP05 {
 			System.out.println("### [resultado.csv] Arquivo nao encontrado... ###");
 		}
 	}
-	
-	public void maisSaiuONZE(List<String> lista) throws URISyntaxException, IOException, LotoException {
-		
-		int cont = 0;
-		int onze = 0;
-		FileWriter arqSaiu = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\quinze\\rnp05\\maisSaiuONZE.csv");
-		PrintWriter gravarArqSaiu = new PrintWriter(arqSaiu);
 
+	public void gravaPraMim(List<String> lista, String nomeArquivo) throws IOException {
+		FileWriter arquivo = new FileWriter(
+				"D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\" + nomeArquivo);
+		PrintWriter gravarArquivo = new PrintWriter(arquivo);
 		for (String lista15 : lista) {
-			onze = 0;
-			String[] linha15 = lista15.split(",");
-			int[] linha1525 = new int[linha15.length];
-			for (int i = 0; i < linha15.length; i++) {
-				linha1525[i] = Integer.parseInt(String.valueOf(linha15[i]));
-			}
-			compararResultadoMaisSaiuOnze(gravarArqSaiu, linha1525, onze);
-			System.out.println(cont++);
+			gravarArquivo.printf("%s%n", lista15);
+			System.out.println(lista15);
 		}
-		arqSaiu.close();
-		gravarArqSaiu.close();
-	}
-
-	@SuppressWarnings({ "deprecation" })
-	public static void compararResultadoMaisSaiuOnze(PrintWriter gravarArqSaiu, int[] linha1525, int onze) throws URISyntaxException, NumberFormatException, IOException {
-
-		int contador = 0;
-		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
-		if (Objects.nonNull(resultado)) {
-
-			Path caminho = Paths.get(resultado.toURI());
-			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
-			String[] linhaResultado;
-			String lista = null;
-			while (Objects.nonNull((linhaResultado = csvReader.readNext()))) {
-
-				contador = 0;
-				int[] resultado1525 = new int[linhaResultado.length];
-				for (int i = 0; i < linhaResultado.length; i++) {
-					resultado1525[i] = Integer.parseInt(String.valueOf(linhaResultado[i]));
-				}
-
-				for (int i = 0; i < linha1525.length; i++) {
-					for (int j = 0; j < resultado1525.length; j++) {
-						if (linha1525[i] == resultado1525[j]) {
-							contador++;
-						}
-					}
-				}
-
-				if (contador == NumeroEnum.ONZE.getValor()) {
-					onze++;
-				}
-			}
-
-			lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + "," + linha1525[3] + "," + linha1525[4] + "," + 
-					linha1525[5] + "," + linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + "," + linha1525[9] + "," + 
-					linha1525[10] + "," + linha1525[11] + "," + linha1525[12] + "," + linha1525[13] + "," + linha1525[14] + "," + onze;
-			gravarArqSaiu.printf("%s%n", lista);
-		} else {
-			System.out.println("### [Resultado1825SAIU.csv] Arquivo nao encontrado... ###");
-		}
+		arquivo.close();
+		gravarArquivo.close();
 	}
 
 }

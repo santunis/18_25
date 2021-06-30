@@ -17,8 +17,11 @@ import com.opencsv.CSVReader;
 import br.com.facil.combinacoes.Combinacoes1525;
 import br.com.facil.enumerador.NumeroEnum;
 import br.com.facil.excecao.LotoException;
+import br.com.facil.regras.pares.RNP05;
+import br.com.facil.regras.pares.RNP06;
 import br.com.facil.regras.pares.RNP07;
 import br.com.facil.regras.pares.RNP08;
+import br.com.facil.regras.pares.RNP09;
 
 public class Principal {
 
@@ -29,8 +32,11 @@ public class Principal {
 
 		List<String> listaCombinacoes1525 = combinacoes1525.gerar1525();
 		System.out.println("Lista Combinacoes 1525: " + listaCombinacoes1525.size());
-		principal.saiu(listaCombinacoes1525);
-
+		principal.maisSaiuONZE(listaCombinacoes1525);
+		
+		
+//		principal.saiu(listaCombinacoes1525);
+//
 //		List<String> listaCombinacoesRNP02 = combinacoes1525.gerar1525RNP02();
 //		System.out.println("Lista Combinacoes RNP02: " + listaCombinacoesRNP02.size());
 //		principal.saiu(listaCombinacoesRNP02);
@@ -507,5 +513,173 @@ public class Principal {
 		}
 
 		return contJogo;
+	}
+	
+	public void teste(List<String> listaCombinacoes1525) throws LotoException, IOException {
+		List<String> listaMaisSai = new ArrayList<String>();
+		RNP05 rnp05 = new RNP05();
+		RNP06 rnp06 = new RNP06();
+		RNP07 rnp07 = new RNP07();
+		RNP08 rnp08 = new RNP08();
+		RNP09 rnp09 = new RNP09();
+		int contlinha = 0;
+		
+		FileWriter arqSaiu = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\quinze\\ListaMaisSai.csv");
+		PrintWriter gravarArqSaiu = new PrintWriter(arqSaiu);
+		for (String lista15 : listaCombinacoes1525) {
+			String[] linha15 = lista15.split(",");
+			contlinha = 0;
+			int[] jogo = new int[linha15.length];
+			for (int i = 0; i < linha15.length; i++) {
+				jogo[i] = Integer.parseInt(String.valueOf(linha15[i]));
+			}
+			
+			if (rnp05.aplicar(jogo)) {
+				for (int i = 0; i < jogo.length; i++) {
+					if (jogo[i] < NumeroEnum.DEZ.getValor()) {
+						contlinha++;
+					}
+				}
+				
+				if (contlinha == NumeroEnum.CINCO.getValor()) {
+					listaMaisSai.add(lista15);
+				} else if (contlinha == NumeroEnum.SEIS.getValor()) {
+					listaMaisSai.add(lista15);
+				}
+			}
+			
+			if (rnp06.aplicar(jogo)) {
+				for (int i = 0; i < jogo.length; i++) {
+					if (jogo[i] < NumeroEnum.DEZ.getValor()) {
+						contlinha++;
+					}
+				}
+				
+				if (contlinha == NumeroEnum.QUATRO.getValor()) {
+					listaMaisSai.add(lista15);
+				} else if (contlinha == NumeroEnum.CINCO.getValor()) {
+					listaMaisSai.add(lista15);
+				} else if (contlinha == NumeroEnum.SEIS.getValor()) {
+					listaMaisSai.add(lista15);
+				}
+			}
+			
+			if (rnp07.aplicar(jogo)) {
+				for (int i = 0; i < jogo.length; i++) {
+					if (jogo[i] < NumeroEnum.DEZ.getValor()) {
+						contlinha++;
+					}
+				}
+				
+				if (contlinha == NumeroEnum.QUATRO.getValor()) {
+					listaMaisSai.add(lista15);
+				} else if (contlinha == NumeroEnum.CINCO.getValor()) {
+					listaMaisSai.add(lista15);
+				} else if (contlinha == NumeroEnum.SEIS.getValor()) {
+					listaMaisSai.add(lista15);
+				}
+			}
+			
+			if (rnp08.aplicar(jogo)) {
+				for (int i = 0; i < jogo.length; i++) {
+					if (jogo[i] < NumeroEnum.DEZ.getValor()) {
+						contlinha++;
+					}
+				}
+				
+				if (contlinha == NumeroEnum.QUATRO.getValor()) {
+					listaMaisSai.add(lista15);
+				} else if (contlinha == NumeroEnum.CINCO.getValor()) {
+					listaMaisSai.add(lista15);
+				} else if (contlinha == NumeroEnum.SEIS.getValor()) {
+					listaMaisSai.add(lista15);
+				}
+			}
+			
+			if (rnp09.aplicar(jogo)) {
+				for (int i = 0; i < jogo.length; i++) {
+					if (jogo[i] < NumeroEnum.DEZ.getValor()) {
+						contlinha++;
+					}
+				}
+				
+				if (contlinha == NumeroEnum.QUATRO.getValor()) {
+					listaMaisSai.add(lista15);
+				} else if (contlinha == NumeroEnum.CINCO.getValor()) {
+					listaMaisSai.add(lista15);
+				} else if (contlinha == NumeroEnum.SEIS.getValor()) {
+					listaMaisSai.add(lista15);
+				}
+			}
+			
+		}
+		for (String lista15 : listaMaisSai) {
+			gravarArqSaiu.printf("%s%n", lista15);
+		}
+		System.out.println("Total: " + listaMaisSai.size());
+		arqSaiu.close();
+		gravarArqSaiu.close();
+	}
+	
+	public void maisSaiuONZE(List<String> lista) throws URISyntaxException, IOException, LotoException {
+		
+		int cont = 0;
+		int onze = 0;
+		FileWriter arqSaiu = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\quinze\\principal\\maisSaiuONZE.csv");
+		PrintWriter gravarArqSaiu = new PrintWriter(arqSaiu);
+
+		for (String lista15 : lista) {
+			onze = 0;
+			String[] linha15 = lista15.split(",");
+			int[] linha1525 = new int[linha15.length];
+			for (int i = 0; i < linha15.length; i++) {
+				linha1525[i] = Integer.parseInt(String.valueOf(linha15[i]));
+			}
+			compararResultadoMaisSaiuOnze(gravarArqSaiu, linha1525, onze);
+			System.out.println(cont++);
+		}
+		arqSaiu.close();
+		gravarArqSaiu.close();
+	}
+
+	@SuppressWarnings({ "deprecation" })
+	public static void compararResultadoMaisSaiuOnze(PrintWriter gravarArqSaiu, int[] linha1525, int onze) throws URISyntaxException, NumberFormatException, IOException {
+
+		int contador = 0;
+		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
+		if (Objects.nonNull(resultado)) {
+
+			Path caminho = Paths.get(resultado.toURI());
+			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
+			String[] linhaResultado;
+			String lista = null;
+			while (Objects.nonNull((linhaResultado = csvReader.readNext()))) {
+
+				contador = 0;
+				int[] resultado1525 = new int[linhaResultado.length];
+				for (int i = 0; i < linhaResultado.length; i++) {
+					resultado1525[i] = Integer.parseInt(String.valueOf(linhaResultado[i]));
+				}
+
+				for (int i = 0; i < linha1525.length; i++) {
+					for (int j = 0; j < resultado1525.length; j++) {
+						if (linha1525[i] == resultado1525[j]) {
+							contador++;
+						}
+					}
+				}
+
+				if (contador == NumeroEnum.ONZE.getValor()) {
+					onze++;
+				}
+			}
+
+			lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + "," + linha1525[3] + "," + linha1525[4] + "," + 
+					linha1525[5] + "," + linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + "," + linha1525[9] + "," + 
+					linha1525[10] + "," + linha1525[11] + "," + linha1525[12] + "," + linha1525[13] + "," + linha1525[14] + "," + onze;
+			gravarArqSaiu.printf("%s%n", lista);
+		} else {
+			System.out.println("### [Resultado1825SAIU.csv] Arquivo nao encontrado... ###");
+		}
 	}
 }

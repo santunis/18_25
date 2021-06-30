@@ -55,7 +55,7 @@ public class Principal {
 //		
 //		// gerar resultado RNP07
 //		principal.resultadoRNP07();
-		principal.resultadoNumerosMenorQueDezRNP07();
+//		principal.resultadoNumerosMenorQueDezRNP07();
 //		
 //		// gerar resultado RNP08
 //		principal.resultadoRNP08();
@@ -2035,7 +2035,6 @@ public class Principal {
 		System.out.println("Linha" + cont + ": " + naosaiu);
 		System.out.println("Linha" + cont + ":");
 	}
-	
 	
 	private static boolean ehPrimo(int numero) {
 	    for (int j = 2; j < numero; j++) {

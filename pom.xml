@@ -11,8 +11,8 @@
 
 	<modules>
 		<module>facil-core</module>
-		<module>facil-ear</module>
 		<module>facil-war</module>
+		<module>facil-ear</module>
 	</modules>
 	
 	<properties>
@@ -25,7 +25,7 @@
         <jackson.dataformat.csv.version>2.11.2</jackson.dataformat.csv.version>
         
         <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
-        <wildfly-jsf.version>23.0.2.Final</wildfly-jsf.version>
+        <wildfly-jsf.version>19.0.0.Final</wildfly-jsf.version>
         <primefaces.version>8.0</primefaces.version>
         <omnifaces.version>3.6</omnifaces.version>
         <log4j.version>1.2.17</log4j.version>
@@ -50,6 +50,7 @@
 				<groupId>javax</groupId>
 				<artifactId>javaee-api</artifactId>
 				<version>${javaee.api.version}</version>
+				<scope>provided</scope>
 			</dependency>
 			
 			<dependency>
@@ -70,6 +71,9 @@
 			    <version>${jackson.dataformat.csv.version}</version>
 			</dependency>
 			
+			
+			
+			<!-- dependencias facil-war -->
 			<dependency>
 				<groupId>javax.servlet</groupId>
 				<artifactId>javax.servlet-api</artifactId>
@@ -124,6 +128,7 @@
 				<groupId>org.projectlombok</groupId>
 				<artifactId>lombok</artifactId>
 				<version>${lombok.version}</version>
+				<scope>provided</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

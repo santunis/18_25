@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+<web-app 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+		http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
 	version="4.0">
 	
-	<display-name>facil-war</display-name>
+	<!-- Titulo do aplicativo -->
+  	<context-param>
+		<param-name>appTitle</param-name>
+		<param-value>Tecnologia Java</param-value>
+  	</context-param>
 	
 	<!-- Pagina inicial -->
 	<welcome-file-list>
@@ -48,6 +55,24 @@
 	</context-param>
 	<!-- Fim de configuracoes do JSF/Facelets -->
 	
+	<!-- THEMES -->
+	<context-param>
+		<param-name>primefaces.THEME</param-name>
+		<param-value>#{configBean.skinTheme}</param-value> 
+	</context-param>
+	
+	<!--Configuracoes para o OmniFaces -->
+	<filter>
+		<filter-name>noCacheFilter</filter-name>
+		<filter-class>org.omnifaces.filter.CacheControlFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>noCacheFilter</filter-name>
+		<servlet-name>Faces Servlet</servlet-name>
+ 	</filter-mapping>
+ 	<!--Fim de Configuracoes para o OmniFaces -->
+ 	
 	<!-- Configuracao do FacesServlet -->
 	<servlet>
 		<servlet-name>Faces Servlet</servlet-name>

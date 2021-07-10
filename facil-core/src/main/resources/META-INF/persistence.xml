@@ -9,10 +9,10 @@
 	<persistence-unit name="lotoDS" transaction-type="JTA">
 		<!-- Implementação do JPA, no nessa caso Hibernate -->
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		<jta-data-source>java:jboss/datasources/lotoDS</jta-data-source>
+		<jta-data-source>java:/lotoDS</jta-data-source>
 		<properties>
 			<!-- Propriedades JDBC -->
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jc.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/loto?useTimezone=true&amp;serverTimezone=UTC" />
 			<property name="javax.persistence.jdbc.user" value="root" />
 			<property name="javax.persistence.jdbc.password" value="123456" />

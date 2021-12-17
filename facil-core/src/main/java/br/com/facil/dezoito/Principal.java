@@ -27,7 +27,7 @@ public class Principal {
 		
 		// Combinacoes 2025
 		Combinacoes2025 combinacoes2025 = new Combinacoes2025();
-		List<String> listaCombinacoes2025 = combinacoes2025.gerar2025();
+		List<String> listaCombinacoes2025 = combinacoes2025.get2025();
 		
 		for (String lista15 : listaCombinacoes1525) {
 			String[] linha15 = lista15.split(",");

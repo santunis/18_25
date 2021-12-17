@@ -36,7 +36,7 @@ public class Combinacoes1525 {
 		
 		Combinacoes1525 combinacoes1525 = new Combinacoes1525();
 		combinacoes1525.gerar1525();
-//		
+		
 //		combinacoes1525.gerar1525RNP02();
 //		combinacoes1525.resultadoNumerosMenorQueDezRNP02();
 //		

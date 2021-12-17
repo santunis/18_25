@@ -32,52 +32,52 @@ public class Principal {
 		
 		Principal principal = new Principal();
 		principal.resultadoParesImpares();
-//		
-//		// gerar resultado RNP02
+		
+		// gerar resultado RNP02
 //		principal.resultadoRNP02();
 //		principal.resultadoNumerosMenorQueDezRNP02();
-//		
-//		// gerar resultado RNP03
+		
+		// gerar resultado RNP03
 //		principal.resultadoRNP03();
 //		principal.resultadoNumerosMenorQueDezRNP03();
-//		
-//		// gerar resultado RNP04
+		
+		// gerar resultado RNP04
 //		principal.resultadoRNP04();
 //		principal.resultadoNumerosMenorQueDezRNP04();
-//		
-//		// gerar resultado RNP05
+		
+		// gerar resultado RNP05
 //		principal.resultadoRNP05();
 //		principal.resultadoNumerosMenorQueDezRNP05();
-//		
-//		// gerar resultado RNP06
+		
+		// gerar resultado RNP06
 //		principal.resultadoRNP06();
 //		principal.resultadoNumerosMenorQueDezRNP06();
-//		
-//		// gerar resultado RNP07
+		
+		// gerar resultado RNP07
 //		principal.resultadoRNP07();
 //		principal.resultadoNumerosMenorQueDezRNP07();
-//		
-//		// gerar resultado RNP08
+		
+		// gerar resultado RNP08
 //		principal.resultadoRNP08();
 //		principal.resultadoNumerosMenorQueDezRNP08();
-//		
-//		// gerar resultado RNP09
+		
+		// gerar resultado RNP09
 //		principal.resultadoRNP09();
 //		principal.resultadoNumerosMenorQueDezRNP09();
-//		
-//		// gerar resultado RNP10
+		
+		// gerar resultado RNP10
 //		principal.resultadoRNP10();
 //		principal.resultadoNumerosMenorQueDezRNP10();
-//		
-//		// gerar resultado RNP11
+		
+		// gerar resultado RNP11
 //		principal.resultadoRNP11();
 //		principal.resultadoNumerosMenorQueDezRNP11();
-//		
-//		// gerar resultado RNP12
+		
+		// gerar resultado RNP12
 //		principal.resultadoRNP12();
 //		principal.resultadoNumerosMenorQueDezRNP12();
-//		
-//		// gerar resultado numeros menor que dez
+		
+		// gerar resultado numeros menor que dez
 //		principal.resultadoNumerosMenorQueDez();
 		
 		
@@ -211,7 +211,7 @@ public class Principal {
 	public void resultadoRNP02() throws URISyntaxException, IOException, LotoException {
 		
 		int cont = 0;
-		FileWriter arquivo = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP02.csv");
+		FileWriter arquivo = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP02.csv");
 		PrintWriter gravarArquivo = new PrintWriter(arquivo);
 		RNP02 rnp02 = new RNP02();
 		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
@@ -246,7 +246,7 @@ public class Principal {
 	public void resultadoRNP03() throws URISyntaxException, IOException, LotoException {
 		
 		int cont = 0;
-		FileWriter arquivo = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP03.csv");
+		FileWriter arquivo = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP03.csv");
 		PrintWriter gravarArquivo = new PrintWriter(arquivo);
 		RNP03 rnp03 = new RNP03();
 		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
@@ -281,7 +281,7 @@ public class Principal {
 	public void resultadoRNP04() throws URISyntaxException, IOException, LotoException {
 		
 		int cont = 0;
-		FileWriter arquivo = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP04.csv");
+		FileWriter arquivo = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP04.csv");
 		PrintWriter gravarArquivo = new PrintWriter(arquivo);
 		RNP04 rnp04 = new RNP04();
 		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
@@ -316,7 +316,7 @@ public class Principal {
 	public void resultadoRNP05() throws URISyntaxException, IOException, LotoException {
 		
 		int cont = 0;
-		FileWriter arquivo = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP05.csv");
+		FileWriter arquivo = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP05.csv");
 		PrintWriter gravarArquivo = new PrintWriter(arquivo);
 		RNP05 rnp05 = new RNP05();
 		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
@@ -351,7 +351,7 @@ public class Principal {
 	public void resultadoRNP06() throws URISyntaxException, IOException, LotoException {
 		
 		int cont = 0;
-		FileWriter arquivo = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP06.csv");
+		FileWriter arquivo = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP06.csv");
 		PrintWriter gravarArquivo = new PrintWriter(arquivo);
 		RNP06 rnp06 = new RNP06();
 		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
@@ -386,7 +386,7 @@ public class Principal {
 	public void resultadoRNP07() throws URISyntaxException, IOException, LotoException {
 		
 		int cont = 0;
-		FileWriter arquivo = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP07.csv");
+		FileWriter arquivo = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP07.csv");
 		PrintWriter gravarArquivo = new PrintWriter(arquivo);
 		RNP07 rnp07 = new RNP07();
 		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
@@ -421,7 +421,7 @@ public class Principal {
 	public void resultadoRNP08() throws URISyntaxException, IOException, LotoException {
 		
 		int cont = 0;
-		FileWriter arquivo = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP08.csv");
+		FileWriter arquivo = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP08.csv");
 		PrintWriter gravarArquivo = new PrintWriter(arquivo);
 		RNP08 rnp08 = new RNP08();
 		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
@@ -456,7 +456,7 @@ public class Principal {
 	public void resultadoRNP09() throws URISyntaxException, IOException, LotoException {
 		
 		int cont = 0;
-		FileWriter arquivo = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP09.csv");
+		FileWriter arquivo = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP09.csv");
 		PrintWriter gravarArquivo = new PrintWriter(arquivo);
 		RNP09 rnp09 = new RNP09();
 		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
@@ -491,7 +491,7 @@ public class Principal {
 	public void resultadoRNP10() throws URISyntaxException, IOException, LotoException {
 		
 		int cont = 0;
-		FileWriter arquivo = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP10.csv");
+		FileWriter arquivo = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP10.csv");
 		PrintWriter gravarArquivo = new PrintWriter(arquivo);
 		RNP10 rnp10 = new RNP10();
 		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
@@ -526,7 +526,7 @@ public class Principal {
 	public void resultadoRNP11() throws URISyntaxException, IOException, LotoException {
 		
 		int cont = 0;
-		FileWriter arquivo = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP11.csv");
+		FileWriter arquivo = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP11.csv");
 		PrintWriter gravarArquivo = new PrintWriter(arquivo);
 		RNP11 rnp11 = new RNP11();
 		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
@@ -561,7 +561,7 @@ public class Principal {
 	public void resultadoRNP12() throws URISyntaxException, IOException, LotoException {
 		
 		int cont = 0;
-		FileWriter arquivo = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP12.csv");
+		FileWriter arquivo = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoRNP12.csv");
 		PrintWriter gravarArquivo = new PrintWriter(arquivo);
 		RNP12 rnp12 = new RNP12();
 		URL resultado = Principal.class.getClassLoader().getResource("resultado.csv");
@@ -595,25 +595,25 @@ public class Principal {
 	@SuppressWarnings("deprecation")
 	public void resultadoNumerosMenorQueDez() throws URISyntaxException, IOException, LotoException {
 		
-		FileWriter arquivoZERO = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_ZERO.csv");
+		FileWriter arquivoZERO = new FileWriter("C:\\\\projetos\\\\18_25\\\\facil-core\\\\src\\\\main\\\\resources\\\\resultado\\ResultadoNumerosMenorQueDez_ZERO.csv");
 		PrintWriter gravarArquivoZERO = new PrintWriter(arquivoZERO);
-		FileWriter arquivoUM = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_UM.csv");
+		FileWriter arquivoUM = new FileWriter("C:\\\\projetos\\\\18_25\\\\facil-core\\\\src\\\\main\\\\resources\\\\resultado\\ResultadoNumerosMenorQueDez_UM.csv");
 		PrintWriter gravarArquivoUM = new PrintWriter(arquivoUM);
-		FileWriter arquivoDOIS = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_DOIS.csv");
+		FileWriter arquivoDOIS = new FileWriter("C:\\\\projetos\\\\18_25\\\\facil-core\\\\src\\\\main\\\\resources\\\\resultado\\ResultadoNumerosMenorQueDez_DOIS.csv");
 		PrintWriter gravarArquivoDOIS = new PrintWriter(arquivoDOIS);
-		FileWriter arquivoTRES = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_TRES.csv");
+		FileWriter arquivoTRES = new FileWriter("C:\\\\projetos\\\\18_25\\\\facil-core\\\\src\\\\main\\\\resources\\\\resultado\\ResultadoNumerosMenorQueDez_TRES.csv");
 		PrintWriter gravarArquivoTRES = new PrintWriter(arquivoTRES);
-		FileWriter arquivoQUATRO = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_QUATRO.csv");
+		FileWriter arquivoQUATRO = new FileWriter("C:\\\\projetos\\\\18_25\\\\facil-core\\\\src\\\\main\\\\resources\\\\resultado\\ResultadoNumerosMenorQueDez_QUATRO.csv");
 		PrintWriter gravarArquivoQUATRO = new PrintWriter(arquivoQUATRO);
-		FileWriter arquivoCINCO = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_CINCO.csv");
+		FileWriter arquivoCINCO = new FileWriter("C:\\\\projetos\\\\18_25\\\\facil-core\\\\src\\\\main\\\\resources\\\\resultado\\ResultadoNumerosMenorQueDez_CINCO.csv");
 		PrintWriter gravarArquivoCINCO = new PrintWriter(arquivoCINCO);
-		FileWriter arquivoSEIS = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_SEIS.csv");
+		FileWriter arquivoSEIS = new FileWriter("C:\\\\projetos\\\\18_25\\\\facil-core\\\\src\\\\main\\\\resources\\\\resultado\\ResultadoNumerosMenorQueDez_SEIS.csv");
 		PrintWriter gravarArquivoSEIS = new PrintWriter(arquivoSEIS);
-		FileWriter arquivoSETE = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_SETE.csv");
+		FileWriter arquivoSETE = new FileWriter("C:\\\\projetos\\\\18_25\\\\facil-core\\\\src\\\\main\\\\resources\\\\resultado\\ResultadoNumerosMenorQueDez_SETE.csv");
 		PrintWriter gravarArquivoSETE = new PrintWriter(arquivoSETE);
-		FileWriter arquivoOITO = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_OITO.csv");
+		FileWriter arquivoOITO = new FileWriter("C:\\\\projetos\\\\18_25\\\\facil-core\\\\src\\\\main\\\\resources\\\\resultado\\ResultadoNumerosMenorQueDez_OITO.csv");
 		PrintWriter gravarArquivoOITO = new PrintWriter(arquivoOITO);
-		FileWriter arquivoNOVE = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_NOVE.csv");
+		FileWriter arquivoNOVE = new FileWriter("C:\\\\projetos\\\\18_25\\\\facil-core\\\\src\\\\main\\\\resources\\\\resultado\\ResultadoNumerosMenorQueDez_NOVE.csv");
 		PrintWriter gravarArquivoNOVE = new PrintWriter(arquivoNOVE);
 		
 		int cont = 0;

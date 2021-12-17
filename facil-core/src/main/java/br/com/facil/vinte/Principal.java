@@ -22,7 +22,7 @@ public class Principal {
 	public static void main(String[] args) throws URISyntaxException, IOException, LotoException {
 		Principal principal = new Principal();
 		Combinacoes2025 combinacoes2025 = new Combinacoes2025();
-		List<String> listaCombinacoes2025 = combinacoes2025.gerar2025();
+		List<String> listaCombinacoes2025 = combinacoes2025.get2025();
 		
 		principal.maisSaiu15(listaCombinacoes2025);
 //		principal.gerar2025();
@@ -98,7 +98,7 @@ public class Principal {
 		FileWriter arqSaiu = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\20_25-MAISSAIU-30VEZES.csv");
 		PrintWriter gravarArqSaiu = new PrintWriter(arqSaiu);
 		
-		List<String> lista2025 = combinacoes2025.gerar2025();
+		List<String> lista2025 = combinacoes2025.get2025();
 		for (String linha : lista2025) {
 			gravarArqSaiu.printf("%s%n", linha);
 		}

@@ -35,47 +35,47 @@ public class Principal {
 		
 		// gerar resultado RNP02
 //		principal.resultadoRNP02();
-//		principal.resultadoNumerosMenorQueDezRNP02();
+		principal.resultadoNumerosMenorQueDezRNP02();
 		
 		// gerar resultado RNP03
 //		principal.resultadoRNP03();
-//		principal.resultadoNumerosMenorQueDezRNP03();
+		principal.resultadoNumerosMenorQueDezRNP03();
 		
 		// gerar resultado RNP04
 //		principal.resultadoRNP04();
-//		principal.resultadoNumerosMenorQueDezRNP04();
+		principal.resultadoNumerosMenorQueDezRNP04();
 		
 		// gerar resultado RNP05
 //		principal.resultadoRNP05();
-//		principal.resultadoNumerosMenorQueDezRNP05();
+		principal.resultadoNumerosMenorQueDezRNP05();
 		
 		// gerar resultado RNP06
 //		principal.resultadoRNP06();
-//		principal.resultadoNumerosMenorQueDezRNP06();
+		principal.resultadoNumerosMenorQueDezRNP06();
 		
 		// gerar resultado RNP07
 //		principal.resultadoRNP07();
-//		principal.resultadoNumerosMenorQueDezRNP07();
+		principal.resultadoNumerosMenorQueDezRNP07();
 		
 		// gerar resultado RNP08
 //		principal.resultadoRNP08();
-//		principal.resultadoNumerosMenorQueDezRNP08();
+		principal.resultadoNumerosMenorQueDezRNP08();
 		
 		// gerar resultado RNP09
 //		principal.resultadoRNP09();
-//		principal.resultadoNumerosMenorQueDezRNP09();
+		principal.resultadoNumerosMenorQueDezRNP09();
 		
 		// gerar resultado RNP10
 //		principal.resultadoRNP10();
-//		principal.resultadoNumerosMenorQueDezRNP10();
+		principal.resultadoNumerosMenorQueDezRNP10();
 		
 		// gerar resultado RNP11
 //		principal.resultadoRNP11();
-//		principal.resultadoNumerosMenorQueDezRNP11();
+		principal.resultadoNumerosMenorQueDezRNP11();
 		
 		// gerar resultado RNP12
 //		principal.resultadoRNP12();
-//		principal.resultadoNumerosMenorQueDezRNP12();
+		principal.resultadoNumerosMenorQueDezRNP12();
 		
 		// gerar resultado numeros menor que dez
 //		principal.resultadoNumerosMenorQueDez();

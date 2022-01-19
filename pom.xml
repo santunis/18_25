@@ -11,8 +11,6 @@
 
 	<modules>
 		<module>facil-core</module>
-		<module>facil-war</module>
-		<module>facil-ear</module>
 	</modules>
 
 	<properties>

@@ -17,6 +17,7 @@ import com.opencsv.CSVReader;
 import br.com.facil.combinacoes.Combinacoes1525;
 import br.com.facil.enumerador.NumeroEnum;
 import br.com.facil.excecao.LotoException;
+import br.com.facil.quinze.rnp05.PrincipalRNP05;
 
 public class PrincipalRNP09 {
 

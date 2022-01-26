@@ -35,7 +35,7 @@ public class Combinacoes1525 {
 	public static void main(String[] args) throws URISyntaxException, IOException, LotoException {
 		
 		Combinacoes1525 combinacoes1525 = new Combinacoes1525();
-		combinacoes1525.gerar1525();
+//		combinacoes1525.gerar1525();
 		
 //		combinacoes1525.gerar1525RNP02();
 //		combinacoes1525.resultadoNumerosMenorQueDezRNP02();
@@ -46,8 +46,9 @@ public class Combinacoes1525 {
 //		combinacoes1525.gerar1525RNP04();
 //		combinacoes1525.resultadoNumerosMenorQueDezRNP04();
 //		
-//		combinacoes1525.gerar1525RNP05();
-//		combinacoes1525.resultadoNumerosMenorQueDezRNP05();
+		List<String> listaCombinacoesRNP05 = combinacoes1525.gerar1525RNP05();
+		combinacoes1525.gravarRNP05(listaCombinacoesRNP05);
+		combinacoes1525.resultadoNumerosMenorQueDezRNP05();
 //		
 //		combinacoes1525.gerar1525RNP06();
 //		combinacoes1525.resultadoNumerosMenorQueDezRNP06();
@@ -809,32 +810,26 @@ public class Combinacoes1525 {
 	
 	@SuppressWarnings("deprecation")
 	public void resultadoNumerosMenorQueDezRNP05() throws URISyntaxException, IOException, LotoException {
-		
-		FileWriter arquivoZERO = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\15_25\\15_25-RNP05\\15_25-RNP05_ZERO.csv");
-		PrintWriter gravarArquivoZERO = new PrintWriter(arquivoZERO);
-		FileWriter arquivoUM = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\15_25\\15_25-RNP05\\15_25-RNP05_UM.csv");
-		PrintWriter gravarArquivoUM = new PrintWriter(arquivoUM);
-		FileWriter arquivoDOIS = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\15_25\\15_25-RNP05\\15_25-RNP05_DOIS.csv");
+
+		FileWriter arquivoDOIS = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\15_25-3268760\\RNP05\\DOIS.csv");
 		PrintWriter gravarArquivoDOIS = new PrintWriter(arquivoDOIS);
-		FileWriter arquivoTRES = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\15_25\\15_25-RNP05\\15_25-RNP05_TRES.csv");
+		FileWriter arquivoTRES = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\15_25-3268760\\RNP05\\TRES.csv");
 		PrintWriter gravarArquivoTRES = new PrintWriter(arquivoTRES);
-		FileWriter arquivoQUATRO = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\15_25\\15_25-RNP05\\15_25-RNP05_QUATRO.csv");
+		FileWriter arquivoQUATRO = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\15_25-3268760\\RNP05\\QUATRO.csv");
 		PrintWriter gravarArquivoQUATRO = new PrintWriter(arquivoQUATRO);
-		FileWriter arquivoCINCO = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\15_25\\15_25-RNP05\\15_25-RNP05_CINCO.csv");
+		FileWriter arquivoCINCO = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\15_25-3268760\\RNP05\\CINCO.csv");
 		PrintWriter gravarArquivoCINCO = new PrintWriter(arquivoCINCO);
-		FileWriter arquivoSEIS = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\15_25\\15_25-RNP05\\15_25-RNP05_SEIS.csv");
+		FileWriter arquivoSEIS = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\15_25-3268760\\RNP05\\SEIS.csv");
 		PrintWriter gravarArquivoSEIS = new PrintWriter(arquivoSEIS);
-		FileWriter arquivoSETE = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\15_25\\15_25-RNP05\\15_25-RNP05_SETE.csv");
+		FileWriter arquivoSETE = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\15_25-3268760\\RNP05\\SETE.csv");
 		PrintWriter gravarArquivoSETE = new PrintWriter(arquivoSETE);
-		FileWriter arquivoOITO = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\15_25\\15_25-RNP05\\15_25-RNP05_OITO.csv");
+		FileWriter arquivoOITO = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\15_25-3268760\\RNP05\\OITO.csv");
 		PrintWriter gravarArquivoOITO = new PrintWriter(arquivoOITO);
-		FileWriter arquivoNOVE = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\15_25\\15_25-RNP05\\15_25-RNP05_NOVE.csv");
+		FileWriter arquivoNOVE = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\15_25-3268760\\RNP05\\NOVE.csv");
 		PrintWriter gravarArquivoNOVE = new PrintWriter(arquivoNOVE);
 		
 		int cont = 0;
 		int contlinha = 0;
-		int zero = 0;
-		int um = 0;
 		int dois = 0;
 		int tres = 0;
 		int quatro = 0;
@@ -843,7 +838,7 @@ public class Combinacoes1525 {
 		int sete = 0;
 		int oito = 0;
 		int nove = 0;
-		URL resultado1525 = Combinacoes1525.class.getClassLoader().getResource("combinacoes\\15_25\\15_25-RNP05\\15_25-RNP05.csv");
+		URL resultado1525 = Combinacoes1525.class.getClassLoader().getResource("combinacoes\\15_25-3268760\\RNP05\\RNP05-226512.csv");
 		if (Objects.nonNull(resultado1525)) {
 			Path caminho = Paths.get(resultado1525.toURI());
 			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
@@ -864,25 +859,7 @@ public class Combinacoes1525 {
 					}
 				}
 
-				if (contlinha == NumeroEnum.ZERO.getValor()) {
-					String lista = null;
-					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-					gravarArquivoZERO.printf("%s%n", lista);
-					zero++;
-				} else if (contlinha == NumeroEnum.UM.getValor()) {
-					String lista = null;
-					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
-							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
-							+ linha1525[6] + "," + linha1525[7] + "," + linha1525[8] + ","
-							+ linha1525[9] + "," + linha1525[10] + "," + linha1525[11] + ","
-							+ linha1525[12] + "," + linha1525[13] + "," + linha1525[14];
-					gravarArquivoUM.printf("%s%n", lista);
-					um++;
-				} else if (contlinha == NumeroEnum.DOIS.getValor()) {
+				if (contlinha == NumeroEnum.DOIS.getValor()) {
 					String lista = null;
 					lista = linha1525[0] + "," + linha1525[1] + "," + linha1525[2] + ","
 							+ linha1525[3] + "," + linha1525[4] + "," + linha1525[5] + ","
@@ -958,10 +935,6 @@ public class Combinacoes1525 {
 
 			}
 			
-			arquivoZERO.close();
-			gravarArquivoZERO.close();
-			arquivoUM.close();
-			gravarArquivoUM.close();
 			arquivoDOIS.close();
 			gravarArquivoDOIS.close();
 			arquivoTRES.close();
@@ -985,8 +958,6 @@ public class Combinacoes1525 {
 		System.out.println();
 		System.out.println();
 		System.out.println("TOTAL DE LINHAS NO ARQUIVO 15_25-RNP05: " + cont);
-		System.out.println("ZERO: " + zero);
-		System.out.println("UM: " + um);
 		System.out.println("DOIS: " + dois);
 		System.out.println("TRES: " + tres);
 		System.out.println("QUATRO: " + quatro);
@@ -3324,6 +3295,96 @@ public class Combinacoes1525 {
 //		gravarArquivo1416.close();
 		System.out.println("TOTAL DE LINHAS NO ARQUIVO 14_16: " + cont);
 		return lista1416;
+	}
+	
+	public void gravarRNP05(List<String> listaCombinacoes1525) throws URISyntaxException, IOException, LotoException {
+
+		FileWriter arquivo = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\15_25-3268760\\RNP05\\RNP05-226512.csv");
+		PrintWriter gravarArquivo = new PrintWriter(arquivo);
+
+		for (String lista15 : listaCombinacoes1525) {
+			String[] linha15 = lista15.split(",");
+			String lista = null;
+			lista = linha15[0] + "," + linha15[1] + "," + linha15[2] + "," + linha15[3] + "," + linha15[4] + ","
+					+ linha15[5] + "," + linha15[6] + "," + linha15[7] + "," + linha15[8] + "," + linha15[9] + ","
+					+ linha15[10] + "," + linha15[11] + "," + linha15[12] + "," + linha15[13] + "," + linha15[14];
+			
+			gravarArquivo.printf("%s%n", lista);
+		}
+		arquivo.close();
+		gravarArquivo.close();
+	}
+	
+	public void gravarRNP06(List<String> listaCombinacoes1525) throws URISyntaxException, IOException, LotoException {
+
+		FileWriter arquivo = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\15_25-3268760\\teste.csv");
+		PrintWriter gravarArquivo = new PrintWriter(arquivo);
+
+		for (String lista15 : listaCombinacoes1525) {
+			String[] linha15 = lista15.split(",");
+			String lista = null;
+			lista = linha15[0] + "," + linha15[1] + "," + linha15[2] + "," + linha15[3] + "," + linha15[4] + ","
+					+ linha15[5] + "," + linha15[6] + "," + linha15[7] + "," + linha15[8] + "," + linha15[9] + ","
+					+ linha15[10] + "," + linha15[11] + "," + linha15[12] + "," + linha15[13] + "," + linha15[14];
+			
+			gravarArquivo.printf("%s%n", lista);
+		}
+		arquivo.close();
+		gravarArquivo.close();
+	}
+	
+	public void gravarRNP07(List<String> listaCombinacoes1525) throws URISyntaxException, IOException, LotoException {
+
+		FileWriter arquivo = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\15_25-3268760\\teste.csv");
+		PrintWriter gravarArquivo = new PrintWriter(arquivo);
+
+		for (String lista15 : listaCombinacoes1525) {
+			String[] linha15 = lista15.split(",");
+			String lista = null;
+			lista = linha15[0] + "," + linha15[1] + "," + linha15[2] + "," + linha15[3] + "," + linha15[4] + ","
+					+ linha15[5] + "," + linha15[6] + "," + linha15[7] + "," + linha15[8] + "," + linha15[9] + ","
+					+ linha15[10] + "," + linha15[11] + "," + linha15[12] + "," + linha15[13] + "," + linha15[14];
+			
+			gravarArquivo.printf("%s%n", lista);
+		}
+		arquivo.close();
+		gravarArquivo.close();
+	}
+	
+	public void gravarRNP08(List<String> listaCombinacoes1525) throws URISyntaxException, IOException, LotoException {
+
+		FileWriter arquivo = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\15_25-3268760\\teste.csv");
+		PrintWriter gravarArquivo = new PrintWriter(arquivo);
+
+		for (String lista15 : listaCombinacoes1525) {
+			String[] linha15 = lista15.split(",");
+			String lista = null;
+			lista = linha15[0] + "," + linha15[1] + "," + linha15[2] + "," + linha15[3] + "," + linha15[4] + ","
+					+ linha15[5] + "," + linha15[6] + "," + linha15[7] + "," + linha15[8] + "," + linha15[9] + ","
+					+ linha15[10] + "," + linha15[11] + "," + linha15[12] + "," + linha15[13] + "," + linha15[14];
+			
+			gravarArquivo.printf("%s%n", lista);
+		}
+		arquivo.close();
+		gravarArquivo.close();
+	}
+	
+	public void gravarRNP09(List<String> listaCombinacoes1525) throws URISyntaxException, IOException, LotoException {
+
+		FileWriter arquivo = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\combinacoes\\15_25-3268760\\teste.csv");
+		PrintWriter gravarArquivo = new PrintWriter(arquivo);
+
+		for (String lista15 : listaCombinacoes1525) {
+			String[] linha15 = lista15.split(",");
+			String lista = null;
+			lista = linha15[0] + "," + linha15[1] + "," + linha15[2] + "," + linha15[3] + "," + linha15[4] + ","
+					+ linha15[5] + "," + linha15[6] + "," + linha15[7] + "," + linha15[8] + "," + linha15[9] + ","
+					+ linha15[10] + "," + linha15[11] + "," + linha15[12] + "," + linha15[13] + "," + linha15[14];
+			
+			gravarArquivo.printf("%s%n", lista);
+		}
+		arquivo.close();
+		gravarArquivo.close();
 	}
 
 }

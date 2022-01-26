@@ -35,85 +35,51 @@ public class Principal {
 		
 		// gerar resultado RNP02
 //		principal.resultadoRNP02();
-		principal.resultadoNumerosMenorQueDezRNP02();
+//		principal.resultadoNumerosMenorQueDezRNP02();
 		
 		// gerar resultado RNP03
 //		principal.resultadoRNP03();
-		principal.resultadoNumerosMenorQueDezRNP03();
+//		principal.resultadoNumerosMenorQueDezRNP03();
 		
 		// gerar resultado RNP04
 //		principal.resultadoRNP04();
-		principal.resultadoNumerosMenorQueDezRNP04();
+//		principal.resultadoNumerosMenorQueDezRNP04();
 		
 		// gerar resultado RNP05
 //		principal.resultadoRNP05();
-		principal.resultadoNumerosMenorQueDezRNP05();
+//		principal.resultadoNumerosMenorQueDezRNP05();
 		
 		// gerar resultado RNP06
 //		principal.resultadoRNP06();
-		principal.resultadoNumerosMenorQueDezRNP06();
+//		principal.resultadoNumerosMenorQueDezRNP06();
 		
 		// gerar resultado RNP07
 //		principal.resultadoRNP07();
-		principal.resultadoNumerosMenorQueDezRNP07();
+//		principal.resultadoNumerosMenorQueDezRNP07();
 		
 		// gerar resultado RNP08
 //		principal.resultadoRNP08();
-		principal.resultadoNumerosMenorQueDezRNP08();
+//		principal.resultadoNumerosMenorQueDezRNP08();
 		
 		// gerar resultado RNP09
 //		principal.resultadoRNP09();
-		principal.resultadoNumerosMenorQueDezRNP09();
+//		principal.resultadoNumerosMenorQueDezRNP09();
 		
 		// gerar resultado RNP10
 //		principal.resultadoRNP10();
-		principal.resultadoNumerosMenorQueDezRNP10();
+//		principal.resultadoNumerosMenorQueDezRNP10();
 		
 		// gerar resultado RNP11
 //		principal.resultadoRNP11();
-		principal.resultadoNumerosMenorQueDezRNP11();
+//		principal.resultadoNumerosMenorQueDezRNP11();
 		
 		// gerar resultado RNP12
 //		principal.resultadoRNP12();
-		principal.resultadoNumerosMenorQueDezRNP12();
+//		principal.resultadoNumerosMenorQueDezRNP12();
 		
 		// gerar resultado numeros menor que dez
-//		principal.resultadoNumerosMenorQueDez();
+		principal.resultadoNumerosMenorQueDez();
 		
-		
-		
-		
-		// gerar resultado fechamento quatorze
-//		FileWriter arquivo = new FileWriter("D:\\projetos_loto\\18_25\\facil-core\\src\\main\\resources\\resultado\\GerarNumerosRNP08MenorQueDez_CINCO.csv");
-//		PrintWriter gravarArquivo = new PrintWriter(arquivo);
-//		URL combinacoes = Principal.class.getClassLoader().getResource("dezoito\\regras\\GerarNumerosRNP08MenorQueDez_CINCO.csv");
-//		if (Objects.nonNull(combinacoes)) {
-//			Path caminho = Paths.get(combinacoes.toURI());
-//			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
-//			String[] linha;
-//			while (Objects.nonNull((linha = csvReader.readNext()))) {
-//				int[] jogo = new int[linha.length];
-//				for (int i = 0; i < linha.length; i++) {
-//					jogo[i] = Integer.parseInt(String.valueOf(linha[i]));
-//				}
-//				principal.jaSaiu(jogo, gravarArquivo);
-//			}
-//			arquivo.close();
-//			gravarArquivo.close();
-//		}
-//		
-//		principal.gerarArquivoARFF();
-//		
-//		principal.resultadofechamentoQUATORZE();
-//		
-//		principal.analise15_25();
-//		
-//		principal.analisarRepetidosNoConcurso();
-//		
-		// gerar apostas ganhadoras.
-//		principal.analiseResultadoGanhador();
-		
-//		principal.frequencia();
 
 		System.out.println("PRINCIPAL - FIM");
 	}
@@ -146,6 +112,18 @@ public class Principal {
 		int cont10 = 0;
 		int cont11 = 0;
 		int cont12 = 0;
+		
+		int rnp05contlinha = 0;
+		int rnp05zero = 0;
+		int rnp05um = 0;
+		int rnp05dois = 0;
+		int rnp05tres = 0;
+		int rnp05quatro = 0;
+		int rnp05cinco = 0;
+		int rnp05seis = 0;
+		int rnp05sete = 0;
+		int rnp05oito = 0;
+		int rnp05nove = 0;
 
 		if (Objects.nonNull(resultadoOrdenado)) {
 
@@ -167,6 +145,33 @@ public class Principal {
 					cont04++;
 				} else if (rnp05.aplicar(linha)) {
 					cont05++;
+					rnp05contlinha = 0;
+					for (int i = 0; i < linha.length; i++) {
+						if (linha[i] < NumeroEnum.DEZ.getValor()) {
+							rnp05contlinha++;
+						}
+					}
+					if (rnp05contlinha == NumeroEnum.ZERO.getValor()) {
+						rnp05zero++;
+					} else if (rnp05contlinha == NumeroEnum.UM.getValor()) {
+						rnp05um++;
+					} else if (rnp05contlinha == NumeroEnum.DOIS.getValor()) {
+						rnp05dois++;
+					} else if (rnp05contlinha == NumeroEnum.TRES.getValor()) {
+						rnp05tres++;
+					} else if (rnp05contlinha == NumeroEnum.QUATRO.getValor()) {
+						rnp05quatro++;
+					} else if (rnp05contlinha == NumeroEnum.CINCO.getValor()) {
+						rnp05cinco++;
+					} else if (rnp05contlinha == NumeroEnum.SEIS.getValor()) {
+						rnp05seis++;
+					} else if (rnp05contlinha == NumeroEnum.SETE.getValor()) {
+						rnp05sete++;
+					} else if (rnp05contlinha == NumeroEnum.OITO.getValor()) {
+						rnp05oito++;
+					} else if (rnp05contlinha == NumeroEnum.NOVE.getValor()) {
+						rnp05nove++;
+					}
 				} else if (rnp06.aplicar(linha)) {
 					cont06++;
 				} else if (rnp07.aplicar(linha)) {
@@ -191,6 +196,18 @@ public class Principal {
 			System.out.println("TOTAL RNP03-2860: " + cont03);
 			System.out.println("TOTAL RNP04-38610: " + cont04);
 			System.out.println("TOTAL RNP05-226512: " + cont05);
+			System.out.println("ZERO: " + rnp05zero);
+			System.out.println("UM: " + rnp05um);
+			System.out.println("DOIS: " + rnp05dois);
+			System.out.println("TRES: " + rnp05tres);
+			System.out.println("QUATRO: " + rnp05quatro);
+			System.out.println("CINCO: " + rnp05cinco);
+			System.out.println("SEIS: " + rnp05seis);
+			System.out.println("SETE: " + rnp05sete);
+			System.out.println("OITO: " + rnp05oito);
+			System.out.println("NOVE: " + rnp05nove);
+			System.out.println();
+			System.out.println();
 			System.out.println("TOTAL RNP06-660660: " + cont06);
 			System.out.println("TOTAL RNP07-1019304: " + cont07);
 			System.out.println("TOTAL RNP08-849420: " + cont08);
@@ -595,25 +612,25 @@ public class Principal {
 	@SuppressWarnings("deprecation")
 	public void resultadoNumerosMenorQueDez() throws URISyntaxException, IOException, LotoException {
 		
-		FileWriter arquivoZERO = new FileWriter("C:\\\\projetos\\\\18_25\\\\facil-core\\\\src\\\\main\\\\resources\\\\resultado\\ResultadoNumerosMenorQueDez_ZERO.csv");
+		FileWriter arquivoZERO = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_ZERO.csv");
 		PrintWriter gravarArquivoZERO = new PrintWriter(arquivoZERO);
-		FileWriter arquivoUM = new FileWriter("C:\\\\projetos\\\\18_25\\\\facil-core\\\\src\\\\main\\\\resources\\\\resultado\\ResultadoNumerosMenorQueDez_UM.csv");
+		FileWriter arquivoUM = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_UM.csv");
 		PrintWriter gravarArquivoUM = new PrintWriter(arquivoUM);
-		FileWriter arquivoDOIS = new FileWriter("C:\\\\projetos\\\\18_25\\\\facil-core\\\\src\\\\main\\\\resources\\\\resultado\\ResultadoNumerosMenorQueDez_DOIS.csv");
+		FileWriter arquivoDOIS = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_DOIS.csv");
 		PrintWriter gravarArquivoDOIS = new PrintWriter(arquivoDOIS);
-		FileWriter arquivoTRES = new FileWriter("C:\\\\projetos\\\\18_25\\\\facil-core\\\\src\\\\main\\\\resources\\\\resultado\\ResultadoNumerosMenorQueDez_TRES.csv");
+		FileWriter arquivoTRES = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_TRES.csv");
 		PrintWriter gravarArquivoTRES = new PrintWriter(arquivoTRES);
-		FileWriter arquivoQUATRO = new FileWriter("C:\\\\projetos\\\\18_25\\\\facil-core\\\\src\\\\main\\\\resources\\\\resultado\\ResultadoNumerosMenorQueDez_QUATRO.csv");
+		FileWriter arquivoQUATRO = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_QUATRO.csv");
 		PrintWriter gravarArquivoQUATRO = new PrintWriter(arquivoQUATRO);
-		FileWriter arquivoCINCO = new FileWriter("C:\\\\projetos\\\\18_25\\\\facil-core\\\\src\\\\main\\\\resources\\\\resultado\\ResultadoNumerosMenorQueDez_CINCO.csv");
+		FileWriter arquivoCINCO = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_CINCO.csv");
 		PrintWriter gravarArquivoCINCO = new PrintWriter(arquivoCINCO);
-		FileWriter arquivoSEIS = new FileWriter("C:\\\\projetos\\\\18_25\\\\facil-core\\\\src\\\\main\\\\resources\\\\resultado\\ResultadoNumerosMenorQueDez_SEIS.csv");
+		FileWriter arquivoSEIS = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_SEIS.csv");
 		PrintWriter gravarArquivoSEIS = new PrintWriter(arquivoSEIS);
-		FileWriter arquivoSETE = new FileWriter("C:\\\\projetos\\\\18_25\\\\facil-core\\\\src\\\\main\\\\resources\\\\resultado\\ResultadoNumerosMenorQueDez_SETE.csv");
+		FileWriter arquivoSETE = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_SETE.csv");
 		PrintWriter gravarArquivoSETE = new PrintWriter(arquivoSETE);
-		FileWriter arquivoOITO = new FileWriter("C:\\\\projetos\\\\18_25\\\\facil-core\\\\src\\\\main\\\\resources\\\\resultado\\ResultadoNumerosMenorQueDez_OITO.csv");
+		FileWriter arquivoOITO = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_OITO.csv");
 		PrintWriter gravarArquivoOITO = new PrintWriter(arquivoOITO);
-		FileWriter arquivoNOVE = new FileWriter("C:\\\\projetos\\\\18_25\\\\facil-core\\\\src\\\\main\\\\resources\\\\resultado\\ResultadoNumerosMenorQueDez_NOVE.csv");
+		FileWriter arquivoNOVE = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\resultado\\ResultadoNumerosMenorQueDez_NOVE.csv");
 		PrintWriter gravarArquivoNOVE = new PrintWriter(arquivoNOVE);
 		
 		int cont = 0;

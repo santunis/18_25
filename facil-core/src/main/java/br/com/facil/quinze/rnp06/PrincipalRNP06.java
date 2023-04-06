@@ -1,4 +1,4 @@
-package br.com.facil.quinze;
+package br.com.facil.quinze.rnp06;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -24,7 +24,7 @@ public class PrincipalRNP06 {
 		Combinacoes1525 combinacoes1525 = new Combinacoes1525();
 		List<String> listaCombinacoesRNP06 = combinacoes1525.gerar1525RNP06();
 		System.out.println("Lista Combinacoes RNP06: " + listaCombinacoesRNP06.size());
-		principalRNP06.saiu(listaCombinacoesRNP06);
+//		principalRNP06.saiu(listaCombinacoesRNP06);
 		
 //		List<String> listaUm = principalRNP06.resultadoNumerosMenorQueDezRNP05UM(listaCombinacoesRNP06);
 //		System.out.println("Lista Combinacoes UM: " + listaUm.size());

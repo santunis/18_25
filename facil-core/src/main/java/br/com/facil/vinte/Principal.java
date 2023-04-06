@@ -31,7 +31,7 @@ public class Principal {
 	
 	public void maisSaiu15(List<String> lista) throws URISyntaxException, IOException, LotoException {
 		
-		FileWriter arqSaiu = new FileWriter("D:\\projetos_github\\lotofacil\\18_25\\facil-core\\src\\main\\resources\\vinte\\principal\\20_25-MAISSAIU.csv");
+		FileWriter arqSaiu = new FileWriter("C:\\projetos\\18_25\\facil-core\\src\\main\\resources\\vinte\\principal\\20_25-MAISSAIU.csv");
 		PrintWriter gravarArqSaiu = new PrintWriter(arqSaiu);
 		
 		int quinze = 0;

@@ -44,16 +44,28 @@ public class PrincipalRNP05 {
 
 //		List<String> listaCinco = principalRNP05.resultadoNumerosMenorQueDezRNP05CINCO(listaCombinacoesRNP05);
 //		System.out.println("Lista Combinacoes CINCO: " + listaCinco.size());
-//		principalRNP05.maisSaiuONZE(listaCinco);
-		
 //		principalRNP05.saiu(listaCinco);
-//		List<String> listaFechamentoCinco = principalRNP05.fechamento14(listaCinco);
-//		System.out.println("Lista Fechamento CINCO: " + listaFechamentoCinco.size());
-//		principalRNP05.saiu(listaFechamentoCinco);
-
+		
 		List<String> listaSeis = principalRNP05.resultadoNumerosMenorQueDezRNP05SEIS(listaCombinacoesRNP05);
 		System.out.println("Lista Combinacoes SEIS: " + listaSeis.size());
-		principalRNP05.saiu(listaSeis);
+//		principalRNP05.saiu(listaSeis);
+		
+		List<String> listaSaiu15 = principalRNP05.retirarSaiu15(listaSeis);
+		System.out.println("Lista Retirar Saiu 15: " + listaSaiu15.size());
+		
+		List<String> listaSaiu14 = principalRNP05.retirarSaiu14(listaSeis);
+		System.out.println("Lista Retirar Saiu 14: " + listaSaiu14.size());
+
+//		List<String> listaSaiu13 = principalRNP05.retirarSaiu13(listaCinco);
+//		System.out.println("Lista Saiu 13: " + listaSaiu13.size());
+		
+//		principalRNP05.maisSaiuONZE(listaCinco);
+		
+		List<String> listaFechamentoCinco = principalRNP05.fechamento14(listaSaiu14);
+		principalRNP05.imprimirNaTela(listaFechamentoCinco);
+		System.out.println("Lista Fechamento CINCO: " + listaFechamentoCinco.size());
+		principalRNP05.saiu(listaFechamentoCinco);
+
 
 //		List<String> listaSete = principalRNP05.resultadoNumerosMenorQueDezRNP05SETE(listaCombinacoesRNP05);
 //		System.out.println("Lista Combinacoes SETE: " + listaSete.size());
@@ -73,11 +85,11 @@ public class PrincipalRNP05 {
 //		List<String> listaSaiu14 = principalRNP05.retirarSaiu14(listaCinco);
 //		System.out.println("Lista Retirar Saiu 14: " + listaSaiu14.size());
 
+//		List<String> listaSaiu13 = principalRNP05.retirarSaiu13(listaSaiu14);
+//		System.out.println("Lista Saiu 13: " + listaSaiu13.size());
+
 //		List<String> listaSaiu12 = principalRNP05.retirarSaiu12(listaSaiu15);
 //		System.out.println("Lista Saiu 12: " + listaSaiu12.size());
-
-//		List<String> listaSaiu13 = principalRNP05.retirarSaiu13(listaSaiu12);
-//		System.out.println("Lista Saiu 13: " + listaSaiu13.size());
 
 //		List<String> listaFechamento = principalRNP05.fechamento14(listaSaiu13);
 //		principalRNP05.saiu(listaCombinacoesRNP05);
@@ -408,7 +420,7 @@ public class PrincipalRNP05 {
 				}
 			}
 
-			if (contJogo < NumeroEnum.QUATORZE.getValor()) {
+			if (contJogo < NumeroEnum.DOZE.getValor()) {
 				retorno = true;
 			} else {
 				retorno = false;
@@ -437,7 +449,7 @@ public class PrincipalRNP05 {
 				jogo[i] = Integer.parseInt(String.valueOf(linha15[i]));
 			}
 
-			URL combinacoes = PrincipalRNP05.class.getClassLoader().getResource("resultado.csv");
+			URL combinacoes = PrincipalRNP05.class.getClassLoader().getResource("resultado/ResultadoRNP05.csv");
 			if (Objects.nonNull(combinacoes)) {
 				Path caminho = Paths.get(combinacoes.toURI());
 				CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
@@ -465,6 +477,7 @@ public class PrincipalRNP05 {
 
 					if (comparaNumerosSaiu(linhaCombinacoes, jogo) == NumeroEnum.QUINZE.getValor()) {
 						contquinze++;
+						System.out.println("Linha: " + contLinha);
 					}
 				}
 
@@ -483,6 +496,7 @@ public class PrincipalRNP05 {
 		System.out.println("TREZE: " + conttreze);
 		System.out.println("QUATROZE: " + contquatorze);
 		System.out.println("QUINZE: " + contquinze);
+		System.out.println("TOTAL: " + contTotal);
 	}
 
 	public static int comparaNumerosSaiu(String[] linhaCombinacoes, int[] jogo) {
@@ -907,6 +921,21 @@ public class PrincipalRNP05 {
 			gravarArqSaiu.printf("%s%n", lista);
 		} else {
 			System.out.println("### [Resultado1825SAIU.csv] Arquivo nao encontrado... ###");
+		}
+	}
+	
+	public void imprimirNaTela(List<String> lista) throws URISyntaxException, IOException, LotoException {
+		for (String lista15 : lista) {
+			String[] linha15 = lista15.split(",");
+			
+
+			int[] jogo = new int[linha15.length];
+			for (int i = 0; i < linha15.length; i++) {
+				jogo[i] = Integer.parseInt(String.valueOf(linha15[i]));
+			}
+			System.out.println(jogo[0] + "," + jogo[1] + "," + jogo[2] + "," + jogo[3] + "," + jogo[4] + "," + 
+			                   jogo[5] + "," + jogo[6] + "," + jogo[7] + "," + jogo[8] + "," + jogo[9] + "," + 
+					           jogo[10] + "," + jogo[11] + "," + jogo[12] + "," + jogo[13] + "," + jogo[14]);
 		}
 	}
 

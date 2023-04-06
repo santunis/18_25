@@ -1,6 +1,8 @@
 /target/
 .settings/*
 *.csv
+*.xlsx
+*.txt
 
 # Created by https://www.gitignore.io/api/eclipse
 # Edit at https://www.gitignore.io/?templates=eclipse

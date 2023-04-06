@@ -23,7 +23,7 @@ public class IAcertei {
 	@SuppressWarnings("deprecation")
 	public void RNP05() throws URISyntaxException, IOException, LotoException {
 		int contLinha = 0;
-		URL resultado1525 = IAcertei.class.getClassLoader().getResource("iacertei\\rnp05\\seis\\RNP05_SEIS.csv");
+		URL resultado1525 = IAcertei.class.getClassLoader().getResource("iacertei\\rnp05\\cinco\\RNP05_CINCO.csv");
 		if (Objects.nonNull(resultado1525)) {
 			Path caminho = Paths.get(resultado1525.toURI());
 			CSVReader csvReader = new CSVReader(new FileReader(caminho.toFile()), ',');
